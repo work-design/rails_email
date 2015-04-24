@@ -9,15 +9,14 @@ Gem::Specification.new do |s|
   s.version     = RailsLog::VERSION
   s.authors     = ["qinmingyuan"]
   s.email       = ["mingyuan0715@foxmail.com"]
-  s.homepage    = "TODO"
-  s.summary     = "TODO: Summary of RailsLog."
-  s.description = "TODO: Description of RailsLog."
+  s.homepage    = "https://github.com/qinmingyuan/rails_log"
+  s.summary     = "Summary of RailsLog."
+  s.description = "Description of RailsLog."
   s.license     = "MIT"
 
   s.files = Dir["{app,config,db,lib}/**/*", "MIT-LICENSE", "Rakefile", "README.rdoc"]
   s.test_files = Dir["test/**/*"]
 
-  s.add_dependency "rails", "~> 4.2.1"
-
-  s.add_development_dependency "sqlite3"
+  s.add_dependency "rails", ">= 4.1.0"
+  s.add_dependency "sidekiq"
 end
