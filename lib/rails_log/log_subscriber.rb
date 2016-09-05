@@ -20,6 +20,7 @@ module RailsLog
         lc.headers = request_headers payload[:headers].to_h
         lc.exception = payload[:exception].join('\n')
         lc.exception_object = payload[:exception_object].class.to_s
+        lc.exception_backtrace = payload[:exception_object].backtrace.join('\n')
         lc.save
         info 'exception log saved!'
       end

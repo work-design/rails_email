@@ -1,25 +1,39 @@
-<p id="notice"><%= notice %></p>
+<div class="sixteen wide column">
 
-<h1>Log Records</h1>
-
-<table>
-  <thead>
+  <div class="ui top attached menu borderless">
+    <div class="item"><strong>日志列表</strong></div>
+  </div>
+  
+  <table class="ui bottom attached table">
+    <thead>
     <tr>
-      <th colspan="3"></th>
+      <th>ID</th>
+      <th>Controller</th>
+      <th>Action</th>
+      <th>params</th>
+      <th>headers</th>
+      <th>创建时间</th>
+      <th></th>
     </tr>
-  </thead>
+    </thead>
 
-  <tbody>
+    <tbody>
     <% @log_records.each do |log_record| %>
       <tr>
-        <td><%= link_to 'Show', log_record %></td>
-        <td><%= link_to 'Edit', edit_log_record_path(log_record) %></td>
-        <td><%= link_to 'Destroy', log_record, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= log_record.id %></td>
+        <td><%= log_record.controller %></td>
+        <td><%= log_record.action %></td>
+        <td><%= log_record.params %></td>
+        <td><%= log_record.headers %></td>
+        <td><%= log_record.created_at.to_s(:db2) %></td>
+        <td>
+          <%= link_to '详细', log_record_path(log_record), class: 'ui blue label' %>
+          <%= link_to '删除', log_record_path(log_record), method: :delete, data: { confirm: 'Are you sure?' }, class: 'ui red label' %>
+        </td>
       </tr>
     <% end %>
-  </tbody>
-</table>
+    </tbody>
+  </table>
 
-<br>
-
-<%= link_to 'New Log Record', new_log_record_path %>
+  <%= paginate @log_records %>
+</div>

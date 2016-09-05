@@ -7,6 +7,7 @@ class CreateLogRecords < ActiveRecord::Migration[5.0]
       t.string :headers, limit: 4096
       t.string :exception, limit: 10240
       t.string :exception_object
+      t.text :exception_backtrace
       t.timestamps
     end
   end
