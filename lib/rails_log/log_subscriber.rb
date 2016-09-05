@@ -1,9 +1,6 @@
 module RailsLog
   class LogSubscriber < ActiveSupport::LogSubscriber
 
-    RESPONSE_FORMAT = %{response: %s  used: %ss\nheaders: %s\nbody-length: %s body: %s}
-    ERROR_FORMAT = %{  error: %s\n%s}
-
     def header_processing(event)
       return unless logger.debug?
 
@@ -13,9 +10,28 @@ module RailsLog
       debug "  Headers: #{headers.inspect}"
     end
 
+    def process_action(event)
+      payload = event.payload
+      if payload[:exception].present?
+        lc = LogRecord.new
+        lc.controller = payload[:controller]
+        lc.action = payload[:action]
+        lc.params = payload[:params].except('controller', 'action')
+        lc.headers = request_headers payload[:headers].to_h
+        lc.exception = payload[:exception].join('\n')
+        lc.exception_object = payload[:exception_object].class.to_s
+        lc.save
+        info 'exception log saved!'
+      end
+    end
+
+    def logger
+      ActionController::Base.logger
+    end
+
     def request_headers(env)
-      result = env.select { |k, v| k.start_with? 'HTTP_' }
-      result.delete 'HTTP_COOKIE'
+      result = env.select { |k, _| k.start_with? 'HTTP_' }
+      #result.delete 'HTTP_COOKIE'
       result = result.collect { |pair| [pair[0].sub(/^HTTP_/, ''), pair[1]] }
       result.sort.to_h
     end

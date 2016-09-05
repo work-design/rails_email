@@ -1,4 +1,2 @@
-require "rails_log/engine"
-
-module RailsLog
-end
+require 'rails_log/engine'
+require 'rails_log/log_subscriber'

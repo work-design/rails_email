@@ -1,0 +1,25 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Log Records</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @log_records.each do |log_record| %>
+      <tr>
+        <td><%= link_to 'Show', log_record %></td>
+        <td><%= link_to 'Edit', edit_log_record_path(log_record) %></td>
+        <td><%= link_to 'Destroy', log_record, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Log Record', new_log_record_path %>
