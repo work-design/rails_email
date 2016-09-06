@@ -5,5 +5,5 @@ class LogRecord < ApplicationRecord
   serialize :headers, Hash
 
   default_scope -> { order(id: :desc) }
-  
+
 end
