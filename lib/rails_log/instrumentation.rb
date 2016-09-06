@@ -1,6 +1,5 @@
 module RailsLog
   module Instrumentation
-    extend ActiveSupport::Concern
 
     # 扩展 controller action 的信息
     def process_action(*args)
