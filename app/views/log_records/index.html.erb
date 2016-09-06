@@ -1,39 +1,50 @@
-<div class="sixteen wide column">
+<div class="ui padded grid">
+  <div class="sixteen wide column">
 
-  <div class="ui top attached menu borderless">
-    <div class="item"><strong>日志列表</strong></div>
-  </div>
-  
-  <table class="ui bottom attached table">
-    <thead>
-    <tr>
-      <th>ID</th>
-      <th>Controller</th>
-      <th>Action</th>
-      <th>params</th>
-      <th>headers</th>
-      <th>创建时间</th>
-      <th></th>
-    </tr>
-    </thead>
+    <div class="ui top attached menu borderless">
+      <div class="item"><strong>日志列表</strong></div>
+    </div>
 
-    <tbody>
-    <% @log_records.each do |log_record| %>
+    <table class="ui fixed table">
+      <thead>
       <tr>
-        <td><%= log_record.id %></td>
-        <td><%= log_record.controller %></td>
-        <td><%= log_record.action %></td>
-        <td><%= log_record.params %></td>
-        <td><%= log_record.headers %></td>
-        <td><%= log_record.created_at.to_s(:db2) %></td>
-        <td>
-          <%= link_to '详细', log_record_path(log_record), class: 'ui blue label' %>
-          <%= link_to '删除', log_record_path(log_record), method: :delete, data: { confirm: 'Are you sure?' }, class: 'ui red label' %>
-        </td>
+        <th class="one wide">ID</th>
+        <th class="two wide">Path / Controller / Action</th>
+        <th class="three wide">params</th>
+        <th class="two wide">Cookie</th>
+        <th class="two wide">Session</th>
+        <th class="five wide">headers</th>
+        <th class="two wide">异常</th>
+        <th class="one wide">创建时间</th>
+        <th class="one wide"></th>
       </tr>
-    <% end %>
-    </tbody>
-  </table>
+      </thead>
 
-  <%= paginate @log_records %>
+      <tbody>
+      <% @log_records.each do |log_record| %>
+        <tr>
+          <td><%= log_record.id %></td>
+          <td>
+            <p><%= log_record.path %></p>
+            <p><%= log_record.controller %></p>
+            <p><%= log_record.action %></p>
+          </td>
+          <td><%= log_record.params %></td>
+          <td><%= log_record.cookie %></td>
+          <td><%= log_record.session %></td>
+          <td><%= log_record.headers %></td>
+          <td><%= simple_format log_record.exception %></td>
+          <td><%= log_record.created_at.to_s(:db2) %></td>
+          <td>
+            <%= link_to '详细', log_record_path(log_record), class: 'ui blue label' %>
+            <%= link_to '删除', log_record_path(log_record), method: :delete, data: { confirm: 'Are you sure?' }, class: 'ui red label' %>
+          </td>
+        </tr>
+      <% end %>
+      </tbody>
+    </table>
+
+    <%= paginate @log_records %>
+
+  </div>
 </div>
