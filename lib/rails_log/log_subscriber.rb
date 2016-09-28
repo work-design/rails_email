@@ -13,19 +13,21 @@ module RailsLog
     def process_action(event)
       payload = event.payload
       if payload[:exception].present?
-        lc = LogRecord.new
-        lc.path = payload[:path]
-        lc.controller = payload[:controller]
-        lc.action = payload[:action]
-        lc.params = payload[:params].except('controller', 'action')
-        lc.headers = request_headers payload[:headers]
-        lc.cookie = payload[:headers]['rack.request.cookie_hash']
-        lc.session = payload[:headers]['rack.session'].to_hash
-        lc.exception = payload[:exception].join('\n')
-        lc.exception_object = payload[:exception_object].class.to_s
-        lc.exception_backtrace = payload[:exception_object].backtrace.join('\n')
-        lc.save
-        info 'exception log saved!'
+        unless RailsLog.config.ignore_exception.include? payload[:exception_object].class
+          lc = LogRecord.new
+          lc.path = payload[:path]
+          lc.controller = payload[:controller]
+          lc.action = payload[:action]
+          lc.params = payload[:params].except('controller', 'action')
+          lc.headers = request_headers payload[:headers]
+          lc.cookie = payload[:headers]['rack.request.cookie_hash']
+          lc.session = payload[:headers]['rack.session'].to_hash
+          lc.exception = payload[:exception].join('\r\n')
+          lc.exception_object = payload[:exception_object].class.to_s
+          lc.exception_backtrace = payload[:exception_object].backtrace.join('\r\n')
+          lc.save
+          info 'exception log saved!'
+        end
       end
     end
 
