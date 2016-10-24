@@ -13,7 +13,7 @@ module RailsLog
     def process_action(event)
       payload = event.payload
       if payload[:exception].present?
-        unless RailsLog.config.ignore_exception.include? payload[:exception_object].class
+        unless RailsLog.config.ignore_exception.include? payload[:exception_object].class.to_s
           lc = LogRecord.new
           lc.path = payload[:path]
           lc.controller = payload[:controller]

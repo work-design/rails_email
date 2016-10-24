@@ -5,7 +5,7 @@ module RailsLog
 
   configure do |config|
     config.ignore_exception = [
-      ActionController::UnknownFormat
+      'ActionController::UnknownFormat'
     ]
   end
 
