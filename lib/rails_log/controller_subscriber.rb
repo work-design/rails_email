@@ -1,5 +1,5 @@
 module RailsLog
-  class LogSubscriber < ActiveSupport::LogSubscriber
+  class ControllerSubscriber < ActiveSupport::LogSubscriber
 
     def header_processing(event)
       return unless logger.debug?
@@ -44,4 +44,4 @@ module RailsLog
   end
 end
 
-RailsLog::LogSubscriber.attach_to :action_controller
+RailsLog::ControllerSubscriber.attach_to :action_controller

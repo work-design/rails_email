@@ -1,0 +1,2 @@
+class LogMailer < ApplicationRecord
+end

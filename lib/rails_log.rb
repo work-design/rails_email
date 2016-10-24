@@ -1,4 +1,5 @@
 require 'rails_log/engine'
 require 'rails_log/config'
-require 'rails_log/log_subscriber'
+require 'rails_log/controller_subscriber'
+require 'rails_log/mailer_subscriber'
 
