@@ -6,6 +6,7 @@ module RailsLog
 
       log_mailer = LogMailer.new(message_object_id: payload[:message_object_id], mailer: payload[:mailer])
       log_mailer.action = payload[:action]
+      log_mailer.params = payload[:params]
       log_mailer.save
 
       info 'mailer log saved!'
@@ -15,7 +16,6 @@ module RailsLog
       payload = event.payload
 
       log_mailer = LogMailer.find_or_initialize_by(message_object_id: payload[:message_object_id], mailer: payload[:mailer])
-      log_mailer.params = payload[:params]
       log_mailer.sent_status = payload[:sent_status]
       log_mailer.sent_string = payload[:sent_string]
       log_mailer.save
