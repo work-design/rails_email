@@ -20,7 +20,7 @@ class ApplicationMailer < ActionMailer::Base
 
       result = yield
 
-      if result
+      if result.is_a? Net::SMTP::Response
         payload[:sent_status] = result.status
         payload[:sent_string] = result.string
       end
