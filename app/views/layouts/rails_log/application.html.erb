@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>错误日志</title>
+  <%= stylesheet_link_tag 'rails_log/application', media: 'all', 'data-turbolinks-track': true %>
+  <%= javascript_include_tag 'rails_log/application', 'data-turbolinks-track': true %>
+  <%= csrf_meta_tags %>
+  <%= action_cable_meta_tag %>
+</head>
+
+<body>
+  <%= render 'layouts/rails_log/nav_bar' %>
+
+  <%= yield %>
+
+  <%= yield :controller_script %>
+  <%= js_load(root: RailsLog::Engine.root) %>
+
+</body>
+
+</html>

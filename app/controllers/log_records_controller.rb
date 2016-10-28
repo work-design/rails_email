@@ -1,4 +1,5 @@
 class LogRecordsController < ApplicationController
+  layout 'rails_log/application'
   before_action :set_log_record, only: [:show, :edit, :update, :destroy]
 
   def index

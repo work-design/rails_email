@@ -1,0 +1,23 @@
+/*
+*= require_tree .
+*= require ui
+*= require expand
+*= require_self
+*/
+
+.ui.items > .item {
+  flex-wrap: wrap;
+}
+
+.ui.items .item .items {
+  width: 100%;
+}
+
+.ui.items .item .items .item {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.items > .item > .avatar.image + .content {
+  width: calc(100% - 3em);
+}
