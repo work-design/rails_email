@@ -22,9 +22,9 @@ module RailsLog
           lc.headers = request_headers payload[:headers]
           lc.cookie = payload[:headers]['rack.request.cookie_hash']
           lc.session = payload[:headers]['rack.session'].to_hash
-          lc.exception = payload[:exception].join('\r\n')
+          lc.exception = payload[:exception].join("\r\n")
           lc.exception_object = payload[:exception_object].class.to_s
-          lc.exception_backtrace = payload[:exception_object].backtrace.join('\r\n')
+          lc.exception_backtrace = payload[:exception_object].backtrace.join("\r\n")
           lc.save
           info 'exception log saved!'
         end
