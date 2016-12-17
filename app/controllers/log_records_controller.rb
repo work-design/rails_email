@@ -3,7 +3,7 @@ class LogRecordsController < ApplicationController
   before_action :set_log_record, only: [:show, :edit, :update, :destroy]
 
   def index
-    @log_records = LogRecord.page(params[:page])
+    @log_records = LogRecord.default_where(params[:q]).page(params[:page])
   end
 
   def show

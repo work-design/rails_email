@@ -3,7 +3,7 @@ class LogMailersController < ApplicationController
   before_action :set_log_mailer, only: [:show, :destroy]
 
   def index
-    @log_mailers = LogMailer.page(params[:page])
+    @log_mailers = LogMailer.default_where(params[:q]).page(params[:page])
   end
 
   def show
