@@ -1,8 +1,9 @@
-<%= search_form_for :q do |f| %>
+<%= search_form_for :q, html: { class: 'ui segment bottom attached form' } do |f| %>
   <div class="fields">
-  <%= f.text_field :name,  placeholder: "用户名：" %>
-  <%= f.text_field :mobile, placeholder: "手机号：" %>
-  <%= f.text_field :email, placeholder: "hola@123.com" %>
-  <%= f.submit "查询", class: 'ui green small button' %>
+    <%= f.text_field :controller,  placeholder: 'Controller' %>
+    <%= f.text_field :action, placeholder: 'Action' %>
+    <%= f.text_field :'path-like', placeholder: 'Contains Path' %>
+    <%= f.text_field :exception_object, placeholder: 'Exception Object' %>
+    <%= f.submit '查询', class: 'ui green small button' %>
   </div>
 <% end %>
