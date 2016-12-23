@@ -1,4 +1,8 @@
 Rails.application.routes.draw do
-  resources :log_records
-  resources :log_mailers
+
+  constraints(RailsLog.config.constraint) do
+    resources :log_records
+    resources :log_mailers
+  end
+
 end
