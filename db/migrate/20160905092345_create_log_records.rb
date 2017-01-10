@@ -4,7 +4,7 @@ class CreateLogRecords < ActiveRecord::Migration[5.0]
       t.string :path
       t.string :controller
       t.string :action
-      t.string :params
+      t.string :params, limit: 2048
       t.string :headers, limit: 4096
       t.string :cookie, limit: 2048
       t.string :session, limit: 2048
