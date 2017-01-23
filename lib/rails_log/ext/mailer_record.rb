@@ -1,4 +1,4 @@
-class ApplicationMailer < ActionMailer::Base
+module MailerRecord
 
   def process(method_name, *args)
     payload = {
