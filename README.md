@@ -4,6 +4,7 @@
 ## 这个gem的工作方式及特性：
 
 1、充分利用rails内置的特性；
+2、use Notifications and Subscriber, not rescue_from, 不影响性能;
 
 ## 使用方法
 
