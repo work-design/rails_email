@@ -31,10 +31,10 @@
             <p><%= log_record.controller %></p>
             <p><%= log_record.action %></p>
           </td>
-          <td><%= log_record.params %></td>
-          <td><%= log_record.cookie %></td>
-          <td><%= log_record.session %></td>
-          <td><%= log_record.headers %></td>
+          <td><%= simple_format_hash log_record.params %></td>
+          <td><%= simple_format_hash log_record.cookie %></td>
+          <td><%= simple_format_hash log_record.session %></td>
+          <td><%= simple_format_hash log_record.headers %></td>
           <td><%= simple_format log_record.exception %></td>
           <td><%= log_record.created_at.to_s(:db2) %></td>
           <td>
