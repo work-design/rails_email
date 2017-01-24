@@ -12,9 +12,8 @@
       <tr>
         <th class="one wide">ID</th>
         <th class="two wide">Path / Controller / Action</th>
-        <th class="three wide">params</th>
-        <th class="two wide">Cookie</th>
-        <th class="two wide">Session</th>
+        <th class="four wide">params</th>
+        <th class="three wide">Session</th>
         <th class="five wide">headers</th>
         <th class="two wide">异常</th>
         <th class="one wide">创建时间</th>
@@ -32,7 +31,6 @@
             <p><%= log_record.action %></p>
           </td>
           <td><%= simple_format_hash log_record.params %></td>
-          <td><%= simple_format_hash log_record.cookie %></td>
           <td><%= simple_format_hash log_record.session %></td>
           <td><%= simple_format_hash log_record.headers %></td>
           <td><%= simple_format log_record.exception %></td>
