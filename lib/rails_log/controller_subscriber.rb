@@ -5,7 +5,7 @@ module RailsLog
       return unless logger.debug?
 
       payload = event.payload
-      headers  = request_headers(payload[:env])
+      headers = request_headers(payload[:env])
 
       debug "  Headers: #{headers.inspect}"
     end
@@ -18,7 +18,7 @@ module RailsLog
           lc.path = payload[:path]
           lc.controller = payload[:controller]
           lc.action = payload[:action]
-          lc.params = payload[:params].except('controller', 'action')
+          lc.params = filter_params(payload[:params])
           lc.headers = request_headers payload[:headers]
           lc.cookie = payload[:headers]['rack.request.cookie_hash']
           lc.session = payload[:headers]['rack.session'].to_hash
@@ -39,6 +39,16 @@ module RailsLog
       result = env.select { |k, _| k.start_with?('HTTP_') && k != 'HTTP_COOKIE' }
       result = result.collect { |pair| [pair[0].sub(/^HTTP_/, ''), pair[1]] }
       result.sort.to_h
+    end
+
+    def filter_params(params)
+      filter_keys = ['controller', 'action']
+      # todo 将value置为空时更合理的方案
+      params.each do |key, value|
+        filter_keys << key if ['ActionDispatch::Http::UploadedFile'].include? value['path'].class.name
+      end
+
+      params.except(*filter_keys)
     end
 
   end
