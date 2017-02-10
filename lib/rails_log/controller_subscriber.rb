@@ -43,12 +43,7 @@ module RailsLog
 
     def filter_params(params)
       filter_keys = ['controller', 'action']
-      # todo 将value置为空时更合理的方案
-      params.each do |key, value|
-        filter_keys << key if ['ActionDispatch::Http::UploadedFile'].include? value['path'].class.name
-      end
-
-      params.except(*filter_keys)
+      params.deep_transform_values { |v| v.to_s }.except(*filter_keys)
     end
 
   end
