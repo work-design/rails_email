@@ -19,4 +19,8 @@ class LogMailersController < ApplicationController
     @log_mailer = LogMailer.find(params[:id])
   end
 
+  def search_params
+    params[:q].permit!
+  end
+
 end

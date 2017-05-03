@@ -18,6 +18,7 @@ module RailsLog
       log_mailer = LogMailer.find_or_initialize_by(message_object_id: payload[:message_object_id], mailer: payload[:mailer])
       log_mailer.sent_status = payload[:sent_status]
       log_mailer.sent_string = payload[:sent_string]
+      log_mailer.mail_to = payload[:mail_to]
       log_mailer.save
 
       info 'mailer log updated!'

@@ -13,7 +13,7 @@
         <th class="two wide">Mailer</th>
         <th class="two wide">Action</th>
         <th class="three wide">Params</th>
-        <th class="two wide">Message ID</th>
+        <th class="two wide">Mail To</th>
         <th class="one wide">发送状态</th>
         <th class="five wide">返回文本</th>
         <th class="two wide">创建时间</th>
@@ -28,7 +28,7 @@
           <td><%= log_mailer.mailer %></td>
           <td><%= log_mailer.action %></td>
           <td><%= log_mailer.params %></td>
-          <td><%= log_mailer.message_object_id %></td>
+          <td><%= log_mailer.mail_to %></td>
           <td><%= log_mailer.sent_status %></td>
           <td><%= log_mailer.sent_string %></td>
           <td><%= log_mailer.created_at.to_s(:db2) %></td>

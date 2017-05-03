@@ -19,6 +19,7 @@ module MailerRecord
       ActiveSupport::Notifications.instrument('deliver.action_mailer') do |payload|
         set_payload_for_mail(payload, mail)
         payload[:message_object_id] = mail.object_id
+        payload[:mail_to] = mail.to.join(', ')
 
         result = yield
 
