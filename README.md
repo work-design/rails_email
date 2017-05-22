@@ -1,10 +1,10 @@
-# 为什么写这个gem
+# RailsLog
 
 
-## 这个gem的工作方式及特性：
+## Features
 
-1、充分利用rails内置的特性；
-2、use Notifications and Subscriber, not rescue_from, 不影响性能;
+1. use Notifications and Subscriber, not rescue_from, 不影响性能;
+2. 记录了非常详尽的debug信息。
 
 ## 使用方法
 
@@ -21,7 +21,7 @@ add to gemfile，默认包含对controller 及 mailer 的日志记录；
 
 nothing any other to do;
 
-## 注意
+### 注意
 
 * 设置发送邮件返回 response
 
@@ -39,3 +39,8 @@ config.action_mailer.smtp_settings = {
 
 
 then you can visit `log_records` to see error records
+
+
+## 依赖
+* [rails_com](https://github.com/qinmingyuan/rails_com) 一个通用的engine
+* [default_where](https://github.com/qinmingyuan/default_where) 用于处理查询

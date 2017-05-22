@@ -3,7 +3,7 @@ class LogMailersController < ApplicationController
   before_action :set_log_mailer, only: [:show, :destroy]
 
   def index
-    @log_mailers = LogMailer.default_where(params[:q]).page(params[:page])
+    @log_mailers = LogMailer.default_where(q_params).page(params[:page])
   end
 
   def show
@@ -19,8 +19,8 @@ class LogMailersController < ApplicationController
     @log_mailer = LogMailer.find(params[:id])
   end
 
-  def search_params
-    params[:q].permit!
+  def q_params
+    params.fetch(:q, {}).permit!
   end
 
 end

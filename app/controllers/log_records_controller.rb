@@ -3,7 +3,7 @@ class LogRecordsController < ApplicationController
   before_action :set_log_record, only: [:show, :destroy]
 
   def index
-    @log_records = LogRecord.default_where(params[:q]).page(params[:page]).per(params[:per])
+    @log_records = LogRecord.default_where(q_params).page(params[:page]).per(params[:per])
   end
 
   def show
@@ -17,6 +17,10 @@ class LogRecordsController < ApplicationController
   private
   def set_log_record
     @log_record = LogRecord.find(params[:id])
+  end
+
+  def q_params
+    params.fetch(:q, {}).permit!
   end
 
 end
