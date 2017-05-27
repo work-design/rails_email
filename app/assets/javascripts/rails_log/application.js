@@ -1,4 +1,4 @@
-//= require jquery3
-//= require jquery_ujs
+//= require jquery
+//= require rails-ujs
 //= require turbolinks
 //= require_self
