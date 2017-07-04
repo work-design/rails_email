@@ -20,6 +20,7 @@ module MailerRecord
         set_payload_for_mail(payload, mail)
         payload[:message_object_id] = mail.object_id
         payload[:mail_to] = mail.to.join(', ')
+        payload[:cc_to] = mail.cc.to_a.join(', ')
 
         result = yield
 

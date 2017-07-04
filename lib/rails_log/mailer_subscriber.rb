@@ -19,6 +19,7 @@ module RailsLog
       log_mailer.sent_status = payload[:sent_status]
       log_mailer.sent_string = payload[:sent_string]
       log_mailer.mail_to = payload[:mail_to]
+      log_mailer.cc_to = payload[:cc_to]
       log_mailer.save
 
       info 'mailer log updated!'
