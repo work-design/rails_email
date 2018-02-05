@@ -1,17 +1,17 @@
 module RailsLog
   class ControllerSubscriber < ActiveSupport::LogSubscriber
 
-    def header_processing(event)
+    def header_processing(payload)
       return unless logger.debug?
-
-      payload = event.payload
-      headers = request_headers(payload[:env])
+      headers = request_headers(payload[:headers])
 
       debug "  Headers: #{headers.inspect}"
+      debug "\n\n"
     end
 
     def process_action(event)
       payload = event.payload
+      header_processing(payload)
       if payload[:exception].present?
         unless RailsLog.config.ignore_exception.include? payload[:exception_object].class.to_s
           lc = LogRecord.new
