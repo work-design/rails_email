@@ -1,5 +1,4 @@
-class LogMailersController < ApplicationController
-  layout 'rails_log/application'
+class RailsLog::LogMailersController < RailsLog::BaseController
   before_action :set_log_mailer, only: [:show, :destroy]
 
   def index
@@ -11,7 +10,7 @@ class LogMailersController < ApplicationController
 
   def destroy
     @log_mailer.destroy
-    redirect_to log_mailers_url, notice: 'Log record was successfully destroyed.'
+    redirect_to admin_log_mailers_url, notice: 'Log record was successfully destroyed.'
   end
 
   private

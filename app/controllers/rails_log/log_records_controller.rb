@@ -1,5 +1,4 @@
-class LogRecordsController < ApplicationController
-  layout 'rails_log/application'
+class RailsLog::LogRecordsController < RailsLog::BaseController
   before_action :set_log_record, only: [:show, :destroy]
 
   def index
@@ -11,7 +10,7 @@ class LogRecordsController < ApplicationController
 
   def destroy
     @log_record.destroy
-    redirect_to log_records_url, notice: 'Log record was successfully destroyed.'
+    redirect_to admin_log_records_url, notice: 'Log record was successfully destroyed.'
   end
 
   private
