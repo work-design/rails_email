@@ -3,7 +3,7 @@
 
 ## Features
 
-1. use Notifications and Subscriber, not rescue_from, 不影响性能;
+1. use Notifications and Subscriber, not rescue_from, not Rack middleware, No affect on Performance;
 2. 记录了非常详尽的debug信息。
 
 ## 使用方法
