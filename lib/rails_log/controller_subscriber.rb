@@ -14,7 +14,7 @@ module RailsLog
       payload = event.payload
       headers = payload.fetch(:headers, {})
 
-      if payload[:exception].present?
+      if payload[:exception].present? && !Rails.env.development?
         unless RailsLog.config.ignore_exception.include? payload[:exception_object].class.to_s
           lc = LogRecord.new
           lc.path = payload[:path]
