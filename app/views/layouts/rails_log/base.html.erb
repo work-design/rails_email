@@ -12,10 +12,9 @@
   <%= render 'layouts/rails_log/nav_bar' %>
 
   <%= yield %>
-
   <%= yield :controller_script %>
-  <%= js_load(root: RailsLog::Engine.root) %>
-
+  
+  <%= js_load %>
 </body>
 
 </html>

@@ -1,17 +1,9 @@
-<%= form_for :q, html: { class: 'ui segment bottom attached form' } do |f| %>
+<%= search_form_with html: { class: 'ui segment bottom attached form' } do |f| %>
   <div class="fields">
-    <div class="field">
-      <%= f.text_field :controller,  placeholder: 'Controller' %>
-    </div>
-    <div class="field">
-      <%= f.text_field :action, placeholder: 'Action' %>
-    </div>
-    <div class="field">
-      <%= f.text_field :'path-like', placeholder: 'Contains Path' %>
-    </div>
-    <div class="field">
-      <%= f.text_field :exception_object, placeholder: 'Exception Object' %>
-    </div>
+    <%= f.text_field :controller,  placeholder: 'Controller' %>
+    <%= f.text_field :action, placeholder: 'Action' %>
+    <%= f.text_field :'path-like', placeholder: 'Contains Path' %>
+    <%= f.text_field :exception_object, placeholder: 'Exception Object' %>
     <%= f.submit '查询', class: 'ui green small button' %>
   </div>
 <% end %>

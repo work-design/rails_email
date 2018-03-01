@@ -1,14 +1,8 @@
-<%= form_for :q, html: { class: 'ui segment bottom attached form' } do |f| %>
+<%= search_form_with html: { class: 'ui segment bottom attached form' } do |f| %>
   <div class="fields">
-    <div class="field">
-      <%= f.text_field :mailer,  placeholder: 'Mailer' %>
-    </div>
-    <div class="field">
-      <%= f.text_field :action, placeholder: 'Action' %>
-    </div>
-    <div class="field">
-      <%= f.text_field :mail_to, placeholder: 'Mail To' %>
-    </div>
+    <%= f.text_field :mailer,  placeholder: 'Mailer' %>
+    <%= f.text_field :action, placeholder: 'Action' %>
+    <%= f.text_field :mail_to, placeholder: 'Mail To' %>
     <%= f.submit '查询', class: 'ui green small button' %>
   </div>
 <% end %>
