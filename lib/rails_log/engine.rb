@@ -1,3 +1,6 @@
+require 'default_form'
+require 'default_where'
+
 module RailsLog
   class Engine < ::Rails::Engine
 

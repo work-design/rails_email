@@ -15,7 +15,7 @@ Gem::Specification.new do |s|
   s.test_files = Dir['test/**/*']
 
   s.add_dependency 'rails'
-  s.add_dependency 'rails_com', '~> 1.2.0'
-  s.add_dependency 'default_where', '~> 2.2.0'
-  s.add_dependency 'default_form', '~> 1.3.0'
+  s.add_runtime_dependency 'rails_com', '~> 1.2.0'
+  s.add_runtime_dependency 'default_where', '~> 2.2.0'
+  s.add_runtime_dependency 'default_form', '~> 1.3.0'
 end
