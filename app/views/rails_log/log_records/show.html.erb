@@ -13,7 +13,7 @@
       <tbody>
         <tr>
           <td>Time</td>
-          <td><%= @log_record.created_at.to_s(:db2) %></td>
+          <td><time><%= @log_record.created_at.to_s(:rfc822) %></time></td>
         </tr>
         <tr>
           <td>Exception Type</td>

@@ -32,7 +32,7 @@
           <td><%= simple_format_hash log_record.params %></td>
           <td><%= simple_format_hash log_record.session %></td>
           <td><%= simple_format log_record.exception %></td>
-          <td><%= log_record.created_at.to_s(:db2) %></td>
+          <td><time><%= log_record.created_at.to_s(:rfc822) %></time></td>
           <td class="ui mini labels">
             <%= link_to '详细', admin_log_record_path(log_record), class: 'ui blue label' %>
             <%= link_to '删除', admin_log_record_path(log_record), method: :delete, class: 'ui red label' %>

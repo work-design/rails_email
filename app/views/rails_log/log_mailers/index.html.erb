@@ -31,7 +31,7 @@
           <td><%= log_mailer.mail_to %></td>
           <td><%= log_mailer.sent_status %></td>
           <td><%= log_mailer.sent_string %></td>
-          <td><%= log_mailer.created_at.to_s(:db2) %></td>
+          <td><time><%= log_mailer.created_at.to_s(:rfc822) %></time></td>
           <td class="ui mini labels">
             <%= link_to '详细', admin_log_mailer_path(log_mailer), class: 'ui blue label' %>
             <%= link_to '删除', admin_log_mailer_path(log_mailer), method: :delete, data: { confirm: 'Are you sure?' }, class: 'ui red label' %>
