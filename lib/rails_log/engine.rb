@@ -2,6 +2,9 @@ require 'default_form'
 require 'default_where'
 
 module RailsLog
+  mattr_accessor :not_found_logger
+  self.not_found_logger = ActiveSupport::Logger.new('log/not_found.log')
+  
   class Engine < ::Rails::Engine
 
     initializer 'rails_log.assets.precompile' do |app|
