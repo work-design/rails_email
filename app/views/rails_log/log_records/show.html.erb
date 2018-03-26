@@ -1,63 +1,54 @@
-<div class="ui padded grid">
-  <div class="sixteen wide column">
-
-    <div class="ui breadcrumb">
-      <%= link_to '返回', admin_log_records_path, class: 'section' %>
-      <div class="divider"> / </div>
-      <div class="section">详细</div>
-    </div>
-
-
-    <table class="ui very basic table">
-
-      <tbody>
-        <tr>
-          <td>Time</td>
-          <td><time><%= @log_record.created_at.to_s(:rfc822) %></time></td>
-        </tr>
-        <tr>
-          <td>Exception Type</td>
-          <td><%= @log_record.exception_object %></td>
-        </tr>
-        <tr>
-          <td>Path</td>
-          <td><%= @log_record.path %></td>
-        </tr>
-        <tr>
-          <td>Controller</td>
-          <td><%= @log_record.controller %></td>
-        </tr>
-        <tr>
-          <td>Action</td>
-          <td><%= @log_record.action %></td>
-        </tr>
-        <tr>
-          <td>Params</td>
-          <td><%= simple_format_hash @log_record.params %></td>
-        </tr>
-        <tr>
-          <td>Cookie</td>
-          <td><%= simple_format_hash @log_record.cookie %></td>
-        </tr>
-        <tr>
-          <td>Session</td>
-          <td><%= simple_format_hash @log_record.session %></td>
-        </tr>
-        <tr>
-          <td>Headers</td>
-          <td><%= simple_format_hash @log_record.headers %></td>
-        </tr>
-        <tr>
-          <td>Exception</td>
-          <td><%= simple_format @log_record.exception %></td>
-        </tr>
-        <tr>
-          <td>Backtrace</td>
-          <td><%= simple_format @log_record.exception_backtrace %></td>
-        </tr>
-      </tbody>
-    </table>
-
-  </div>
+<div class="ui segment breadcrumb">
+  <%= link_to '返回', admin_log_records_path, class: 'section' %>
+  <div class="divider"> / </div>
+  <div class="section">详细</div>
 </div>
 
+<table class="ui very basic table">
+  <tbody>
+    <tr>
+      <td>Time</td>
+      <td><time><%= @log_record.created_at.to_s(:rfc822) %></time></td>
+    </tr>
+    <tr>
+      <td>Exception Type</td>
+      <td><%= @log_record.exception_object %></td>
+    </tr>
+    <tr>
+      <td>Path</td>
+      <td><%= @log_record.path %></td>
+    </tr>
+    <tr>
+      <td>Controller</td>
+      <td><%= @log_record.controller %></td>
+    </tr>
+    <tr>
+      <td>Action</td>
+      <td><%= @log_record.action %></td>
+    </tr>
+    <tr>
+      <td>Params</td>
+      <td><%= simple_format_hash @log_record.params %></td>
+    </tr>
+    <tr>
+      <td>Cookie</td>
+      <td><%= simple_format_hash @log_record.cookie %></td>
+    </tr>
+    <tr>
+      <td>Session</td>
+      <td><%= simple_format_hash @log_record.session %></td>
+    </tr>
+    <tr>
+      <td>Headers</td>
+      <td><%= simple_format_hash @log_record.headers %></td>
+    </tr>
+    <tr>
+      <td>Exception</td>
+      <td><%= simple_format @log_record.exception %></td>
+    </tr>
+    <tr>
+      <td>Backtrace</td>
+      <td><%= simple_format @log_record.exception_backtrace %></td>
+    </tr>
+  </tbody>
+</table>

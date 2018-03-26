@@ -1,47 +1,42 @@
-<div class="ui padded grid">
-  <div class="sixteen wide column">
+<div>
+  <%= render 'nav_bar' %>
+  <%= render 'search_form' %>
 
-    <div class="ui top attached menu borderless">
-      <div class="item"><strong>日志列表</strong></div>
-    </div>
-    <%= render 'search_form' %>
+  <table class="ui fixed table">
+    <thead>
+    <tr>
+      <th class="one wide">ID</th>
+      <th class="two wide">Mailer</th>
+      <th class="two wide">Action</th>
+      <th class="three wide">Params</th>
+      <th class="two wide">Mail To</th>
+      <th class="one wide">发送状态</th>
+      <th class="five wide">返回文本</th>
+      <th class="two wide">创建时间</th>
+      <th class="two wide"></th>
+    </tr>
+    </thead>
 
-    <table class="ui fixed table">
-      <thead>
+    <tbody>
+    <% @log_mailers.each do |log_mailer| %>
       <tr>
-        <th class="one wide">ID</th>
-        <th class="two wide">Mailer</th>
-        <th class="two wide">Action</th>
-        <th class="three wide">Params</th>
-        <th class="two wide">Mail To</th>
-        <th class="one wide">发送状态</th>
-        <th class="five wide">返回文本</th>
-        <th class="two wide">创建时间</th>
-        <th class="two wide"></th>
+        <td><%= log_mailer.id %></td>
+        <td><%= log_mailer.mailer %></td>
+        <td><%= log_mailer.action %></td>
+        <td><%= log_mailer.params %></td>
+        <td><%= log_mailer.mail_to %></td>
+        <td><%= log_mailer.sent_status %></td>
+        <td><%= log_mailer.sent_string %></td>
+        <td><time><%= log_mailer.created_at.to_s(:rfc822) %></time></td>
+        <td class="ui mini labels">
+          <%= link_to '详细', admin_log_mailer_path(log_mailer), class: 'ui blue label' %>
+          <%= link_to '删除', admin_log_mailer_path(log_mailer), method: :delete, data: { confirm: 'Are you sure?' }, class: 'ui red label' %>
+        </td>
       </tr>
-      </thead>
+    <% end %>
+    </tbody>
+  </table>
 
-      <tbody>
-      <% @log_mailers.each do |log_mailer| %>
-        <tr>
-          <td><%= log_mailer.id %></td>
-          <td><%= log_mailer.mailer %></td>
-          <td><%= log_mailer.action %></td>
-          <td><%= log_mailer.params %></td>
-          <td><%= log_mailer.mail_to %></td>
-          <td><%= log_mailer.sent_status %></td>
-          <td><%= log_mailer.sent_string %></td>
-          <td><time><%= log_mailer.created_at.to_s(:rfc822) %></time></td>
-          <td class="ui mini labels">
-            <%= link_to '详细', admin_log_mailer_path(log_mailer), class: 'ui blue label' %>
-            <%= link_to '删除', admin_log_mailer_path(log_mailer), method: :delete, data: { confirm: 'Are you sure?' }, class: 'ui red label' %>
-          </td>
-        </tr>
-      <% end %>
-      </tbody>
-    </table>
+  <%= paginate @log_mailers %>
 
-    <%= paginate @log_mailers %>
-
-  </div>
 </div>

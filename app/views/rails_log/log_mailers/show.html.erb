@@ -1,55 +1,46 @@
-<div class="ui padded grid">
-  <div class="sixteen wide column">
-
-    <div class="ui breadcrumb">
-      <%= link_to '返回', admin_log_mailers_path, class: 'section' %>
-      <div class="divider"> / </div>
-      <div class="section">详细</div>
-    </div>
-
-
-    <table class="ui very basic table">
-
-      <tbody>
-        <tr>
-          <td>Time</td>
-          <td><time><%= @log_mailer.created_at.to_s(:rfc822) %></time></td>
-        </tr>
-        <tr>
-          <td>Mailer</td>
-          <td><%= @log_mailer.mailer %></td>
-        </tr>
-        <tr>
-          <td>Action</td>
-          <td><%= @log_mailer.action %></td>
-        </tr>
-        <tr>
-          <td>Params</td>
-          <td><%= @log_mailer.params %></td>
-        </tr>
-        <tr>
-          <td>Message ID</td>
-          <td><%= @log_mailer.message_object_id %></td>
-        </tr>
-        <tr>
-          <td>Mail To</td>
-          <td><%= @log_mailer.mail_to %></td>
-        </tr>
-        <tr>
-          <td>CC To</td>
-          <td><%= @log_mailer.cc_to %></td>
-        </tr>
-        <tr>
-          <td>Sent Code</td>
-          <td><%= @log_mailer.sent_status %></td>
-        </tr>
-        <tr>
-          <td>Sent Text</td>
-          <td><%= @log_mailer.sent_string %></td>
-        </tr>
-      </tbody>
-    </table>
-
-  </div>
+<div class="ui segment breadcrumb">
+  <%= link_to '返回', admin_log_mailers_path, class: 'section' %>
+  <div class="divider"> / </div>
+  <div class="section">详细</div>
 </div>
 
+<table class="ui very basic table">
+  <tbody>
+    <tr>
+      <td>Time</td>
+      <td><time><%= @log_mailer.created_at.to_s(:rfc822) %></time></td>
+    </tr>
+    <tr>
+      <td>Mailer</td>
+      <td><%= @log_mailer.mailer %></td>
+    </tr>
+    <tr>
+      <td>Action</td>
+      <td><%= @log_mailer.action %></td>
+    </tr>
+    <tr>
+      <td>Params</td>
+      <td><%= @log_mailer.params %></td>
+    </tr>
+    <tr>
+      <td>Message ID</td>
+      <td><%= @log_mailer.message_object_id %></td>
+    </tr>
+    <tr>
+      <td>Mail To</td>
+      <td><%= @log_mailer.mail_to %></td>
+    </tr>
+    <tr>
+      <td>CC To</td>
+      <td><%= @log_mailer.cc_to %></td>
+    </tr>
+    <tr>
+      <td>Sent Code</td>
+      <td><%= @log_mailer.sent_status %></td>
+    </tr>
+    <tr>
+      <td>Sent Text</td>
+      <td><%= @log_mailer.sent_string %></td>
+    </tr>
+  </tbody>
+</table>
