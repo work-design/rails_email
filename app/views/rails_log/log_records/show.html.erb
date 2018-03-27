@@ -4,11 +4,11 @@
   <div class="section">详细</div>
 </div>
 
-<table class="ui very basic table">
+<table class="ui very basic fixed table">
   <tbody>
     <tr>
-      <td>Time</td>
-      <td><time><%= @log_record.created_at.to_s(:rfc822) %></time></td>
+      <td class="two wide">Time</td>
+      <td class="fourteen wide"><time><%= @log_record.created_at.to_s(:rfc822) %></time></td>
     </tr>
     <tr>
       <td>Exception Type</td>
