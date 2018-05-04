@@ -1,5 +1,6 @@
-PATH
-  remote: ../rails_com
+GIT
+  remote: https://github.com/qinmingyuan/rails_com.git
+  revision: 4846553f8105ff18c69dff382b50586d845ba3e7
   specs:
     rails_com (1.2.1)
       rails
