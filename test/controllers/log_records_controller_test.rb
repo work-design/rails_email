@@ -2,7 +2,7 @@ require 'test_helper'
 
 class LogRecordsControllerTest < ActionDispatch::IntegrationTest
   setup do
-    @log_record = log_records(:one)
+    @log_record = create :log_record
   end
 
   test "should get index" do

@@ -1,19 +1,16 @@
-# Configure Rails Environment
-ENV["RAILS_ENV"] = "test"
+ENV['RAILS_ENV'] ||= 'test'
+require_relative '../test/dummy/config/environment'
+require 'rails/test_help'
+require 'minitest/mock'
 
-require File.expand_path("../../test/dummy/config/environment.rb",  __FILE__)
-ActiveRecord::Migrator.migrations_paths = [File.expand_path("../../test/dummy/db/migrate", __FILE__)]
-require "rails/test_help"
-
-# Filter out Minitest backtrace while allowing backtrace from other libraries
-# to be shown.
+ActiveRecord::Migrator.migrations_paths = [File.expand_path('../test/dummy/db/migrate', __dir__)]
 Minitest.backtrace_filter = Minitest::BacktraceFilter.new
 
-# Load support files
-Dir["#{File.dirname(__FILE__)}/support/**/*.rb"].each { |f| require f }
+if defined?(FactoryBot)
+  FactoryBot.definition_file_paths << RailsLog::Engine.root.join('test/factories')
+  FactoryBot.find_definitions
+end
 
-# Load fixtures from the engine
-if ActiveSupport::TestCase.respond_to?(:fixture_path=)
-  ActiveSupport::TestCase.fixture_path = File.expand_path("../fixtures", __FILE__)
-  ActiveSupport::TestCase.fixtures :all
+class ActiveSupport::TestCase
+  include FactoryBot::Syntax::Methods
 end
