@@ -4,7 +4,7 @@ require 'default_where'
 module RailsLog
   mattr_accessor :not_found_logger
   self.not_found_logger = ActiveSupport::Logger.new('log/not_found.log')
-  
+
   class Engine < ::Rails::Engine
 
     initializer 'rails_log.assets.precompile' do |app|
@@ -14,6 +14,12 @@ module RailsLog
 
     initializer 'rails_log.add_assets_templates' do |app|
       app.config.assets.paths.push *Dir[File.expand_path('lib/nondigest_assets/*', root)]
+    end
+
+    initializer 'rails_log.quiet_logs' do |app|
+      if app.config.assets.quiet
+        app.middleware.insert_before ::Rails::Rack::Logger, ::RailsLog::QuietLogs
+      end
     end
 
   end
