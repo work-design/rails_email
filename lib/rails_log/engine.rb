@@ -17,7 +17,7 @@ module RailsLog
     end
 
     initializer 'rails_log.quiet_logs' do |app|
-      if app.config.assets.quiet
+      if RailsLog.config.quiet_logs
         app.middleware.insert_before ::Rails::Rack::Logger, ::RailsLog::QuietLogs
       end
     end

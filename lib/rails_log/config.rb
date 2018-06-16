@@ -8,6 +8,7 @@ module RailsLog
       'ActionController::UnknownFormat'
     ]
     config.controller_class = 'Admin::BaseController'
+    config.quiet_logs = true
   end
 
 end
