@@ -5,12 +5,16 @@
   <table class="ui fixed table">
     <thead>
     <tr>
-      <th class="one wide">ID</th>
-      <th class="three wide">Path / Controller / Action</th>
-      <th class="three wide">params</th>
-      <th class="three wide">Session</th>
-      <th class="four wide">异常</th>
-      <th class="one wide">创建时间</th>
+      <th class="one wide"><%= LogRecord.human_attribute_name(:id) %></th>
+      <th class="three wide">
+        <p><%= LogRecord.human_attribute_name(:path) %></p>
+        <p><%= LogRecord.human_attribute_name(:controller) %></p>
+        <p><%= LogRecord.human_attribute_name(:action) %></p>
+      </th>
+      <th class="three wide"><%= LogRecord.human_attribute_name(:params) %></th>
+      <th class="three wide"><%= LogRecord.human_attribute_name(:session) %></th>
+      <th class="four wide"><%= LogRecord.human_attribute_name(:exception) %></th>
+      <th class="one wide"><%= LogRecord.human_attribute_name(:created_at) %></th>
       <th class="one wide"></th>
     </tr>
     </thead>
@@ -24,8 +28,8 @@
           <p><%= log_record.controller %></p>
           <p><%= log_record.action %></p>
         </td>
-        <td><%= simple_format_hash log_record.params %></td>
-        <td><%= simple_format_hash log_record.session %></td>
+        <td><%= simple_format log_record.params %></td>
+        <td><%= simple_format log_record.session %></td>
         <td><%= simple_format log_record.exception %></td>
         <td><time><%= log_record.created_at.to_s(:rfc822) %></time></td>
         <td class="ui mini labels">

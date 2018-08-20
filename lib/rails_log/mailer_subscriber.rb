@@ -16,6 +16,7 @@ module RailsLog
       payload = event.payload
 
       log_mailer = LogMailer.find_or_initialize_by(message_object_id: payload[:message_object_id], mailer: payload[:mailer])
+      log_mailer.subject = payload[:subject]
       log_mailer.sent_status = payload[:sent_status]
       log_mailer.sent_string = payload[:sent_string]
       log_mailer.mail_to = payload[:mail_to]

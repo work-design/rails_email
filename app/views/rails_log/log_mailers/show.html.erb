@@ -7,39 +7,43 @@
 <table class="ui very basic fixed table">
   <tbody>
     <tr>
-      <td class="two wide">Time</td>
+      <td class="two wide"><%= LogMailer.human_attribute_name(:created_at) %></td>
       <td class="fourteen wide"><time><%= @log_mailer.created_at.to_s(:rfc822) %></time></td>
     </tr>
     <tr>
-      <td>Mailer</td>
+      <td><%= LogMailer.human_attribute_name(:mailer) %></td>
       <td><%= @log_mailer.mailer %></td>
     </tr>
     <tr>
-      <td>Action</td>
+      <td><%= LogMailer.human_attribute_name(:action) %></td>
       <td><%= @log_mailer.action %></td>
     </tr>
     <tr>
-      <td>Params</td>
+      <td><%= LogMailer.human_attribute_name(:params) %></td>
       <td><%= @log_mailer.params %></td>
     </tr>
     <tr>
-      <td>Message ID</td>
+      <td><%= LogMailer.human_attribute_name(:subject) %></td>
+      <td><%= @log_mailer.subject %></td>
+    </tr>
+    <tr>
+      <td><%= LogMailer.human_attribute_name(:message_object_id) %></td>
       <td><%= @log_mailer.message_object_id %></td>
     </tr>
     <tr>
-      <td>Mail To</td>
+      <td><%= LogMailer.human_attribute_name(:mail_to) %></td>
       <td><%= @log_mailer.mail_to %></td>
     </tr>
     <tr>
-      <td>CC To</td>
+      <td><%= LogMailer.human_attribute_name(:cc_to) %></td>
       <td><%= @log_mailer.cc_to %></td>
     </tr>
     <tr>
-      <td>Sent Code</td>
+      <td><%= LogMailer.human_attribute_name(:sent_status) %></td>
       <td><%= @log_mailer.sent_status %></td>
     </tr>
     <tr>
-      <td>Sent Text</td>
+      <td><%= LogMailer.human_attribute_name(:sent_string) %></td>
       <td><%= @log_mailer.sent_string %></td>
     </tr>
   </tbody>

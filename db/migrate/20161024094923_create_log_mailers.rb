@@ -5,6 +5,7 @@ class CreateLogMailers < ActiveRecord::Migration[5.0]
       t.string :mailer
       t.string :action
       t.string :params
+      t.string :subject
       t.string :mail_to
       t.string :cc_to
       t.string :sent_status
