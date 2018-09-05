@@ -3,7 +3,7 @@ git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 gemspec
 
 gem 'rails', '>= 5.2.0'
-gem 'mysql2'
+gem 'sqlite3'
 gem 'puma'
 
 gem 'turbolinks'
