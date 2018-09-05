@@ -1,0 +1,367 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>RailsLog::ControllerSubscriber</title>
+    <meta charset="UTF-8" />
+    <link rel="stylesheet" href="../../css/reset.css" type="text/css" media="screen" />
+<link rel="stylesheet" href="../../css/main.css" type="text/css" media="screen" />
+<link rel="stylesheet" href="../../css/github.css" type="text/css" media="screen" />
+<script src="../../js/jquery-1.3.2.min.js" type="text/javascript" charset="utf-8"></script>
+<script src="../../js/main.js" type="text/javascript" charset="utf-8"></script>
+<script src="../../js/highlight.pack.js" type="text/javascript" charset="utf-8"></script>
+
+
+    <meta property="og:title" value="RailsLog::ControllerSubscriber">
+
+  
+
+    <meta name="keywords" content="RailsLog::ControllerSubscriber class">
+  
+    <meta name="keywords" content="start_processing, process_action, logger, request_headers, filter_params">
+  
+</head>
+
+<body>
+    <div class="banner">
+        
+        <h1>
+            <span class="type">Class</span>
+            RailsLog::ControllerSubscriber
+            
+                <span class="parent">&lt;
+                    
+                    ActiveSupport::LogSubscriber
+                    
+                </span>
+            
+        </h1>
+        <ul class="files">
+            
+            <li><a href="../../files/lib/rails_log/controller_subscriber_rb.html">lib/rails_log/controller_subscriber.rb</a></li>
+            
+        </ul>
+    </div>
+    <div id="bodyContent">
+        <div id="content">
+  
+
+
+  
+
+
+  
+  
+
+
+  
+
+
+  
+    <!-- Method ref -->
+    <div class="sectiontitle">Methods</div>
+    <dl class="methods">
+      
+        <dt>F</dt>
+        <dd>
+          <ul>
+            
+              
+              <li>
+                <a href="#method-i-filter_params">filter_params</a>
+              </li>
+            
+          </ul>
+        </dd>
+      
+        <dt>L</dt>
+        <dd>
+          <ul>
+            
+              
+              <li>
+                <a href="#method-i-logger">logger</a>
+              </li>
+            
+          </ul>
+        </dd>
+      
+        <dt>P</dt>
+        <dd>
+          <ul>
+            
+              
+              <li>
+                <a href="#method-i-process_action">process_action</a>
+              </li>
+            
+          </ul>
+        </dd>
+      
+        <dt>R</dt>
+        <dd>
+          <ul>
+            
+              
+              <li>
+                <a href="#method-i-request_headers">request_headers</a>
+              </li>
+            
+          </ul>
+        </dd>
+      
+        <dt>S</dt>
+        <dd>
+          <ul>
+            
+              
+              <li>
+                <a href="#method-i-start_processing">start_processing</a>
+              </li>
+            
+          </ul>
+        </dd>
+      
+    </dl>
+  
+
+  
+
+
+
+  
+
+    
+
+    
+
+    
+
+
+    
+
+
+    <!-- Methods -->
+    
+    
+      <div class="sectiontitle">Instance Public methods</div>
+      
+        <div class="method">
+          <div class="title method-title" id="method-i-filter_params">
+            
+              <b>filter_params</b>(params)
+            
+            <a href="../../classes/RailsLog/ControllerSubscriber.html#method-i-filter_params" name="method-i-filter_params" class="permalink">Link</a>
+          </div>
+
+          
+            <div class="description">
+              
+            </div>
+          
+
+          
+
+          
+
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source:
+                <a href="javascript:toggleSource('method-i-filter_params_source')" id="l_method-i-filter_params_source">show</a>
+                
+              </p>
+              <div id="method-i-filter_params_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File lib/rails_log/controller_subscriber.rb, line 46</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">filter_params</span>(<span class="ruby-identifier">params</span>)
+  <span class="ruby-identifier">filter_keys</span> = [<span class="ruby-string">&#39;controller&#39;</span>, <span class="ruby-string">&#39;action&#39;</span>]
+  <span class="ruby-identifier">params</span>.<span class="ruby-identifier">deep_transform_values</span> { <span class="ruby-operator">|</span><span class="ruby-identifier">v</span><span class="ruby-operator">|</span> <span class="ruby-identifier">v</span>.<span class="ruby-identifier">to_s</span> }.<span class="ruby-identifier">except</span>(<span class="ruby-operator">*</span><span class="ruby-identifier">filter_keys</span>)
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-logger">
+            
+              <b>logger</b>()
+            
+            <a href="../../classes/RailsLog/ControllerSubscriber.html#method-i-logger" name="method-i-logger" class="permalink">Link</a>
+          </div>
+
+          
+            <div class="description">
+              
+            </div>
+          
+
+          
+
+          
+
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source:
+                <a href="javascript:toggleSource('method-i-logger_source')" id="l_method-i-logger_source">show</a>
+                
+              </p>
+              <div id="method-i-logger_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File lib/rails_log/controller_subscriber.rb, line 36</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">logger</span>
+  <span class="ruby-constant">ActionController</span><span class="ruby-operator">::</span><span class="ruby-constant">Base</span>.<span class="ruby-identifier">logger</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-process_action">
+            
+              <b>process_action</b>(event)
+            
+            <a href="../../classes/RailsLog/ControllerSubscriber.html#method-i-process_action" name="method-i-process_action" class="permalink">Link</a>
+          </div>
+
+          
+            <div class="description">
+              
+            </div>
+          
+
+          
+
+          
+
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source:
+                <a href="javascript:toggleSource('method-i-process_action_source')" id="l_method-i-process_action_source">show</a>
+                
+              </p>
+              <div id="method-i-process_action_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File lib/rails_log/controller_subscriber.rb, line 13</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">process_action</span>(<span class="ruby-identifier">event</span>)
+  <span class="ruby-identifier">payload</span> = <span class="ruby-identifier">event</span>.<span class="ruby-identifier">payload</span>
+  <span class="ruby-identifier">headers</span> = <span class="ruby-identifier">payload</span>.<span class="ruby-identifier">fetch</span>(<span class="ruby-value">:headers</span>, {})
+
+  <span class="ruby-keyword">if</span> <span class="ruby-identifier">payload</span>[<span class="ruby-value">:exception</span>].<span class="ruby-identifier">present?</span> <span class="ruby-operator">&amp;&amp;</span> <span class="ruby-operator">!</span><span class="ruby-constant">Rails</span>.<span class="ruby-identifier">env</span>.<span class="ruby-identifier">development?</span>
+    <span class="ruby-keyword">unless</span> <span class="ruby-constant">RailsLog</span>.<span class="ruby-identifier">config</span>.<span class="ruby-identifier">ignore_exception</span>.<span class="ruby-identifier">include?</span> <span class="ruby-identifier">payload</span>[<span class="ruby-value">:exception_object</span>].<span class="ruby-identifier">class</span>.<span class="ruby-identifier">to_s</span>
+      <span class="ruby-identifier">lc</span> = <span class="ruby-constant">LogRecord</span>.<span class="ruby-identifier">new</span>
+      <span class="ruby-identifier">lc</span>.<span class="ruby-identifier">path</span> = <span class="ruby-identifier">payload</span>[<span class="ruby-value">:path</span>]
+      <span class="ruby-identifier">lc</span>.<span class="ruby-identifier">controller</span> = <span class="ruby-identifier">payload</span>[<span class="ruby-value">:controller</span>]
+      <span class="ruby-identifier">lc</span>.<span class="ruby-identifier">action</span> = <span class="ruby-identifier">payload</span>[<span class="ruby-value">:action</span>]
+      <span class="ruby-identifier">lc</span>.<span class="ruby-identifier">params</span> = <span class="ruby-identifier">filter_params</span>(<span class="ruby-identifier">payload</span>[<span class="ruby-value">:params</span>])
+      <span class="ruby-identifier">lc</span>.<span class="ruby-identifier">headers</span> = <span class="ruby-identifier">request_headers</span> <span class="ruby-identifier">headers</span>
+      <span class="ruby-identifier">lc</span>.<span class="ruby-identifier">cookie</span> = <span class="ruby-identifier">headers</span>[<span class="ruby-string">&#39;rack.request.cookie_hash&#39;</span>]
+      <span class="ruby-identifier">lc</span>.<span class="ruby-identifier">session</span> = <span class="ruby-constant">Hash</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">headers</span>[<span class="ruby-string">&#39;rack.session&#39;</span>])
+      <span class="ruby-identifier">lc</span>.<span class="ruby-identifier">exception</span> = <span class="ruby-identifier">payload</span>[<span class="ruby-value">:exception</span>].<span class="ruby-identifier">join</span>(<span class="ruby-string">&quot;\r\n&quot;</span>)
+      <span class="ruby-identifier">lc</span>.<span class="ruby-identifier">exception_object</span> = <span class="ruby-identifier">payload</span>[<span class="ruby-value">:exception_object</span>].<span class="ruby-identifier">class</span>.<span class="ruby-identifier">to_s</span>
+      <span class="ruby-identifier">lc</span>.<span class="ruby-identifier">exception_backtrace</span> = <span class="ruby-identifier">payload</span>[<span class="ruby-value">:exception_object</span>]&amp;.<span class="ruby-identifier">backtrace</span>&amp;.<span class="ruby-identifier">join</span>(<span class="ruby-string">&quot;\r\n&quot;</span>)&amp;.<span class="ruby-identifier">truncate</span>(<span class="ruby-constant">LogRecord</span>.<span class="ruby-identifier">columns_hash</span>[<span class="ruby-string">&#39;exception_backtrace&#39;</span>].<span class="ruby-identifier">limit</span>)
+      <span class="ruby-identifier">lc</span>.<span class="ruby-identifier">save</span>
+      <span class="ruby-identifier">info</span> <span class="ruby-string">&#39;exception log saved!&#39;</span>
+    <span class="ruby-keyword">end</span>
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-request_headers">
+            
+              <b>request_headers</b>(headers)
+            
+            <a href="../../classes/RailsLog/ControllerSubscriber.html#method-i-request_headers" name="method-i-request_headers" class="permalink">Link</a>
+          </div>
+
+          
+            <div class="description">
+              
+            </div>
+          
+
+          
+
+          
+
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source:
+                <a href="javascript:toggleSource('method-i-request_headers_source')" id="l_method-i-request_headers_source">show</a>
+                
+              </p>
+              <div id="method-i-request_headers_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File lib/rails_log/controller_subscriber.rb, line 40</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">request_headers</span>(<span class="ruby-identifier">headers</span>)
+  <span class="ruby-identifier">result</span> = <span class="ruby-identifier">headers</span>.<span class="ruby-identifier">select</span> { <span class="ruby-operator">|</span><span class="ruby-identifier">k</span>, <span class="ruby-identifier">_</span><span class="ruby-operator">|</span> <span class="ruby-identifier">k</span>.<span class="ruby-identifier">start_with?</span>(<span class="ruby-string">&#39;HTTP_&#39;</span>) <span class="ruby-operator">&amp;&amp;</span> <span class="ruby-identifier">k</span> <span class="ruby-operator">!=</span> <span class="ruby-string">&#39;HTTP_COOKIE&#39;</span> }
+  <span class="ruby-identifier">result</span> = <span class="ruby-identifier">result</span>.<span class="ruby-identifier">collect</span> { <span class="ruby-operator">|</span><span class="ruby-identifier">pair</span><span class="ruby-operator">|</span> [<span class="ruby-identifier">pair</span>[<span class="ruby-value">0</span>].<span class="ruby-identifier">sub</span>(<span class="ruby-regexp">/^HTTP_/</span>, <span class="ruby-string">&#39;&#39;</span>), <span class="ruby-identifier">pair</span>[<span class="ruby-value">1</span>]] }
+  <span class="ruby-identifier">result</span>.<span class="ruby-identifier">sort</span>.<span class="ruby-identifier">to_h</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-start_processing">
+            
+              <b>start_processing</b>(event)
+            
+            <a href="../../classes/RailsLog/ControllerSubscriber.html#method-i-start_processing" name="method-i-start_processing" class="permalink">Link</a>
+          </div>
+
+          
+            <div class="description">
+              
+            </div>
+          
+
+          
+
+          
+
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source:
+                <a href="javascript:toggleSource('method-i-start_processing_source')" id="l_method-i-start_processing_source">show</a>
+                
+              </p>
+              <div id="method-i-start_processing_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File lib/rails_log/controller_subscriber.rb, line 4</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">start_processing</span>(<span class="ruby-identifier">event</span>)
+  <span class="ruby-keyword">return</span> <span class="ruby-keyword">unless</span> <span class="ruby-identifier">logger</span>.<span class="ruby-identifier">debug?</span>
+  <span class="ruby-identifier">payload</span> = <span class="ruby-identifier">event</span>.<span class="ruby-identifier">payload</span>
+  <span class="ruby-identifier">raw_headers</span> = <span class="ruby-identifier">payload</span>.<span class="ruby-identifier">fetch</span>(<span class="ruby-value">:headers</span>, {})
+  <span class="ruby-identifier">headers</span> = <span class="ruby-identifier">request_headers</span>(<span class="ruby-identifier">raw_headers</span>)
+
+  <span class="ruby-identifier">debug</span> <span class="ruby-node">&quot;  Headers: #{headers.inspect}&quot;</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+      
+    
+  
+</div>
+
+    </div>
+  </body>
+</html>

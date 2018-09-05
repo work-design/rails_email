@@ -5,7 +5,7 @@ module RailsLog
   mattr_accessor :not_found_logger
   self.not_found_logger = ActiveSupport::Logger.new('log/not_found.log')
 
-  class Engine < ::Rails::Engine
+  class Engine < ::Rails::Engine # :nodoc:
 
     initializer 'rails_log.assets.precompile' do |app|
       app.config.assets.precompile += ['rails_log_manifest.js']
