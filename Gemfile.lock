@@ -1,6 +1,6 @@
 GIT
   remote: https://github.com/qinmingyuan/rails_com.git
-  revision: 719d3f4b8054b906202bae500de12ba6a518977d
+  revision: 53fd3c0147a23df778e9184a39d7f3d17490e431
   branch: master
   specs:
     rails_com (1.2.1)
@@ -103,7 +103,6 @@ GEM
     mini_mime (1.0.1)
     mini_portile2 (2.3.0)
     minitest (5.11.3)
-    mysql2 (0.5.1)
     nio4r (2.3.1)
     nokogiri (1.8.4)
       mini_portile2 (~> 2.3.0)
@@ -170,7 +169,6 @@ DEPENDENCIES
   awesome_print
   factory_bot_rails
   kaminari
-  mysql2
   pry-rails
   puma
   rails (>= 5.2.0)

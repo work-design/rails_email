@@ -9,18 +9,18 @@ Gem::Specification.new do |s|
   s.homepage = 'https://github.com/qinmingyuan/rails_log'
   s.summary = 'Record rails error log and email log'
   s.description = 'Description of RailsLog.'
-  s.license = 'MIT'
+  s.license = 'LGPL-3.0'
 
   s.files = Dir[
     '{app,config,db,lib}/**/*',
-    'MIT-LICENSE',
+    'LICENSE',
     'Rakefile',
     'README.md'
   ]
   s.test_files = Dir['test/**/*']
 
-  s.add_dependency 'rails'
-  s.add_runtime_dependency 'rails_com', '~> 1.2.0'
-  s.add_runtime_dependency 'default_where', '~> 2.2.0'
-  s.add_runtime_dependency 'default_form', '~> 1.3.0'
+  s.add_dependency 'rails', '>= 5.0', '<= 6.0'
+  s.add_runtime_dependency 'rails_com', '~> 1.2'
+  s.add_runtime_dependency 'default_where', '~> 2.2'
+  s.add_runtime_dependency 'default_form', '~> 1.3'
 end
