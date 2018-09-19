@@ -6,7 +6,7 @@ Gem::Specification.new do |s|
   s.version = RailsLog::VERSION
   s.authors = ['qinmingyuan']
   s.email = ['mingyuan0715@foxmail.com']
-  s.homepage = 'https://github.com/qinmingyuan/rails_log'
+  s.homepage = 'https://github.com/yougexiangfa/rails_log'
   s.summary = 'Record rails error log and email log'
   s.description = 'Description of RailsLog.'
   s.license = 'LGPL-3.0'
