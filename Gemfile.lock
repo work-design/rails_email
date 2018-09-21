@@ -1,19 +1,19 @@
 GIT
   remote: https://github.com/qinmingyuan/rails_com.git
-  revision: 53fd3c0147a23df778e9184a39d7f3d17490e431
+  revision: 6a8546ce3a19136e38d1eb1dd35185a1a8aa474a
   branch: master
   specs:
-    rails_com (1.2.1)
-      rails
+    rails_com (1.2.4)
+      rails (>= 5.2, <= 6.0)
 
 PATH
   remote: .
   specs:
-    rails_log (2.1.1)
-      default_form (~> 1.3.0)
-      default_where (~> 2.2.0)
-      rails
-      rails_com (~> 1.2.0)
+    rails_log (2.1.2)
+      default_form (~> 1.3)
+      default_where (~> 2.2)
+      rails (>= 5.0, <= 6.0)
+      rails_com (~> 1.2)
 
 GEM
   remote: https://rubygems.org/
@@ -65,10 +65,10 @@ GEM
     coderay (1.1.2)
     concurrent-ruby (1.0.5)
     crass (1.0.4)
-    default_form (1.3.0)
-      rails (>= 4.2)
-    default_where (2.2.0)
-      activerecord (>= 4.0.0)
+    default_form (1.3.2)
+      rails (~> 5.2)
+    default_where (2.2.1)
+      activerecord (~> 5.0, >= 4.0)
     erubi (1.7.1)
     factory_bot (4.8.2)
       activesupport (>= 3.0.0)
