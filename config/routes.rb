@@ -1,12 +1,14 @@
 Rails.application.routes.draw do
 
-  scope :admin, as: 'admin', module: 'rails_log' do
+  scope :admin, module: 'log/admin', as: 'admin',  do
     resources :log_records
     resources :log_mailers
   end
-  
-  controller :rails_log do
-    get '/not_founds', action: :index
+
+  scope module: 'log' do
+    controller :rails_log do
+      get '/not_founds', action: :index
+    end
   end
 
 end

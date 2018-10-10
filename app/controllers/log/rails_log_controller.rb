@@ -1,4 +1,4 @@
-class RailsLogController < ApplicationController
+class Log::RailsLogController < ApplicationController
 
   def not_found
     params.permit!
@@ -6,11 +6,11 @@ class RailsLogController < ApplicationController
 
     head :not_found
   end
-  
+
   def index
     path = Rails.root + RailsLog.not_found_logger.instance_variable_get(:@logdev).filename
     result = `tail -n200 #{path}`
-    
+
     render plain: result
   end
 

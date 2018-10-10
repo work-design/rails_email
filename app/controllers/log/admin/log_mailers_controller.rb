@@ -1,4 +1,4 @@
-class RailsLog::LogMailersController < RailsLog::BaseController
+class Log::Admin::LogMailersController < Log::Admin::BaseController
   before_action :set_log_mailer, only: [:show, :destroy]
 
   def index
