@@ -12,8 +12,7 @@ gem 'kaminari'
 
 gem 'factory_bot_rails'
 
-gem 'rails_com', github: 'qinmingyuan/rails_com', branch: 'master'
-
+gem 'rails_com'
 gem 'pry-rails'
 gem 'awesome_print'
 

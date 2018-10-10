@@ -7,6 +7,10 @@ module RailsLog
 
   class Engine < ::Rails::Engine # :nodoc:
 
+    config.eager_load_paths += Dir[
+      "#{config.root}/app/models/rails_log"
+    ]
+
     initializer 'rails_log.assets.precompile' do |app|
       app.config.assets.precompile += ['rails_log_manifest.js']
       ApplicationMailer.include MailerRecord

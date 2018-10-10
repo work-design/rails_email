@@ -14,5 +14,5 @@ Rails.application.routes.draw do
 end
 
 Rails.application.routes.append do
-  match '*path' => 'rails_log#not_found', via: :all
+  match '*path' => 'log/rails_log#not_found', via: :all
 end
