@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
 
-  scope :admin, module: 'log/admin', as: 'admin',  do
+  scope :admin, module: 'log/admin', as: 'admin' do
     resources :log_records
     resources :log_mailers
   end
