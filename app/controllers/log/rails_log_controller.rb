@@ -1,10 +1,21 @@
 class Log::RailsLogController < ApplicationController
+  skip_before_action :verify_authenticity_token
 
   def not_found
     params.permit!
     RailsLog.not_found_logger.info "#{params[:path]}.#{params[:format]}"
 
     head :not_found
+  end
+
+  def csp
+    data = JSON.parse(request.body.read)
+    p = data.fetch('csp-report', {})
+    p.transform_keys!(&:underscore)
+
+    LogCsp.create(p)
+
+    head :no_content
   end
 
   def index

@@ -1,0 +1,51 @@
+<%= render 'nav_log' %>
+
+<div class="ui attached segment">
+  <%= render 'search_form' %>
+</div>
+
+<table class="ui bottom attached table">
+  <thead>
+    <tr>
+      <th><%= LogCsp.human_attribute_name(:id) %></th>
+      <th>
+        <p><%= LogCsp.human_attribute_name(:document_uri) %></p>
+        <p><%= LogCsp.human_attribute_name(:referrer) %></p>
+      </th>
+      <th><%= LogCsp.human_attribute_name(:blocked_uri) %></th>
+      <th>
+        <p><%= LogCsp.human_attribute_name(:violated_directive) %></p>
+        <p><%= LogCsp.human_attribute_name(:effective_directive) %></p>
+      </th>
+      <th><%= LogCsp.human_attribute_name(:original_policy) %></th>
+      <th>Actions</th>
+    </tr>
+  </thead>
+  <tbody>
+  <% @log_csps.each do |log_csp| %>
+    <tr>
+      <td><%= log_csp.id %></td>
+      <td>
+        <p><%= log_csp.document_uri %></p>
+        <p><%= log_csp.referrer %></p>
+      </td>
+      <td><%= log_csp.blocked_uri %></td>
+      <td>
+        <p><%= log_csp.violated_directive %></p>
+        <p><%= log_csp.effective_directive %></p>
+      </td>
+      <td><%= simple_format log_csp.original_policy.split('; ') %></td>
+      <td class="ui labels">
+        <%= link_to admin_log_csp_path(log_csp), data: { tooltip: t('.show') }, class: 'ui blue mini icon button' do %>
+          <i class="location arrow icon"></i>
+        <% end %>
+        <%= link_to admin_log_csp_path(log_csp), method: :delete, data: { tooltip: t('.destroy'), confirm: 'Are you sure?' }, class: 'ui red mini icon button' do %>
+          <i class="times icon"></i>
+        <% end %>
+      </td>
+    </tr>
+  <% end %>
+  </tbody>
+</table>
+
+<%= paginate @log_csps %>

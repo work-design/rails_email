@@ -1,9 +1,8 @@
-<div>
-  <%= render 'nav_bar' %>
-  <%= render 'search_form' %>
+<%= render 'nav_log' %>
+<%= render 'search_form' %>
 
-  <table class="ui fixed table">
-    <thead>
+<table class="ui fixed table">
+  <thead>
     <tr>
       <th class="one wide"><%= LogMailer.human_attribute_name(:id) %></th>
       <th class="two wide"><%= LogMailer.human_attribute_name(:mailer) %></th>
@@ -18,31 +17,29 @@
       <th class="two wide"><%= LogMailer.human_attribute_name(:created_at) %></th>
       <th class="two wide"></th>
     </tr>
-    </thead>
+  </thead>
 
-    <tbody>
-    <% @log_mailers.each do |log_mailer| %>
-      <tr>
-        <td><%= log_mailer.id %></td>
-        <td><%= log_mailer.mailer %></td>
-        <td><%= log_mailer.action %></td>
-        <td><%= log_mailer.params %></td>
-        <td>
-          <p><%= log_mailer.mail_to %></p>
-          <p><%= log_mailer.cc_to %></p>
-        </td>
-        <td><%= log_mailer.sent_status %></td>
-        <td><%= log_mailer.sent_string %></td>
-        <td><time><%= log_mailer.created_at.to_s(:rfc822) %></time></td>
-        <td class="ui mini labels">
-          <%= link_to '详细', admin_log_mailer_path(log_mailer), class: 'ui blue label' %>
-          <%= link_to '删除', admin_log_mailer_path(log_mailer), method: :delete, data: { confirm: 'Are you sure?' }, class: 'ui red label' %>
-        </td>
-      </tr>
-    <% end %>
-    </tbody>
-  </table>
+  <tbody>
+  <% @log_mailers.each do |log_mailer| %>
+    <tr>
+      <td><%= log_mailer.id %></td>
+      <td><%= log_mailer.mailer %></td>
+      <td><%= log_mailer.action %></td>
+      <td><%= log_mailer.params %></td>
+      <td>
+        <p><%= log_mailer.mail_to %></p>
+        <p><%= log_mailer.cc_to %></p>
+      </td>
+      <td><%= log_mailer.sent_status %></td>
+      <td><%= log_mailer.sent_string %></td>
+      <td><time><%= log_mailer.created_at.to_s(:rfc822) %></time></td>
+      <td class="ui mini labels">
+        <%= link_to '详细', admin_log_mailer_path(log_mailer), class: 'ui blue label' %>
+        <%= link_to '删除', admin_log_mailer_path(log_mailer), method: :delete, data: { confirm: 'Are you sure?' }, class: 'ui red label' %>
+      </td>
+    </tr>
+  <% end %>
+  </tbody>
+</table>
 
-  <%= paginate @log_mailers %>
-
-</div>
+<%= paginate @log_mailers %>
