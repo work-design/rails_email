@@ -18,14 +18,15 @@ Processing by Log::Admin::LogCspsController#index as HTML
 
 ## 使用方法
 
-1. add to gemfile，默认包含对controller 及 mailer 的日志记录；
+1. 添加到gemfile中，默认包含对controller 及 mailer 的日志记录；
 `gem 'rails_log'`
 
 如果只需要其中一个，在gemfile中指定 require
-
-`gem 'rails_log', require: 'log_mailer'`
-`gem 'rails_log', require: 'log_controller'`
-`gem 'rails_log', require: ['log_controller', 'log_mailer']`
+```
+gem 'rails_log', require: 'log_mailer'
+gem 'rails_log', require: 'log_controller'
+gem 'rails_log', require: ['log_controller', 'log_mailer']
+```
 
 2. 运行迁移
 ```ruby
