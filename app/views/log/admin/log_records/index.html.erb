@@ -1,7 +1,10 @@
 <%= render 'nav_log' %>
-<%= render 'search_form' %>
 
-<table class="ui fixed table">
+<div class="ui attached segment">
+  <%= render 'search_form' %>
+</div>
+
+<table class="ui fixed bottom attached table">
   <thead>
     <tr>
       <th class="one wide"><%= LogRecord.human_attribute_name(:id) %></th>
@@ -31,9 +34,13 @@
       <td><%= simple_format log_record.session %></td>
       <td><%= simple_format log_record.exception %></td>
       <td><time><%= log_record.created_at.to_s(:rfc822) %></time></td>
-      <td class="ui mini labels">
-        <%= link_to '详细', admin_log_record_path(log_record), class: 'ui blue label' %>
-        <%= link_to '删除', admin_log_record_path(log_record), method: :delete, class: 'ui red label' %>
+      <td>
+        <%= link_to admin_log_record_path(log_record), data: { tooltip: t('.show') }, class: 'ui blue mini icon button' do %>
+          <i class="location arrow icon"></i>
+        <% end %>
+        <%= link_to admin_log_record_path(log_record), method: :delete, data: { tooltip: t('.destroy') }, class: 'ui red mini icon button' do %>
+          <i class="times icon"></i>
+        <% end %>
       </td>
     </tr>
   <% end %>

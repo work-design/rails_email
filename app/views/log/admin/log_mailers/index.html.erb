@@ -1,7 +1,10 @@
 <%= render 'nav_log' %>
-<%= render 'search_form' %>
 
-<table class="ui fixed table">
+<div class="ui attached segment">
+  <%= render 'search_form' %>
+</div>
+
+<table class="ui fixed bottom attached table">
   <thead>
     <tr>
       <th class="one wide"><%= LogMailer.human_attribute_name(:id) %></th>
@@ -33,9 +36,13 @@
       <td><%= log_mailer.sent_status %></td>
       <td><%= log_mailer.sent_string %></td>
       <td><time><%= log_mailer.created_at.to_s(:rfc822) %></time></td>
-      <td class="ui mini labels">
-        <%= link_to '详细', admin_log_mailer_path(log_mailer), class: 'ui blue label' %>
-        <%= link_to '删除', admin_log_mailer_path(log_mailer), method: :delete, data: { confirm: 'Are you sure?' }, class: 'ui red label' %>
+      <td>
+        <%= link_to admin_log_mailer_path(log_mailer), data: { tooltip: t('.show') }, class: 'ui blue mini icon button' do %>
+          <i class="location arrow icon"></i>
+        <% end %>
+        <%= link_to admin_log_mailer_path(log_mailer), method: :delete, data: { tooltip: t('.destroy'), confirm: 'Are you sure?' }, class: 'ui red mini icon button' do %>
+          <i class="times icon"></i>
+        <% end %>
       </td>
     </tr>
   <% end %>

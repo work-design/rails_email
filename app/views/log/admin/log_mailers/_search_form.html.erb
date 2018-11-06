@@ -1,8 +1,8 @@
-<%= search_form_with html: { class: 'ui segment bottom attached form' } do |f| %>
+<%= search_form_with model: LogMailer.new do |f| %>
   <div class="fields">
-    <%= f.text_field :mailer,  placeholder: 'Mailer' %>
-    <%= f.text_field :action, placeholder: 'Action' %>
-    <%= f.text_field :mail_to, placeholder: 'Mail To' %>
-    <%= f.submit '查询', class: 'ui green small button' %>
+    <%= f.text_field :mailer %>
+    <%= f.text_field :action %>
+    <%= f.text_field :mail_to %>
+    <%= f.submit 'Search' %>
   </div>
 <% end %>

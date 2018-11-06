@@ -1,9 +1,9 @@
-<%= search_form_with html: { class: 'ui segment bottom attached form' } do |f| %>
+<%= search_form_with model: LogRecord.new do |f| %>
   <div class="fields">
-    <%= f.text_field :controller,  placeholder: 'Controller' %>
-    <%= f.text_field :action, placeholder: 'Action' %>
-    <%= f.text_field :'path-like', placeholder: 'Contains Path' %>
-    <%= f.text_field :exception_object, placeholder: 'Exception Object' %>
-    <%= f.submit '查询', class: 'ui green small button' %>
+    <%= f.text_field :controller %>
+    <%= f.text_field :action %>
+    <%= f.text_field :'path-like' %>
+    <%= f.text_field :exception_object %>
+    <%= f.submit 'Search' %>
   </div>
 <% end %>
