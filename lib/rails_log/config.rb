@@ -8,6 +8,7 @@ module RailsLog
       'ActionController::UnknownFormat'
     ]
     config.admin_class = 'AdminController'
+    config.api_class = 'ApiController'
     config.quiet_logs = true
     config.intercept_not_found = true
   end
