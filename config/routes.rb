@@ -17,6 +17,5 @@ end
 if RailsLog.config.intercept_not_found
   Rails.application.routes.append do
     match '*path' => 'log/rails_log#not_found', via: :all
-    match 'api/*path' => 'api/log/rails_log#not_found', via: :all
   end
 end
