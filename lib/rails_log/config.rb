@@ -9,6 +9,7 @@ module RailsLog
     ]
     config.admin_class = 'AdminController'
     config.quiet_logs = true
+    config.intercept_not_found = true
   end
 
 end
