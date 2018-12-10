@@ -1,4 +1,4 @@
-class Api::Log::RailsLogController < RailsLog.config.api_class.constantize
+class Log::Api::RailsLogController < RailsLog.config.api_class.constantize
 
   def not_found
     params.permit!
