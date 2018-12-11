@@ -16,7 +16,7 @@ module RailsLog
 
       if payload[:exception].present? && !Rails.env.development?
         unless RailsLog.config.ignore_exception.include? payload[:exception_object].class.to_s
-          lc = LogRecord.new
+          lc = ::LogRecord.new
           lc.path = payload[:path]
           lc.controller = payload[:controller]
           lc.action = payload[:action]
@@ -27,7 +27,7 @@ module RailsLog
           lc.exception = payload[:exception].join("\r\n")
           lc.exception_object = payload[:exception_object].class.to_s
 
-          limit = LogRecord.columns_hash['exception_backtrace'].limit
+          limit = ::LogRecord.columns_hash['exception_backtrace'].limit
           if limit
             lc.exception_backtrace = payload[:exception_object]&.backtrace&.join("\r\n")&.truncate(limit)
           else
@@ -52,7 +52,7 @@ module RailsLog
 
     def filter_params(params)
       filter_keys = ['controller', 'action']
-      params.deep_transform_values { |v| v.to_s }.except(*filter_keys)
+      params.deep_transform_values(&:to_s).except(*filter_keys)
     end
 
   end
