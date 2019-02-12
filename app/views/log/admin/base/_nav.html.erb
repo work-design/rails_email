@@ -1,0 +1,16 @@
+<div class="ui vertical fluid icon menu">
+  <div class="header center link item" id="close_side">
+    <i class="content icon"></i>
+  </div>
+  <div class="item ui dropdown">
+    <a class="<%= active_helper(controllers: ['log_records', 'log_mailers', 'log_csps'], active_class: 'title active', item_class: 'title') %>">
+      <i class="bug icon"></i>
+      <span>Logs</span>
+    </a>
+    <div class="<%= active_helper(controllers: ['log_records', 'log_mailers', 'log_csps'], active_class: 'menu content active', item_class: 'menu content') %>">
+      <%= link_to '错误日志', admin_log_records_path, class: active_helper(controller: 'log/admin/log_records') %>
+      <%= link_to '邮件日志', admin_log_mailers_path, class: active_helper(controller: 'log/admin/log_mailers') %>
+      <%= link_to 'CSP日志', admin_log_csps_path, class: active_helper(controller: 'log/admin/log_csps') %>
+    </div>
+  </div>
+</div>
