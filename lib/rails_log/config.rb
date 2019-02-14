@@ -11,6 +11,7 @@ module RailsLog
     config.api_class = 'ApiController'
     config.quiet_logs = true
     config.intercept_not_found = true
+    config.debug = false
   end
 
 end

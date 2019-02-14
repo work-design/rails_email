@@ -12,36 +12,41 @@ module RailsLog
 
     def process_action(event)
       payload = event.payload
-      headers = payload.fetch(:headers, {})
 
-      if payload[:exception].present? && !Rails.env.development?
-        unless RailsLog.config.ignore_exception.include? payload[:exception_object].class.to_s
-          lc = ::LogRecord.new
-          lc.path = payload[:path]
-          lc.controller = payload[:controller]
-          lc.action = payload[:action]
-          lc.params = filter_params(payload[:params])
-          lc.headers = request_headers headers
-          lc.cookie = headers['rack.request.cookie_hash']
-          lc.session = Hash.new(headers['rack.session'])
-          lc.exception = payload[:exception].join("\r\n")
-          lc.exception_object = payload[:exception_object].class.to_s
+      return if payload[:exception].blank?
+      return if RailsLog.config.ignore_exception.include?(payload[:exception_object].class.to_s)
+      return unless Rails.env.development? && RailsLog.config.debug
 
-          limit = ::LogRecord.columns_hash['exception_backtrace'].limit
-          if limit
-            lc.exception_backtrace = payload[:exception_object]&.backtrace&.join("\r\n")&.truncate(limit)
-          else
-            lc.exception_backtrace = payload[:exception_object]&.backtrace&.join("\r\n")
-          end
-
-          lc.save
-          info 'exception log saved!'
-        end
-      end
+      record_to_log(payload)
     end
 
     def logger
       ActionController::Base.logger
+    end
+
+    def record_to_log(payload)
+      headers = payload.fetch(:headers, {})
+
+      lc = ::LogRecord.new
+      lc.path = payload[:path]
+      lc.controller = payload[:controller]
+      lc.action = payload[:action]
+      lc.params = filter_params(payload[:params])
+      lc.headers = request_headers(headers)
+      lc.cookie = headers['rack.request.cookie_hash']
+      lc.session = Hash.new(headers['rack.session'])
+      lc.exception = payload[:exception].join("\r\n")
+      lc.exception_object = payload[:exception_object].class.to_s
+
+      limit = ::LogRecord.columns_hash['exception_backtrace'].limit
+      if limit
+        lc.exception_backtrace = payload[:exception_object]&.backtrace&.join("\r\n")&.truncate(limit)
+      else
+        lc.exception_backtrace = payload[:exception_object]&.backtrace&.join("\r\n")
+      end
+
+      lc.save
+      info 'exception log saved!'
     end
 
     def request_headers(headers)
