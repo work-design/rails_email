@@ -5,7 +5,7 @@ module RailsLog
       return unless logger.debug?
       payload = event.payload
       raw_headers = payload.fetch(:headers, {})
-      headers = request_headers(raw_headers)
+      headers = ::LogRecord.request_headers(raw_headers)
 
       debug "  Headers: #{headers.inspect}"
     end
@@ -13,15 +13,11 @@ module RailsLog
     def process_action(event)
       payload = event.payload
 
-      return if payload[:exception].blank?
+      return if payload[:exception_object].blank?
       return if RailsLog.config.ignore_exception.include?(payload[:exception_object].class.to_s)
       return unless Rails.env.development? && RailsLog.config.debug
 
       record_to_log(payload)
-    end
-
-    def logger
-      ActionController::Base.logger
     end
 
     def record_to_log(payload)
@@ -31,8 +27,8 @@ module RailsLog
       lc.path = payload[:path]
       lc.controller = payload[:controller]
       lc.action = payload[:action]
-      lc.params = filter_params(payload[:params])
-      lc.headers = request_headers(headers)
+      lc.params = ::LogRecord.filter_params(payload[:params])
+      lc.headers = ::LogRecord.request_headers(headers)
       lc.cookie = headers['rack.request.cookie_hash']
       lc.session = Hash.new(headers['rack.session'])
       lc.exception = payload[:exception].join("\r\n")
@@ -40,24 +36,17 @@ module RailsLog
 
       limit = ::LogRecord.columns_hash['exception_backtrace'].limit
       if limit
-        lc.exception_backtrace = payload[:exception_object]&.backtrace&.join("\r\n")&.truncate(limit)
+        lc.exception_backtrace = payload[:exception_object].backtrace.join("\r\n").truncate(limit)
       else
-        lc.exception_backtrace = payload[:exception_object]&.backtrace&.join("\r\n")
+        lc.exception_backtrace = payload[:exception_object].backtrace.join("\r\n")
       end
 
       lc.save
-      info 'exception log saved!'
+      logger.info 'exception log saved!'
     end
 
-    def request_headers(headers)
-      result = headers.select { |k, _| k.start_with?('HTTP_') && k != 'HTTP_COOKIE' }
-      result = result.collect { |pair| [pair[0].sub(/^HTTP_/, ''), pair[1]] }
-      result.sort.to_h
-    end
-
-    def filter_params(params)
-      filter_keys = ['controller', 'action']
-      params.deep_transform_values(&:to_s).except(*filter_keys)
+    def logger
+      ActionController::Base.logger
     end
 
   end
