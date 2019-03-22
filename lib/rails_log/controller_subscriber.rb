@@ -31,16 +31,9 @@ module RailsLog
       lc.headers = ::LogRecord.request_headers(headers)
       lc.cookie = headers['rack.request.cookie_hash']
       lc.session = Hash.new(headers['rack.session'])
-      lc.exception = payload[:exception].join("\r\n")
+      lc.exception = payload[:exception].join("\r\n")[0..columns_limit['exception']]
       lc.exception_object = payload[:exception_object].class.to_s
-
-      limit = ::LogRecord.columns_hash['exception_backtrace'].limit
-      if limit
-        lc.exception_backtrace = payload[:exception_object].backtrace.join("\r\n").truncate(limit)
-      else
-        lc.exception_backtrace = payload[:exception_object].backtrace.join("\r\n")
-      end
-
+      lc.exception_backtrace = payload[:exception_object].backtrace.join("\r\n")[0..columns_limit['exception_backtrace']]
       lc.save
       logger.info 'exception log saved!'
     end

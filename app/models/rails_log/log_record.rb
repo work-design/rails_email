@@ -18,16 +18,9 @@ class LogRecord < ApplicationRecord
     lc.headers = request_headers(headers)
     lc.cookie = headers['rack.request.cookie_hash']
     lc.session = Hash.new(headers['rack.session'])
-    lc.exception = [exp.class.name, exp.message].join("\r\n")
+    lc.exception = [exp.class.name, exp.message].join("\r\n")[0..columns_limit['exception']]
     lc.exception_object = exp.class.to_s
-
-    limit = self.columns_hash['exception_backtrace'].limit
-    if limit
-      lc.exception_backtrace = exp.backtrace.join("\r\n").truncate(limit)
-    else
-      lc.exception_backtrace = exp.backtrace.join("\r\n")
-    end
-
+    lc.exception_backtrace = exp.backtrace.join("\r\n")[0..columns_limit['exception_backtrace']]
     lc.save
     logger.info 'exception log saved!'
   end
@@ -40,6 +33,10 @@ class LogRecord < ApplicationRecord
 
   def self.filter_params(params)
     params.deep_transform_values(&:to_s).except('controller', 'action')
+  end
+
+  def self.columns_limit
+    @columns_limit ||= self.columns_hash.slice('params', 'headers', 'cookie', 'session', 'exception', 'exception_object', 'exception_backtrace').transform_values { |i| i.limit.nil? ? -1 : i.limit - 1 }
   end
 
 end
