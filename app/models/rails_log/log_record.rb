@@ -7,6 +7,8 @@ class LogRecord < ApplicationRecord
   default_scope -> { order(id: :desc) }
 
   def self.record_to_log(controller, exp)
+    return unless Rails.env.development? && RailsLog.config.debug
+
     request = controller.request
     headers = request.headers
 
