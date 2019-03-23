@@ -42,6 +42,10 @@ module RailsLog
       ActionController::Base.logger
     end
 
+    def columns_list
+      ::LogRecord.columns_list
+    end
+
   end
 end
 
