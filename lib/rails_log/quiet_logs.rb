@@ -3,7 +3,7 @@ module RailsLog
 
     def initialize(app)
       @app = app
-      @assets_regex = %r(\A/{0,2}(/cable|/rails))
+      @assets_regex = %r(\A/{0,2}(/cable|/rails/active_storage))
     end
 
     def call(env)
