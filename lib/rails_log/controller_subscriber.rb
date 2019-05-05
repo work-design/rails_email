@@ -5,9 +5,10 @@ module RailsLog
       return unless logger.debug?
       payload = event.payload
       raw_headers = payload.fetch(:headers, {})
-      headers = ::LogRecord.request_headers(raw_headers)
+      real_headers = ::LogRecord.request_headers(raw_headers)
 
-      debug "  Headers: #{headers.inspect}"
+      debug "  Headers: #{real_headers.inspect}"
+      debug "  Sessions: #{raw_headers['rack.session'].to_h}"
     end
 
     def process_action(event)
@@ -21,16 +22,16 @@ module RailsLog
     end
 
     def record_to_log(payload)
-      headers = payload.fetch(:headers, {})
+      raw_headers = payload.fetch(:headers, {})
 
       lc = ::LogRecord.new
       lc.path = payload[:path]
       lc.controller = payload[:controller]
       lc.action = payload[:action]
       lc.params = ::LogRecord.filter_params(payload[:params])
-      lc.headers = ::LogRecord.request_headers(headers)
-      lc.cookie = headers['rack.request.cookie_hash']
-      lc.session = Hash.new(headers['rack.session'])
+      lc.headers = ::LogRecord.request_headers(raw_headers)
+      lc.cookie = raw_headers['rack.request.cookie_hash']
+      lc.session = raw_headers['rack.session'].to_h
       lc.exception = payload[:exception].join("\r\n")[0..columns_limit['exception']]
       lc.exception_object = payload[:exception_object].class.to_s
       lc.exception_backtrace = payload[:exception_object].backtrace.join("\r\n")[0..columns_limit['exception_backtrace']]
