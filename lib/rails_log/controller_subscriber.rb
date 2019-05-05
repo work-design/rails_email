@@ -9,6 +9,7 @@ module RailsLog
 
       debug "  Headers: #{real_headers.inspect}"
       debug "  Sessions: #{raw_headers['rack.session'].to_h}"
+      debug "  Cookies: #{raw_headers['rack.request.cookie_hash']}"
     end
 
     def process_action(event)
