@@ -7,7 +7,7 @@ module RailsLog
       raw_headers = payload.fetch(:headers, {})
       real_headers = ::LogRecord.request_headers(raw_headers)
       session_key = Rails.configuration.session_options[:key]
-      cookies = raw_headers['rack.request.cookie_hash'].except(:session_key)
+      cookies = Hash(raw_headers['rack.request.cookie_hash']).except(session_key)
 
       debug "  Headers: #{real_headers.inspect}"
       debug "  Sessions: #{raw_headers['rack.session'].to_h}"
