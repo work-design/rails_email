@@ -11,7 +11,7 @@ class Log::Admin::LogCspsController < Log::Admin::BaseController
 
   def destroy
     @log_csp.destroy
-    redirect_to admin_log_csps_url, notice: 'Log csp was successfully destroyed.'
+    redirect_to admin_log_csps_url
   end
 
   private

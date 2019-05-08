@@ -10,7 +10,7 @@ class Log::Admin::LogMailersController < Log::Admin::BaseController
 
   def destroy
     @log_mailer.destroy
-    redirect_to admin_log_mailers_url, notice: 'Log record was successfully destroyed.'
+    redirect_to admin_log_mailers_url
   end
 
   private
