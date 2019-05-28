@@ -1,3 +1,5 @@
-require 'rails_log/engine'
-require 'rails_log/config'
-require 'rails_log/controller_subscriber'
+# frozen_string_literal: true
+
+require_relative 'rails_log/engine'
+require_relative 'rails_log/config'
+require_relative 'rails_log/controller_subscriber'
