@@ -39,11 +39,6 @@ module RailsLog
       lc.exception_object = payload[:exception_object].class.to_s
       lc.exception_backtrace = payload[:exception_object].backtrace.join("\r\n")[0..columns_limit['exception_backtrace']]
       lc.save
-      logger.info 'exception log saved!'
-    end
-
-    def logger
-      ActionController::Base.logger
     end
 
     def columns_limit

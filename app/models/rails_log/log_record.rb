@@ -24,7 +24,6 @@ class LogRecord < ApplicationRecord
     lc.exception_object = exp.class.to_s
     lc.exception_backtrace = exp.backtrace.join("\r\n")[0..columns_limit['exception_backtrace']]
     lc.save
-    logger.info 'exception log saved!'
   end
 
   def self.request_headers(headers)
