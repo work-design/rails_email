@@ -1,5 +1,5 @@
 class Log::Admin::LogCspsController < Log::Admin::BaseController
-  before_action :set_log_csp, only: [:show, :edit]
+  before_action :set_log_csp, only: [:show]
 
   def index
     q_params = params.fetch(:q, {}).permit!

@@ -1,3 +1,3 @@
-class Log::Admin::BaseController < RailsLog.config.admin_class.constantize
+class Log::Admin::BaseController < RailsLog.config.admin_controller.constantize
 
 end

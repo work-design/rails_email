@@ -1,5 +1,3 @@
-require 'default_form'
-require 'default_where'
 require 'rails_com'
 
 module RailsLog
@@ -7,11 +5,7 @@ module RailsLog
   self.not_found_logger = ActiveSupport::Logger.new('log/not_found.log')
 
   class Engine < ::Rails::Engine # :nodoc:
-
-    config.eager_load_paths += Dir[
-      "#{config.root}/app/models/rails_log"
-    ]
-
+    
     config.generators do |g|
       g.rails = {
         assets: false,
