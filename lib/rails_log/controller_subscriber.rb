@@ -19,7 +19,7 @@ module RailsLog
 
       return if payload[:exception_object].blank?
       return if RailsLog.config.ignore_exception.include?(payload[:exception_object].class.to_s)
-      return unless Rails.env.development? && RailsLog.config.debug
+      return if Rails.env.development? && RailsLog.config.disable_debug
 
       record_to_log(payload)
     end

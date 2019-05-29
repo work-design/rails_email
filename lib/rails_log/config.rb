@@ -10,7 +10,7 @@ module RailsLog
     config.admin_class = 'AdminController'
     config.quiet_logs = true
     config.intercept_not_found = true
-    config.debug = false
+    config.disable_debug = true
   end
 
 end
