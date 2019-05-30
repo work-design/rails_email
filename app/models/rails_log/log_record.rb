@@ -1,10 +1,10 @@
 module RailsLog::LogRecord
   extend ActiveSupport::Concern
   included do
-    serialize :params, Hash
-    serialize :cookie, Hash
-    serialize :session, Hash
-    serialize :headers, Hash
+    attribute :params, :json, default: {}
+    attribute :headers, :json, default: {}
+    attribute :cookie, :json, default: {}
+    attribute :session, :json, default: {}
   
     default_scope -> { order(id: :desc) }
   end
