@@ -1,7 +1,7 @@
 <%= search_form_with model: LogRecord.new do |f| %>
   <div class="fields">
-    <%= f.text_field :controller %>
-    <%= f.text_field :action %>
+    <%= f.text_field :controller_name %>
+    <%= f.text_field :action_name %>
     <%= f.text_field :'path-like' %>
     <%= f.text_field :exception_object %>
     <%= f.submit %>

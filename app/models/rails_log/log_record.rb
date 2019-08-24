@@ -1,6 +1,8 @@
 module RailsLog::LogRecord
   extend ActiveSupport::Concern
   included do
+    attribute :controller_name, :string
+    attribute :action_name, :string
     attribute :params, :json, default: {}
     attribute :headers, :json, default: {}
     attribute :cookie, :json, default: {}
@@ -18,8 +20,8 @@ module RailsLog::LogRecord
   
       lc = self.new
       lc.path = request.fullpath
-      lc.controller = controller.class.name
-      lc.action = controller.action_name
+      lc.controller_name = controller.class.name
+      lc.action_name = controller.action_name
       lc.params = filter_params(request.filtered_parameters)
       lc.headers = request_headers(headers)
       lc.cookie = headers['rack.request.cookie_hash']

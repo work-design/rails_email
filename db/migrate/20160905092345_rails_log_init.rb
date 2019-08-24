@@ -3,8 +3,8 @@ class RailsLogInit < ActiveRecord::Migration[5.0]
 
     create_table :log_records do |t|
       t.string :path
-      t.string :controller
-      t.string :action
+      t.string :controller_name
+      t.string :action_name
       t.jsonb :params
       t.jsonb :headers
       t.jsonb :cookie

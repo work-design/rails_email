@@ -2,6 +2,8 @@ class Log::Admin::LogRecordsController < Log::Admin::BaseController
   before_action :set_log_record, only: [:show, :destroy]
 
   def index
+    q_params = {}
+    q_params.merge! params.permit(:controller, :action)
     @log_records = LogRecord.default_where(q_params).page(params[:page]).per(params[:per])
   end
 
@@ -16,10 +18,6 @@ class Log::Admin::LogRecordsController < Log::Admin::BaseController
   private
   def set_log_record
     @log_record = LogRecord.find(params[:id])
-  end
-
-  def q_params
-    params.fetch(:q, {}).permit!
   end
 
 end

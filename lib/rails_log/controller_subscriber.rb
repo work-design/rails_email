@@ -29,8 +29,8 @@ module RailsLog
 
       lc = ::LogRecord.new
       lc.path = payload[:path]
-      lc.controller = payload[:controller]
-      lc.action = payload[:action]
+      lc.controller_name = payload[:controller]
+      lc.action_name = payload[:action]
       lc.params = ::LogRecord.filter_params(payload[:params])
       lc.headers = ::LogRecord.request_headers(raw_headers)
       lc.cookie = raw_headers['rack.request.cookie_hash']
