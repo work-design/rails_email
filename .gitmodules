@@ -1,4 +1,3 @@
 [submodule "test/dummy"]
-	path = test/dummy
-	url = git@github.com:work-design/dummy.git
-	branch = master
+  path = test/dummy
+  url = https://github.com/work-design/dummy.git

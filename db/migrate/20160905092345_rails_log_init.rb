@@ -5,10 +5,17 @@ class RailsLogInit < ActiveRecord::Migration[5.0]
       t.string :path
       t.string :controller_name
       t.string :action_name
-      t.jsonb :params
-      t.jsonb :headers
-      t.jsonb :cookie
-      t.jsonb :session
+      if connection.adapter_name == 'PostgreSQL'
+        t.jsonb :params
+        t.jsonb :headers
+        t.jsonb :cookie
+        t.jsonb :session
+      else
+        t.json :params
+        t.json :headers
+        t.json :cookie
+        t.json :session
+      end
       t.string :exception, limit: 10240
       t.string :exception_object
       t.text :exception_backtrace
