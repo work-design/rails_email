@@ -3,7 +3,7 @@ class Log::Admin::LogRecordsController < Log::Admin::BaseController
 
   def index
     q_params = {}
-    q_params.merge! params.permit(:controller, :action)
+    q_params.merge! params.permit(:controller_name, :action_name)
     @log_records = LogRecord.default_where(q_params).page(params[:page]).per(params[:per])
   end
 
@@ -12,7 +12,6 @@ class Log::Admin::LogRecordsController < Log::Admin::BaseController
 
   def destroy
     @log_record.destroy
-    redirect_to admin_log_records_url
   end
 
   private

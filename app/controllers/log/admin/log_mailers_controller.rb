@@ -2,6 +2,8 @@ class Log::Admin::LogMailersController < Log::Admin::BaseController
   before_action :set_log_mailer, only: [:show, :destroy]
 
   def index
+    q_params = {}
+    q_params.merge! params.permit(:mailer, :action, :mail_to)
     @log_mailers = LogMailer.default_where(q_params).page(params[:page])
   end
 
@@ -10,7 +12,6 @@ class Log::Admin::LogMailersController < Log::Admin::BaseController
 
   def destroy
     @log_mailer.destroy
-    redirect_to admin_log_mailers_url
   end
 
   private

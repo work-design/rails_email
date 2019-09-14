@@ -1,8 +1,8 @@
-<div class="ui attached segment">
-  <%= render 'search_form' %>
+<div class="ui top attached segment">
+  <%= render 'filter' %>
 </div>
 
-<table class="ui fixed bottom attached table">
+<table class="ui bottom attached selectable table">
   <thead>
     <tr>
       <th class="one wide"><%= LogMailer.human_attribute_name(:id) %></th>

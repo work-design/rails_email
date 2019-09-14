@@ -2,7 +2,8 @@ class Log::Admin::LogCspsController < Log::Admin::BaseController
   before_action :set_log_csp, only: [:show]
 
   def index
-    q_params = params.fetch(:q, {}).permit!
+    q_params = {}
+    q_params.merge! params.permit(:document_uri)
     @log_csps = LogCsp.default_where(q_params).page(params[:page])
   end
 
@@ -11,7 +12,6 @@ class Log::Admin::LogCspsController < Log::Admin::BaseController
 
   def destroy
     @log_csp.destroy
-    redirect_to admin_log_csps_url
   end
 
   private
