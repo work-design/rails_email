@@ -22,7 +22,7 @@
   <tbody>
   <% @log_records.each do |log_record| %>
     <tr>
-      <td><%= link_to admin_log_record_path(log_record), log_record.id %></td>
+      <td><%= link_to log_record.id, admin_log_record_path(log_record) %></td>
       <td>
         <p><%= log_record.path %></p>
         <p><%= log_record.controller_name %></p>
