@@ -22,7 +22,7 @@
   <tbody>
   <% @log_records.each do |log_record| %>
     <tr>
-      <td><%= log_record.id %></td>
+      <td><%= link_to admin_log_record_path(log_record), log_record.id %></td>
       <td>
         <p><%= log_record.path %></p>
         <p><%= log_record.controller_name %></p>
@@ -33,11 +33,11 @@
       <td><%= simple_format log_record.exception %></td>
       <td><time><%= log_record.created_at.to_s(:rfc822) %></time></td>
       <td>
-        <%= link_to admin_log_record_path(log_record), data: { tooltip: t('.show') }, class: 'ui blue mini icon button' do %>
-          <i class="location arrow icon"></i>
+        <%= link_to admin_log_record_path(log_record), data: { tooltip: t('.show') }, class: 'ui mini circular icon button' do %>
+          <i class="fas fa-eye"></i>
         <% end %>
-        <%= link_to admin_log_record_path(log_record), method: :delete, data: { tooltip: t('.destroy') }, class: 'ui red mini icon button' do %>
-          <i class="times icon"></i>
+        <%= link_to admin_log_record_path(log_record), method: :delete, data: { tooltip: t('.destroy') }, remote: true, class: 'ui mini circular icon button' do %>
+          <i class="fas fa-trash"></i>
         <% end %>
       </td>
     </tr>
