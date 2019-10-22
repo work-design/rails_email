@@ -8,8 +8,8 @@
       <th class="one wide"><%= LogRecord.human_attribute_name(:id) %></th>
       <th class="three wide">
         <p><%= LogRecord.human_attribute_name(:path) %></p>
-        <p><%= LogRecord.human_attribute_name(:controller) %></p>
-        <p><%= LogRecord.human_attribute_name(:action) %></p>
+        <p><%= LogRecord.human_attribute_name(:controller_name) %></p>
+        <p><%= LogRecord.human_attribute_name(:action_name) %></p>
       </th>
       <th class="three wide"><%= LogRecord.human_attribute_name(:params) %></th>
       <th class="three wide"><%= LogRecord.human_attribute_name(:session) %></th>
@@ -25,8 +25,8 @@
       <td><%= log_record.id %></td>
       <td>
         <p><%= log_record.path %></p>
-        <p><%= log_record.controller %></p>
-        <p><%= log_record.action %></p>
+        <p><%= log_record.controller_name %></p>
+        <p><%= log_record.action_name %></p>
       </td>
       <td><%= simple_format log_record.params %></td>
       <td><%= simple_format log_record.session %></td>

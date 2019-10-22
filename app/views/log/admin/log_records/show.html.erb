@@ -19,12 +19,12 @@
       <td><%= @log_record.path %></td>
     </tr>
     <tr>
-      <td><%= LogRecord.human_attribute_name(:controller) %></td>
-      <td><%= @log_record.controller %></td>
+      <td><%= LogRecord.human_attribute_name(:controller_name) %></td>
+      <td><%= @log_record.controller_name %></td>
     </tr>
     <tr>
-      <td><%= LogRecord.human_attribute_name(:action) %></td>
-      <td><%= @log_record.action %></td>
+      <td><%= LogRecord.human_attribute_name(:action_name) %></td>
+      <td><%= @log_record.action_name %></td>
     </tr>
     <tr>
       <td><%= LogRecord.human_attribute_name(:params) %></td>
