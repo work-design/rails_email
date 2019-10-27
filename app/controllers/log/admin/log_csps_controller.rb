@@ -1,5 +1,5 @@
 class Log::Admin::LogCspsController < Log::Admin::BaseController
-  before_action :set_log_csp, only: [:show]
+  before_action :set_log_csp, only: [:show, :destroy]
 
   def index
     q_params = {}

@@ -16,7 +16,7 @@
         <p><%= LogCsp.human_attribute_name(:effective_directive) %></p>
       </th>
       <th><%= LogCsp.human_attribute_name(:original_policy) %></th>
-      <th>Actions</th>
+      <th></th>
     </tr>
   </thead>
   <tbody>
@@ -33,12 +33,12 @@
         <p><%= log_csp.effective_directive %></p>
       </td>
       <td><%= simple_format log_csp.original_policy.split('; ') %></td>
-      <td class="ui labels">
-        <%= link_to admin_log_csp_path(log_csp), data: { tooltip: t('.show') }, class: 'ui blue mini icon button' do %>
-          <i class="location arrow icon"></i>
+      <td>
+        <%= link_to admin_log_csp_path(log_csp), data: { tooltip: t('.show') }, remote: true, class: 'ui mini circular icon button' do %>
+          <i class="fas fa-eye"></i>
         <% end %>
-        <%= link_to admin_log_csp_path(log_csp), method: :delete, data: { tooltip: t('.destroy'), confirm: 'Are you sure?' }, class: 'ui red mini icon button' do %>
-          <i class="times icon"></i>
+        <%= link_to admin_log_csp_path(log_csp), method: :delete, data: { tooltip: t('.destroy'), confirm: t('.confirm') }, remote: true, class: 'ui mini circular icon button' do %>
+          <i class="fas fa-trash-alt"></i>
         <% end %>
       </td>
     </tr>

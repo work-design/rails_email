@@ -1,6 +1,6 @@
 require 'test_helper'
-
 class LogRecordTest < ActiveSupport::TestCase
+
   setup do
     @log_record = create :log_record
   end
