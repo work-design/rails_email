@@ -11,6 +11,7 @@ Processing by Log::Admin::LogCspsController#index as HTML
   Headers: {"ACCEPT"=>"text/html, application/xhtml+xml", "ACCEPT_ENCODING"=>"gzip, deflate, br", "ACCEPT_LANGUAGE"=>"en,zh-CN;q=0.9,zh;q=0.8,en-US;q=0.7,zh-TW;q=0.6", "CONNECTION"=>"keep-alive", "HOST"=>"localhost:3000", "IF_NONE_MATCH"=>"W/\"0b91528b7e1207b8a0c59f74361bbb16\"", "REFERER"=>"http://localhost:3000/admin/log_mailers", "TURBOLINKS_CSP_NONCE"=>"usxcEjOGjTjPfcGLmodktA==", "TURBOLINKS_REFERRER"=>"http://localhost:3000/admin/log_mailers", "USER_AGENT"=>"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_14_1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/70.0.3538.77 Safari/537.36", "UTC_OFFSET"=>"-480", "VERSION"=>"HTTP/1.1"}
 ```
 4. 为内容安全策略提供 report url
+5. 支持企业微信机器人发送通知
 
 ## 特性
 1. 注重性能：使用订阅通知机制实现，而非`rescue_from` 或者 `Rack middleware`;
