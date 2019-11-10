@@ -19,6 +19,10 @@ class WechatWorkMarkdown
     @content << "#{paragraph}\n"
   end
   
+  def add_column(title, content)
+    @content << "**#{title}：**#{content}\n"
+  end
+ 
   def add_link(name, url)
     @content << "[#{name}](#{url})"
   end

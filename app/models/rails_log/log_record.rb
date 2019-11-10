@@ -5,6 +5,9 @@ module RailsLog::LogRecord
     
     attribute :controller_name, :string
     attribute :action_name, :string
+    attribute :exception, :string
+    attribute :exception_object, :string
+    attribute :exception_backtrace, :string
     attribute :params, :json, default: {}
     attribute :headers, :json, default: {}
     attribute :cookie, :json, default: {}
@@ -20,10 +23,10 @@ module RailsLog::LogRecord
   end
   
   def message_content
-    body = self.as_json(only: [:path, :controller_name, :action_name])
+    body = self.as_json(only: [:path, :controller_name, :action_name, :exception, :exception_backtrace])
     content = WechatWorkMarkdown.new
     body.each do |k, v|
-      content.add_section(k, v)
+      content.add_column(k, v)
     end
     content.add_link('详细点击', url_helpers.admin_log_record_url(self))
     content
