@@ -25,7 +25,7 @@ class WechatWorkMarkdown
  
   def link_more(name, url)
     text = "[#{name}](#{url})"
-    truncate_length = 4096 - text.length
+    truncate_length = 4095 - text.length
 
     @content = @content.truncate(truncate_length) + text
   end
