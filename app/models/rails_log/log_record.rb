@@ -16,7 +16,7 @@ module RailsLog::LogRecord
   end
   
   def send_message
-  
+    WechatWorkBot.send(message_content)
   end
   
   def message_content
@@ -25,6 +25,8 @@ module RailsLog::LogRecord
     body.each do |k, v|
       content.add_section(k, v)
     end
+    content.add_link('详细点击', url_helpers.admin_log_record_url(self))
+    content
   end
 
   def process_job

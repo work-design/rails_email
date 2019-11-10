@@ -1,14 +1,14 @@
 module WechatWorkBot
   extend self
 
+  def send(msg)
+    url = RailsLog.config.notify_url
+    body = msg.as_markdown
+    headers = {
+      'Content-Type': 'application/json'
+    }
   
-  
-  def markdown
-    h1
-  end
-  
-  def x
-  
+    HTTParty.post(url, body: body, headers: headers)
   end
 
 end

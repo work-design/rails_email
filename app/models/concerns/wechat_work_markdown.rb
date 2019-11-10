@@ -5,20 +5,22 @@ class WechatWorkMarkdown
     @content = ''
   end
   
-  
-  def markdown
-  
+  def as_markdown
+    {
+      msgtype: 'markdown',
+      markdown: {
+        content: content
+      }
+    }
   end
   
   def add_section(header, paragraph, level: 3)
-    @content << "#{'#' * level} #{header}"
-    @content << "\n"
-    @content << "#{paragraph}"
+    @content << "#{'#' * level} #{header}\n"
+    @content << "#{paragraph}\n"
   end
   
-  def add_link(
-  
-  )
+  def add_link(name, url)
+    @content << "[#{name}](#{url})"
   end
 
 end
