@@ -9,7 +9,7 @@ class WechatWorkMarkdown
     {
       msgtype: 'markdown',
       markdown: {
-        content: content.truncate(4096)
+        content: content
       }
     }
   end
@@ -23,8 +23,11 @@ class WechatWorkMarkdown
     @content << "**#{title}：**#{content}\n"
   end
  
-  def add_link(name, url)
-    @content << "[#{name}](#{url})"
+  def link_more(name, url)
+    text = "[#{name}](#{url})"
+    truncate_length = 4096 - text.length
+
+    @content = @content.truncate(truncate_length) + text
   end
 
 end

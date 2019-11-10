@@ -28,7 +28,7 @@ module RailsLog::LogRecord
     body.each do |k, v|
       content.add_column(k, v)
     end
-    content.add_link('详细点击', url_helpers.admin_log_record_url(self))
+    content.link_more('详细点击', url_helpers.admin_log_record_url(self))
     content
   end
 
