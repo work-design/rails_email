@@ -9,7 +9,7 @@ class WechatWorkMarkdown
     {
       msgtype: 'markdown',
       markdown: {
-        content: content
+        content: content.truncate(4096)
       }
     }
   end
