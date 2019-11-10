@@ -11,6 +11,7 @@ module RailsLog
     config.quiet_logs = true
     config.intercept_not_found = true
     config.disable_debug = true
+    config.notify_url = ''
   end
 
 end

@@ -1,6 +1,8 @@
 module RailsLog::LogRecord
   extend ActiveSupport::Concern
   included do
+    delegate :url_helpers, to: 'Rails.application.routes'
+    
     attribute :controller_name, :string
     attribute :action_name, :string
     attribute :params, :json, default: {}
@@ -9,6 +11,24 @@ module RailsLog::LogRecord
     attribute :session, :json, default: {}
   
     default_scope -> { order(id: :desc) }
+
+    after_create_commit :sent_message
+  end
+  
+  def send_message
+  
+  end
+  
+  def message_content
+    body = self.as_json(only: [:path, :controller_name, :action_name])
+    content = WechatWorkMarkdown.new
+    body.each do |k, v|
+      content.add_section(k, v)
+    end
+  end
+
+  def process_job
+    LogRecordNotifyJob.perform_later(self)
   end
   
   class_methods do
@@ -43,8 +63,15 @@ module RailsLog::LogRecord
     end
 
     def columns_limit
-      @columns_limit ||= self.columns_hash.slice('params', 'headers', 'cookie', 'session', 'exception', 'exception_object', 'exception_backtrace').transform_values { |i| i.limit.nil? ? -1 : i.limit - 1 }
+      @columns_limit ||= self.columns_hash.slice(
+        'params',
+        'headers',
+        'cookie',
+        'session',
+        'exception',
+        'exception_object',
+        'exception_backtrace'
+      ).transform_values { |i| i.limit.nil? ? -1 : i.limit - 1 }
     end
   end
-  
 end
