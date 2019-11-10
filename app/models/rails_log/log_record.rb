@@ -15,11 +15,11 @@ module RailsLog::LogRecord
   
     default_scope -> { order(id: :desc) }
 
-    after_create_commit :sent_message
+    after_create_commit :send_message
   end
   
   def send_message
-    WechatWorkBot.send(message_content)
+    WechatWorkBot.send_message(message_content)
   end
   
   def message_content
