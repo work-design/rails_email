@@ -4,11 +4,8 @@ module WechatWorkBot
   def send(msg)
     url = RailsLog.config.notify_url
     body = msg.as_markdown
-    headers = {
-      'Content-Type': 'application/json'
-    }
   
-    HTTParty.post(url, body: body, headers: headers)
+    HTTPX.post(url, json: body)
   end
 
 end
