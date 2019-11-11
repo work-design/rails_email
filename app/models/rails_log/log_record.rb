@@ -23,10 +23,12 @@ module RailsLog::LogRecord
   end
   
   def message_content
-    body = self.as_json(only: [:path, :controller_name, :action_name, :exception, :exception_backtrace])
     content = WechatWorkMarkdown.new
-    body.each do |k, v|
+    self.as_json(only: [:path, :controller_name, :action_name, :exception]).each do |k, v|
       content.add_column(k, v)
+    end
+    self.as_json(only: [:exception_backtrace]).each do |k, v|
+      content.add_section(k, v)
     end
     content.link_more('详细点击', url_helpers.admin_log_record_url(self))
     content
