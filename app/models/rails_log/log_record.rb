@@ -27,7 +27,7 @@ module RailsLog::LogRecord
     self.as_json(only: [:path, :controller_name, :action_name, :params, :session]).each do |k, v|
       content.add_column(k, v)
     end
-    content .add_paragraph(exception)
+    content.add_paragraph(exception)
     content.add_paragraph(exception_backtrace)
     content.link_more('详细点击', url_helpers.admin_log_record_url(self))
     content
