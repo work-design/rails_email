@@ -15,7 +15,7 @@ class WechatWorkMarkdown
   end
   
   def add_paragraph(content)
-    @content
+    @content << "#{content}"
   end
   
   def add_section(header, paragraph, level: 3)
