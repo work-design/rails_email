@@ -5,7 +5,7 @@ module RailsLog
       payload = event.payload
 
       log_mailer = ::LogMailer.new(message_object_id: payload[:message_object_id], mailer: payload[:mailer])
-      log_mailer.action = payload[:action]
+      log_mailer.action_name = payload[:action_name]
       log_mailer.params = payload[:params]
       log_mailer.save
 

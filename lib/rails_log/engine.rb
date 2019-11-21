@@ -19,10 +19,6 @@ module RailsLog
       g.templates.unshift File.expand_path('lib/templates', RailsCom::Engine.root)
     end
 
-    initializer 'rails_log.assets.precompile' do |app|
-      ApplicationMailer.include MailerRecord
-    end
-
     initializer 'rails_log.quiet_logs' do |app|
       if RailsLog.config.quiet_logs
         app.middleware.insert_before ::Rails::Rack::Logger, ::RailsLog::QuietLogs

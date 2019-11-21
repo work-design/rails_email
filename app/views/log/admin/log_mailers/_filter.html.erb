@@ -1,7 +1,7 @@
 <%= form_with theme: 'search', model: LogMailer.new do |f| %>
   <div class="fields">
     <%= f.text_field :mailer %>
-    <%= f.text_field :action %>
+    <%= f.text_field :action_name %>
     <%= f.text_field :mail_to %>
     <%= f.submit %>
   </div>

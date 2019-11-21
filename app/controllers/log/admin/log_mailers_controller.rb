@@ -3,7 +3,7 @@ class Log::Admin::LogMailersController < Log::Admin::BaseController
 
   def index
     q_params = {}
-    q_params.merge! params.permit(:mailer, :action, :mail_to)
+    q_params.merge! params.permit(:mailer, :action_name, :mail_to)
     @log_mailers = LogMailer.default_where(q_params).page(params[:page])
   end
 
@@ -18,9 +18,5 @@ class Log::Admin::LogMailersController < Log::Admin::BaseController
   def set_log_mailer
     @log_mailer = LogMailer.find(params[:id])
   end
-
-  def q_params
-    params.fetch(:q, {}).permit!
-  end
-
+  
 end

@@ -25,7 +25,7 @@ class RailsLogInit < ActiveRecord::Migration[5.0]
     create_table :log_mailers do |t|
       t.string :message_object_id
       t.string :mailer
-      t.string :action
+      t.string :action_name
       t.string :params
       t.string :subject
       t.string :mail_to

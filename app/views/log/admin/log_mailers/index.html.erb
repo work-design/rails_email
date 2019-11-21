@@ -7,7 +7,7 @@
     <tr>
       <th class="one wide"><%= LogMailer.human_attribute_name(:id) %></th>
       <th class="two wide"><%= LogMailer.human_attribute_name(:mailer) %></th>
-      <th class="two wide"><%= LogMailer.human_attribute_name(:action) %></th>
+      <th class="two wide"><%= LogMailer.human_attribute_name(:action_name) %></th>
       <th class="three wide"><%= LogMailer.human_attribute_name(:params) %></th>
       <th class="two wide">
         <p><%= LogMailer.human_attribute_name(:mail_to) %></p>
@@ -25,7 +25,7 @@
     <tr>
       <td><%= log_mailer.id %></td>
       <td><%= log_mailer.mailer %></td>
-      <td><%= log_mailer.action %></td>
+      <td><%= log_mailer.action_name %></td>
       <td><%= log_mailer.params %></td>
       <td>
         <p><%= log_mailer.mail_to %></p>
@@ -35,11 +35,11 @@
       <td><%= log_mailer.sent_string %></td>
       <td><time><%= log_mailer.created_at.to_s(:rfc822) %></time></td>
       <td>
-        <%= link_to admin_log_mailer_path(log_mailer), data: { tooltip: t('.show') }, remote: true, class: 'ui blue mini icon button' do %>
-          <i class="location arrow icon"></i>
+        <%= link_to admin_log_mailer_path(log_mailer), data: { tooltip: t('.show') }, remote: true, class: 'ui mini circular icon button' do %>
+          <i class="fa fa-eye"></i>
         <% end %>
-        <%= link_to admin_log_mailer_path(log_mailer), method: :delete, data: { tooltip: t('.destroy'), confirm: t('.confirm') }, remote: true, class: 'ui red mini icon button' do %>
-          <i class="times icon"></i>
+        <%= link_to admin_log_mailer_path(log_mailer), method: :delete, data: { tooltip: t('.destroy'), confirm: t('.confirm') }, remote: true, class: 'ui mini circular icon button' do %>
+          <i class="fa fa-trash"></i>
         <% end %>
       </td>
     </tr>
