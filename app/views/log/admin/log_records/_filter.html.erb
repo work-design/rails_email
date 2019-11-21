@@ -1,4 +1,4 @@
-<%= search_form_with model: LogRecord.new do |f| %>
+<%= form_with theme: 'search', model: LogRecord.new do |f| %>
   <div class="fields">
     <%= f.text_field :controller_name %>
     <%= f.text_field :action_name %>
