@@ -23,7 +23,7 @@
   <tbody>
   <% @log_mailers.each do |log_mailer| %>
     <tr>
-      <td><%= log_mailer.id %></td>
+      <td><%= link_to log_mailer.id, admin_log_mailer_path(log_mailer) %></td>
       <td><%= log_mailer.mailer %></td>
       <td><%= log_mailer.action_name %></td>
       <td><%= log_mailer.params %></td>
