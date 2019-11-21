@@ -30,7 +30,7 @@ gem 'rails_log', require: ['log_controller', 'log_mailer']
 ```
 
 2. 运行迁移
-```ruby
+```shell
 rake rails_log_engine:install:migrations # 为Rails Engine默认提供的方法
 ```
 
