@@ -3,6 +3,7 @@ module RailsLog::LogRecord
   included do
     delegate :url_helpers, to: 'Rails.application.routes'
     
+    attribute :path, :string
     attribute :controller_name, :string
     attribute :action_name, :string
     attribute :exception, :string
