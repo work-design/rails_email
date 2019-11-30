@@ -1,8 +1,7 @@
 module RailsLog::LogRecord
   extend ActiveSupport::Concern
+
   included do
-    delegate :url_helpers, to: 'Rails.application.routes'
-    
     attribute :path, :string
     attribute :controller_name, :string
     attribute :action_name, :string
@@ -17,6 +16,8 @@ module RailsLog::LogRecord
     default_scope -> { order(id: :desc) }
 
     after_create_commit :send_message
+
+    delegate :url_helpers, to: 'Rails.application.routes'
   end
   
   def send_message
