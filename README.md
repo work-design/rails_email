@@ -19,7 +19,7 @@ Processing by Log::Admin::LogCspsController#index as HTML
 
 ## 使用方法
 
-1. 添加到gemfile中，默认包含对controller 及 mailer 的日志记录；
+* 添加到gemfile中，默认包含对controller 及 mailer 的日志记录；
 `gem 'rails_log'`
 
 如果只需要其中一个，在gemfile中指定 require
@@ -29,12 +29,7 @@ gem 'rails_log', require: 'log_controller'
 gem 'rails_log', require: ['log_controller', 'log_mailer']
 ```
 
-2. 运行迁移
-```shell
-rake rails_log_engine:install:migrations # 为Rails Engine默认提供的方法
-```
-
-3. 邮件日志相关配置
+* 邮件日志相关配置
 * 设置发送邮件返回 response
 ```ruby
 config.action_mailer.smtp_settings = {
