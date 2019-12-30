@@ -6,7 +6,8 @@ module RailsLog
   configure do |config|
     config.admin_controller = 'AdminController'
     config.ignore_exception = [
-      'ActionController::UnknownFormat'
+      'ActionController::UnknownFormat',
+      'ActiveRecord::RecordNotFound'
     ]
     config.quiet_logs = true
     config.intercept_not_found = true
