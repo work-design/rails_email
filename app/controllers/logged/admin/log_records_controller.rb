@@ -1,4 +1,4 @@
-class Log::Admin::LogRecordsController < Log::Admin::BaseController
+class Logged::Admin::LogRecordsController < Logged::Admin::BaseController
   before_action :set_log_record, only: [:show, :destroy]
 
   def index

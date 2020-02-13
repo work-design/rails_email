@@ -1,4 +1,4 @@
-class Log::Admin::LogCspsController < Log::Admin::BaseController
+class Logged::Admin::LogCspsController < Logged::Admin::BaseController
   before_action :set_log_csp, only: [:show, :destroy]
 
   def index

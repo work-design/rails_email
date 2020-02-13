@@ -1,4 +1,4 @@
-class Log::Admin::LogMailersController < Log::Admin::BaseController
+class Logged::Admin::LogMailersController < Logged::Admin::BaseController
   before_action :set_log_mailer, only: [:show, :destroy]
 
   def index
@@ -18,5 +18,5 @@ class Log::Admin::LogMailersController < Log::Admin::BaseController
   def set_log_mailer
     @log_mailer = LogMailer.find(params[:id])
   end
-  
+
 end
