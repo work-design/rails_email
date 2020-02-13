@@ -13,6 +13,7 @@ module RailsLog
     config.intercept_not_found = true
     config.disable_debug = true
     config.notify_url = 'https://qyapi.weixin.qq.com/cgi-bin/webhook/send'
+    config.not_found_logger = ActiveSupport::Logger.new('log/not_found.log')
   end
 
 end

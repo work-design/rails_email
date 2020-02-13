@@ -12,18 +12,18 @@ module RailsLog::LogRecord
     attribute :headers, :json, default: {}
     attribute :cookie, :json, default: {}
     attribute :session, :json, default: {}
-  
+
     default_scope -> { order(id: :desc) }
 
     after_create_commit :send_message
 
     delegate :url_helpers, to: 'Rails.application.routes'
   end
-  
+
   def send_message
     WechatWorkBot.send_message(message_content)
   end
-  
+
   def message_content
     content = WechatWorkMarkdown.new
     self.as_json(only: [:path, :controller_name, :action_name, :params, :session]).each do |k, v|
@@ -38,14 +38,14 @@ module RailsLog::LogRecord
   def process_job
     LogRecordNotifyJob.perform_later(self)
   end
-  
+
   class_methods do
     def record_to_log(controller, exp)
       return if Rails.env.development? && RailsLog.config.disable_debug
-  
+
       request = controller.request
       headers = request.headers
-  
+
       lc = self.new
       lc.path = request.fullpath
       lc.controller_name = controller.class.name
@@ -81,5 +81,6 @@ module RailsLog::LogRecord
         'exception_backtrace'
       ).transform_values { |i| i.limit.nil? ? -1 : i.limit - 1 }
     end
+
   end
 end

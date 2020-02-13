@@ -10,8 +10,8 @@ module RailsLog::LogMailer
     attribute :cc_to, :string
     attribute :sent_status, :string
     attribute :sent_string, :string
-    
+
     default_scope -> { order(id: :desc) }
   end
-  
+
 end
