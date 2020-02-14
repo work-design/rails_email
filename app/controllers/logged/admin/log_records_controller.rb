@@ -3,7 +3,6 @@ class Logged::Admin::LogRecordsController < Logged::Admin::BaseController
 
   def index
     q_params = {}
-    raise
     q_params.merge! params.permit('controller_name', 'action_name', 'path-like', 'exception_object')
     @log_records = LogRecord.default_where(q_params).page(params[:page]).per(params[:per])
   end
