@@ -7,7 +7,7 @@ module RailsLog::LogRecord
     attribute :action_name, :string
     attribute :exception, :string
     attribute :exception_object, :string
-    attribute :exception_backtrace, :string
+    attribute :exception_backtrace, :string, array: true
     attribute :params, :json, default: {}
     attribute :headers, :json, default: {}
     attribute :cookie, :json, default: {}
@@ -27,12 +27,23 @@ module RailsLog::LogRecord
   def message_content
     content = WechatWorkMarkdown.new
     self.as_json(only: [:path, :controller_name, :action_name, :params, :session]).each do |k, v|
-      content.add_column(k, v)
+      content.add_column self.class.human_attribute_name(k), v
     end
+    content.add_column '用户信息', user_info.inspect
     content.add_paragraph(exception)
-    content.add_paragraph(exception_backtrace)
+    content.add_paragraph(exception_backtrace[0])
     content.link_more('详细点击', url_helpers.admin_log_record_url(self))
     content
+  end
+
+  def user_info
+    token = session.dig('auth_token')
+    at = AuthorizedToken.find_by token: token
+    if at.user
+      at.user.as_json(only: [:id, :name], methods: [:account_identities])
+    else
+      at.account.as_json(only: [:id, :identity])
+    end
   end
 
   def process_job
@@ -56,7 +67,7 @@ module RailsLog::LogRecord
       lc.session = Hash.new(headers['rack.session'])
       lc.exception = [exp.class.name, exp.message].join("\r\n")[0..columns_limit['exception']]
       lc.exception_object = exp.class.to_s
-      lc.exception_backtrace = exp.backtrace.join("\r\n")[0..columns_limit['exception_backtrace']]
+      lc.exception_backtrace = exp.backtrace
       lc.save
     end
 

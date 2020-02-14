@@ -37,7 +37,7 @@ module RailsLog
       lc.session = raw_headers['rack.session'].to_h
       lc.exception = payload[:exception].join("\r\n")[0..columns_limit['exception']]
       lc.exception_object = payload[:exception_object].class.to_s
-      lc.exception_backtrace = payload[:exception_object].backtrace.join("\r\n")[0..columns_limit['exception_backtrace']]
+      lc.exception_backtrace = payload[:exception_object].backtrace
       lc.save
     end
 
