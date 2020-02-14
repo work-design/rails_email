@@ -42,7 +42,7 @@
     </tr>
     <tr>
       <td><%= LogRecord.human_attribute_name(:exception_backtrace) %></td>
-      <td><pre style="overflow-x: auto"><%= @log_record.exception_backtrace %></pre></td>
+      <td><pre style="overflow-x: auto"><%= @log_record.exception_backtrace.join("\n") %></pre></td>
     </tr>
   </tbody>
 </table>
