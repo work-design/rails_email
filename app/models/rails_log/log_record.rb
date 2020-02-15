@@ -27,8 +27,8 @@ module RailsLog::LogRecord
 
   def message_content
     content = WechatWorkMarkdown.new
-    self.as_json(only: [:path, :controller_name, :action_name, :params, :session, :ip]).each do |k, v|
-      content.add_column self.class.human_attribute_name(k), v
+    self.as_json(only: [:path, :controller_name, :action_name, :params, :session, :headers, :ip]).each do |k, v|
+      content.add_column self.class.human_attribute_name(k), v unless v.blank?
     end
     content.add_column '用户信息', user_info.inspect
     content.add_paragraph(exception)
