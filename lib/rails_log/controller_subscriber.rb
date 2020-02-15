@@ -33,6 +33,7 @@ module RailsLog
       lc.action_name = payload[:action]
       lc.params = ::LogRecord.filter_params(payload[:params])
       lc.headers = ::LogRecord.request_headers(raw_headers)
+      lc.ip = raw_headers['action_dispatch.remote_ip'].to_s
       lc.cookie = raw_headers['rack.request.cookie_hash']
       lc.session = raw_headers['rack.session'].to_h
       lc.exception = payload[:exception].join("\r\n")[0..columns_limit['exception']]

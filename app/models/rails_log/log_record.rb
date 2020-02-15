@@ -12,6 +12,7 @@ module RailsLog::LogRecord
     attribute :headers, :json, default: {}
     attribute :cookie, :json, default: {}
     attribute :session, :json, default: {}
+    attribute :ip, :string
 
     default_scope -> { order(id: :desc) }
 
@@ -26,7 +27,7 @@ module RailsLog::LogRecord
 
   def message_content
     content = WechatWorkMarkdown.new
-    self.as_json(only: [:path, :controller_name, :action_name, :params, :session]).each do |k, v|
+    self.as_json(only: [:path, :controller_name, :action_name, :params, :session, :ip]).each do |k, v|
       content.add_column self.class.human_attribute_name(k), v
     end
     content.add_column '用户信息', user_info.inspect
@@ -61,6 +62,7 @@ module RailsLog::LogRecord
       lc.path = request.fullpath
       lc.controller_name = controller.class.name
       lc.action_name = controller.action_name
+      lc.ip = request.remote_ip
       lc.params = filter_params(request.filtered_parameters)
       lc.headers = request_headers(headers)
       lc.cookie = headers['rack.request.cookie_hash']
