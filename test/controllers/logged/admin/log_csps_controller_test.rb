@@ -1,5 +1,5 @@
 require 'test_helper'
-class Log::Admin::LogCspsControllerTest < ActionDispatch::IntegrationTest
+class Logged::Admin::LogCspsControllerTest < ActionDispatch::IntegrationTest
 
   setup do
     @log_csp = create :log_csp
@@ -9,12 +9,12 @@ class Log::Admin::LogCspsControllerTest < ActionDispatch::IntegrationTest
     get admin_log_csps_url
     assert_response :success
   end
-  
+
   test 'show ok' do
     get admin_log_csp_url(@log_csp), xhr: true
     assert_response :success
   end
-  
+
   test 'destroy ok' do
     assert_difference('LogCsp.count', -1) do
       delete admin_log_csp_url(@log_csp), xhr: true

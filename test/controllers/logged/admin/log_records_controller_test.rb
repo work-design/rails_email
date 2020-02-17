@@ -1,5 +1,5 @@
 require 'test_helper'
-class Log::Admin::LogRecordsControllerTest < ActionDispatch::IntegrationTest
+class Logged::Admin::LogRecordsControllerTest < ActionDispatch::IntegrationTest
 
   setup do
     @log_record = create :log_record
@@ -14,7 +14,7 @@ class Log::Admin::LogRecordsControllerTest < ActionDispatch::IntegrationTest
     get admin_log_record_url(@log_record), xhr: true
     assert_response :success
   end
-  
+
   test 'destroy ok' do
     assert_difference('LogRecord.count', -1) do
       delete admin_log_record_url(@log_record), xhr: true
@@ -22,5 +22,5 @@ class Log::Admin::LogRecordsControllerTest < ActionDispatch::IntegrationTest
 
     assert_response :success
   end
-  
+
 end
