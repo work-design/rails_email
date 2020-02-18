@@ -43,7 +43,7 @@ module RailsLog::LogRecord
   end
 
   def user_info
-    token = session.dig('auth_token')
+    token = session.dig('auth_token') || headers.dig('AUTH_TOKEN')
     return {} unless defined? AuthorizedToken
     at = AuthorizedToken.find_by token: token
     if at&.user
