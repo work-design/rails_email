@@ -27,19 +27,7 @@ module RailsLog::LogRecord
   end
 
   def send_message
-    WechatWorkBot.send_message(message_content)
-  end
-
-  def message_content
-    content = WechatWorkMarkdown.new
-    self.as_json(only: [:path, :controller_name, :action_name, :params, :session, :headers, :ip]).each do |k, v|
-      content.add_column self.class.human_attribute_name(k), v unless v.blank?
-    end
-    content.add_column '用户信息', user_info.inspect
-    content.add_paragraph(exception)
-    content.add_paragraph(exception_backtrace[0])
-    content.link_more('详细点击', url_helpers.admin_log_record_url(self))
-    content
+    RailsLog.config.notify_bot.constantize.new(self).send_message
   end
 
   def user_info
