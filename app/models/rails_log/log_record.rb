@@ -46,10 +46,12 @@ module RailsLog::LogRecord
     token = session.dig('auth_token')
     return {} unless defined? AuthorizedToken
     at = AuthorizedToken.find_by token: token
-    if at.user
+    if at&.user
       at.user.as_json(only: [:id, :name], methods: [:account_identities])
-    else
+    elsif at&.account
       at.account.as_json(only: [:id, :identity])
+    else
+      {}
     end
   end
 
