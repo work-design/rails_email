@@ -1,13 +1,13 @@
 GIT
   remote: https://github.com/qinmingyuan/default_form.git
-  revision: 7958a123127221461cc960960f541b9b4dda0c60
+  revision: e4600e93de120cc2d3a49970f6f1606179f8aa06
   specs:
     default_form (1.5.0)
       rails_com (~> 1.2)
 
 GIT
   remote: https://github.com/work-design/rails_com.git
-  revision: 8bdf3ed3ed11c722268a72e8447030adb6322e4a
+  revision: 9bab932ab26c9c0566afeb1180e8410fb5fa8944
   specs:
     rails_com (1.2.9)
       default_where (~> 2.2)
@@ -82,8 +82,8 @@ GEM
     awesome_print (1.8.0)
     builder (3.2.4)
     coderay (1.1.2)
-    concurrent-ruby (1.1.5)
-    crass (1.0.5)
+    concurrent-ruby (1.1.6)
+    crass (1.0.6)
     default_where (2.2.0)
       activerecord (>= 4.0.0)
     erubi (1.9.0)
@@ -94,25 +94,25 @@ GEM
       railties (>= 4.2.0)
     globalid (0.4.2)
       activesupport (>= 4.2.0)
-    http-2-next (0.2.1)
+    http-2-next (0.2.2)
     http-form_data (2.2.0)
-    httpx (0.6.5)
+    httpx (0.6.6)
       http-2-next (>= 0.1.2)
       timers
-    i18n (1.7.0)
+    i18n (1.8.2)
       concurrent-ruby (~> 1.0)
-    kaminari (1.1.1)
+    kaminari (1.2.0)
       activesupport (>= 4.1.0)
-      kaminari-actionview (= 1.1.1)
-      kaminari-activerecord (= 1.1.1)
-      kaminari-core (= 1.1.1)
-    kaminari-actionview (1.1.1)
+      kaminari-actionview (= 1.2.0)
+      kaminari-activerecord (= 1.2.0)
+      kaminari-core (= 1.2.0)
+    kaminari-actionview (1.2.0)
       actionview
-      kaminari-core (= 1.1.1)
-    kaminari-activerecord (1.1.1)
+      kaminari-core (= 1.2.0)
+    kaminari-activerecord (1.2.0)
       activerecord
-      kaminari-core (= 1.1.1)
-    kaminari-core (1.1.1)
+      kaminari-core (= 1.2.0)
+    kaminari-core (1.2.0)
     loofah (2.4.0)
       crass (~> 1.0.2)
       nokogiri (>= 1.5.9)
@@ -121,12 +121,12 @@ GEM
     marcel (0.3.3)
       mimemagic (~> 0.3.2)
     method_source (0.9.2)
-    mimemagic (0.3.3)
+    mimemagic (0.3.4)
     mini_mime (1.0.2)
     mini_portile2 (2.4.0)
-    minitest (5.13.0)
+    minitest (5.14.0)
     nio4r (2.5.2)
-    nokogiri (1.10.7)
+    nokogiri (1.10.8)
       mini_portile2 (~> 2.4.0)
     pry (0.12.2)
       coderay (~> 1.1.0)
@@ -135,7 +135,7 @@ GEM
       pry (>= 0.10.4)
     puma (4.3.1)
       nio4r (~> 2.0)
-    rack (2.0.8)
+    rack (2.2.2)
     rack-proxy (0.6.5)
       rack
     rack-test (1.1.0)
