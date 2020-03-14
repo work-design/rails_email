@@ -1,13 +1,13 @@
 GIT
   remote: https://github.com/qinmingyuan/default_form.git
-  revision: e4600e93de120cc2d3a49970f6f1606179f8aa06
+  revision: c55e73c74f188513b852393e12dfef7b31764303
   specs:
     default_form (1.5.0)
       rails_com (~> 1.2)
 
 GIT
   remote: https://github.com/work-design/rails_com.git
-  revision: 70e0ad52e892696aa9ea49eceecd93e82deda450
+  revision: 5334e3eb7437caf9b78f9fcdcb900fdc3b59eafe
   specs:
     rails_com (1.2.9)
       default_where (~> 2.2)
@@ -94,9 +94,9 @@ GEM
       railties (>= 4.2.0)
     globalid (0.4.2)
       activesupport (>= 4.2.0)
-    http-2-next (0.2.2)
-    http-form_data (2.2.0)
-    httpx (0.6.6)
+    http-2-next (0.2.5)
+    http-form_data (2.3.0)
+    httpx (0.6.7)
       http-2-next (>= 0.1.2)
       timers
     i18n (1.8.2)
@@ -126,14 +126,14 @@ GEM
     mini_portile2 (2.4.0)
     minitest (5.14.0)
     nio4r (2.5.2)
-    nokogiri (1.10.8)
+    nokogiri (1.10.9)
       mini_portile2 (~> 2.4.0)
     pry (0.12.2)
       coderay (~> 1.1.0)
       method_source (~> 0.9.0)
     pry-rails (0.3.9)
       pry (>= 0.10.4)
-    puma (4.3.1)
+    puma (4.3.3)
       nio4r (~> 2.0)
     rack (2.2.2)
     rack-proxy (0.6.5)
@@ -193,7 +193,7 @@ GEM
     websocket-driver (0.7.1)
       websocket-extensions (>= 0.1.0)
     websocket-extensions (0.1.4)
-    zeitwerk (2.2.2)
+    zeitwerk (2.3.0)
 
 PLATFORMS
   ruby
@@ -214,4 +214,4 @@ DEPENDENCIES
   webpacker
 
 BUNDLED WITH
-   1.17.2
+   2.1.2
