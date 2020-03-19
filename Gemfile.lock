@@ -7,7 +7,7 @@ GIT
 
 GIT
   remote: https://github.com/work-design/rails_com.git
-  revision: 5334e3eb7437caf9b78f9fcdcb900fdc3b59eafe
+  revision: 19e85ed037407d6bf4fc603af53d5156cc4fc90b
   specs:
     rails_com (1.2.9)
       default_where (~> 2.2)
@@ -94,8 +94,8 @@ GEM
       railties (>= 4.2.0)
     globalid (0.4.2)
       activesupport (>= 4.2.0)
-    http-2-next (0.2.5)
-    http-form_data (2.3.0)
+    http-2-next (0.2.3)
+    http-form_data (2.2.0)
     httpx (0.6.7)
       http-2-next (>= 0.1.2)
       timers
