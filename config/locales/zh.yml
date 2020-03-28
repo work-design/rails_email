@@ -1,12 +1,16 @@
 zh:
   logged:
     admin:
+      title: 日志
       log_records:
         index:
           title: 错误日志
       log_mailers:
         index:
           title: 邮件日志
+      log_csps:
+        index:
+          title: 内容安全
   activerecord:
     attributes:
       log_record:
