@@ -1,13 +1,13 @@
 GIT
   remote: https://github.com/qinmingyuan/default_form.git
-  revision: f4e1e04100e7fe41d5384f24eaf99ce6fef338fa
+  revision: cd01cb958728534b17878a5dc3bce572bd1ce807
   specs:
     default_form (1.5.0)
       rails_com (~> 1.2)
 
 GIT
   remote: https://github.com/work-design/rails_com.git
-  revision: b7a658759540c2215f3a599d8a73d94a3041ccb9
+  revision: 3077155643aba877089a74df8057bd4bbe1ec047
   specs:
     rails_com (1.2.9)
       default_where (~> 2.2)
