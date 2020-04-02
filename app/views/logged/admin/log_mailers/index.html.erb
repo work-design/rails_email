@@ -35,10 +35,10 @@
       <td><%= log_mailer.sent_string %></td>
       <td><time><%= log_mailer.created_at.to_s(:rfc822) %></time></td>
       <td>
-        <%= link_to admin_log_mailer_path(log_mailer), aria: { label: t('.show') }, remote: true, class: 'ui mini circular icon button' do %>
+        <%= link_to admin_log_mailer_path(log_mailer), aria: { label: t('.show') }, remote: true, class: 'button is-small is-rounded is-light' do %>
           <i class="fa fa-eye"></i>
         <% end %>
-        <%= link_to admin_log_mailer_path(log_mailer), method: :delete, aria: { label: t('.destroy') }, data: { confirm: t('.confirm') }, remote: true, class: 'ui mini circular icon button' do %>
+        <%= link_to admin_log_mailer_path(log_mailer), method: :delete, aria: { label: t('.destroy') }, data: { confirm: t('.confirm') }, remote: true, class: 'button is-small is-rounded is-light' do %>
           <i class="fa fa-trash"></i>
         <% end %>
       </td>
