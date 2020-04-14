@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
 
-  scope :admin, module: 'logged/admin', as: 'admin' do
+  scope :panel, module: 'logged/panel', as: :panel do
     resources :log_records, only: [:index, :show, :destroy]
     resources :log_mailers, only: [:index, :show, :destroy]
     resources :log_csps, only: [:index, :show, :destroy]

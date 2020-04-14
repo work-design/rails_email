@@ -1,6 +1,6 @@
 zh:
   logged:
-    admin:
+    panel:
       title: 日志
       log_records:
         index:

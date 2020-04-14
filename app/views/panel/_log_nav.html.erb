@@ -1,0 +1,12 @@
+<div class="<%= active_helper(modules: 'logged/panel', active_class: 'menu ex-accordion is-active', item_class: 'menu ex-accordion') %>" data-controller="menu">
+  <%= content_tag :div, class: 'menu-list' do -%>
+    <%= link_to t('logged.panel.log_records.index.title'), panel_log_records_path, class: active_helper(controller: 'log_records') %>
+    <%= link_to t('logged.panel.log_mailers.index.title'), panel_log_mailers_path, class: active_helper(controller: 'log_mailers') %>
+    <%= link_to t('logged.panel.log_csps.index.title'), panel_log_csps_path, class: active_helper(controller: 'log_csps') %>
+  <% end %>
+  <a class="menu-label" data-action="menu#toggle">
+    <i class="fas fa-bug"></i>
+    <span><%= t('logged.panel.title') %></span>
+    <i class="fas dropdown"></i>
+  </a>
+</div>
