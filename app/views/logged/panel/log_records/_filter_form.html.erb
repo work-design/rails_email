@@ -1,9 +1,11 @@
 <%= form_with theme: 'search', model: LogRecord.new do |f| %>
-  <div class="fields">
+  <div class="field-body">
     <%= f.text_field :controller_name %>
     <%= f.text_field :action_name %>
     <%= f.text_field :'path-like' %>
     <%= f.text_field :exception_object %>
-    <%= f.submit %>
+    <div class="field is-narrow">
+      <%= f.submit %>
+    </div>
   </div>
 <% end %>
