@@ -1,19 +1,19 @@
 <%= render 'filter_form' %>
 
-<table class="table is-hoverable is-fullwidth">
+<table class="table is-hoverable is-fullwidth" style="table-layout: fixed;">
   <thead>
     <tr>
-      <th class="one wide"><%= LogRecord.human_attribute_name(:id) %></th>
-      <th class="three wide">
+      <th style="width: 4rem;"><%= LogRecord.human_attribute_name(:id) %></th>
+      <th>
         <p><%= LogRecord.human_attribute_name(:path) %></p>
         <p><%= LogRecord.human_attribute_name(:controller_name) %></p>
         <p><%= LogRecord.human_attribute_name(:action_name) %></p>
       </th>
-      <th class="three wide"><%= LogRecord.human_attribute_name(:params) %></th>
-      <th class="three wide"><%= LogRecord.human_attribute_name(:session) %></th>
-      <th class="four wide"><%= LogRecord.human_attribute_name(:exception) %></th>
-      <th class="one wide"><%= LogRecord.human_attribute_name(:created_at) %></th>
-      <th class="one wide"></th>
+      <th><%= LogRecord.human_attribute_name(:params) %></th>
+      <th><%= LogRecord.human_attribute_name(:session) %></th>
+      <th><%= LogRecord.human_attribute_name(:exception) %></th>
+      <th><%= LogRecord.human_attribute_name(:created_at) %></th>
+      <th></th>
     </tr>
   </thead>
 

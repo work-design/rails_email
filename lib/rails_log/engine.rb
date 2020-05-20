@@ -16,7 +16,7 @@ class RailsLog::Engine < ::Rails::Engine # :nodoc:
   end
 
   initializer 'rails_log.quiet_logs' do |app|
-    if RailsLog.config.quiet_logs
+    if RailsLog.config.quiet_logs.present?
       app.middleware.insert_before ::Rails::Rack::Logger, ::RailsLog::QuietLogs
     end
   end

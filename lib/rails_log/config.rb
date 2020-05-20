@@ -9,7 +9,9 @@ module RailsLog
       'ActionController::UnknownFormat',
       'ActiveRecord::RecordNotFound'
     ]
-    config.quiet_logs = true
+    config.quiet_logs = [
+      '/rails/active_storage'
+    ]
     config.intercept_not_found = true
     config.disable_debug = true
     config.notify_bot = 'WorkWechatBot'
