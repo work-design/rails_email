@@ -4,7 +4,6 @@ gemspec
 
 gem 'rails'
 gem 'sqlite3'
-gem 'puma'
 gem 'webpacker'
 
 gem 'turbolinks'
