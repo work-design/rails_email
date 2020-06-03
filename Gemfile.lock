@@ -1,13 +1,13 @@
 GIT
   remote: https://github.com/qinmingyuan/default_form.git
-  revision: 2c9a69ca1789bf4a5928481a0e883d3a6a6ccf3b
+  revision: 2f56f33a823bf5689e84478aee7595d0d8a5b64b
   specs:
     default_form (1.5.1)
       rails_com (~> 1.2)
 
 GIT
   remote: https://github.com/work-design/rails_com.git
-  revision: 48adc26b3f733e38d671c082dbc8c3a6275c9f72
+  revision: 6caef1c18a8cdaf348281f4a496d50f1c558658f
   specs:
     rails_com (1.2.9)
       default_where (~> 2.2)
@@ -81,7 +81,7 @@ GEM
       zeitwerk (~> 2.2, >= 2.2.2)
     awesome_print (1.8.0)
     builder (3.2.4)
-    coderay (1.1.2)
+    coderay (1.1.3)
     concurrent-ruby (1.1.6)
     crass (1.0.6)
     default_where (2.2.0)
@@ -101,18 +101,18 @@ GEM
       timers
     i18n (1.8.2)
       concurrent-ruby (~> 1.0)
-    kaminari (1.2.0)
+    kaminari (1.2.1)
       activesupport (>= 4.1.0)
-      kaminari-actionview (= 1.2.0)
-      kaminari-activerecord (= 1.2.0)
-      kaminari-core (= 1.2.0)
-    kaminari-actionview (1.2.0)
+      kaminari-actionview (= 1.2.1)
+      kaminari-activerecord (= 1.2.1)
+      kaminari-core (= 1.2.1)
+    kaminari-actionview (1.2.1)
       actionview
-      kaminari-core (= 1.2.0)
-    kaminari-activerecord (1.2.0)
+      kaminari-core (= 1.2.1)
+    kaminari-activerecord (1.2.1)
       activerecord
-      kaminari-core (= 1.2.0)
-    kaminari-core (1.2.0)
+      kaminari-core (= 1.2.1)
+    kaminari-core (1.2.1)
     loofah (2.5.0)
       crass (~> 1.0.2)
       nokogiri (>= 1.5.9)
@@ -192,7 +192,7 @@ GEM
       semantic_range (>= 2.3.0)
     websocket-driver (0.7.2)
       websocket-extensions (>= 0.1.0)
-    websocket-extensions (0.1.4)
+    websocket-extensions (0.1.5)
     zeitwerk (2.3.0)
 
 PLATFORMS
