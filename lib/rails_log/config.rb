@@ -4,7 +4,6 @@ module RailsLog
   include ActiveSupport::Configurable
 
   configure do |config|
-    config.panel_controller = 'PanelController'
     config.ignore_exception = [
       'ActionController::UnknownFormat',
       'ActiveRecord::RecordNotFound'

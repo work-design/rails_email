@@ -1,3 +1,3 @@
-class Logged::Panel::BaseController < RailsLog.config.panel_controller.constantize
+class Logged::Panel::BaseController < PanelController
 
-end
+end unless defined? Logged::Panel::BaseController
