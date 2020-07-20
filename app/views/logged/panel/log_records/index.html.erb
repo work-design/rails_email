@@ -22,13 +22,19 @@
     <tr>
       <td><%= link_to log_record.id, panel_log_record_path(log_record) %></td>
       <td>
-        <p><%= log_record.path %></p>
+        <pre><%= log_record.path %></pre>
         <p><%= log_record.controller_name %></p>
         <p><%= log_record.action_name %></p>
       </td>
-      <td><%= simple_format log_record.params %></td>
-      <td><%= simple_format log_record.session %></td>
-      <td><%= simple_format log_record.exception %></td>
+      <td>
+        <pre><%= log_record.params %></pre>
+      </td>
+      <td>
+        <pre><%= log_record.session %></pre>
+      </td>
+      <td>
+        <pre><%= log_record.exception %></pre>
+      </td>
       <td><time><%= log_record.created_at.to_s(:rfc822) %></time></td>
       <td>
         <%= link_to panel_log_record_path(log_record), aria: { label: t('.show') }, remote: true, class: 'button is-small is-rounded is-light' do %>
