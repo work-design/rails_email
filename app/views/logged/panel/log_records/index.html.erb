@@ -33,7 +33,7 @@
         <p><%= log_record.session %></p>
       </td>
       <td>
-        <p><%= log_record.exception %></p>
+        <p style="max-height: 100px"><%= log_record.exception %></p>
       </td>
       <td><time><%= log_record.created_at.to_s(:rfc822) %></time></td>
       <td>
