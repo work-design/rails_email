@@ -1,48 +1,5 @@
-<%= render 'filter_form' %>
-
-<table class="table is-hoverable is-fullwidth">
-  <thead>
-    <tr>
-      <th class="one wide"><%= LogMailer.human_attribute_name(:id) %></th>
-      <th class="two wide"><%= LogMailer.human_attribute_name(:mailer) %></th>
-      <th class="two wide"><%= LogMailer.human_attribute_name(:action_name) %></th>
-      <th class="three wide"><%= LogMailer.human_attribute_name(:params) %></th>
-      <th class="two wide">
-        <p><%= LogMailer.human_attribute_name(:mail_to) %></p>
-        <p><%= LogMailer.human_attribute_name(:cc_to) %></p>
-      </th>
-      <th class="one wide"><%= LogMailer.human_attribute_name(:sent_status) %></th>
-      <th class="five wide"><%= LogMailer.human_attribute_name(:sent_string) %></th>
-      <th class="two wide"><%= LogMailer.human_attribute_name(:created_at) %></th>
-      <th class="two wide"></th>
-    </tr>
-  </thead>
-
-  <tbody>
-  <% @log_mailers.each do |log_mailer| %>
-    <tr>
-      <td><%= link_to log_mailer.id, panel_log_mailer_path(log_mailer) %></td>
-      <td><%= log_mailer.mailer %></td>
-      <td><%= log_mailer.action_name %></td>
-      <td><%= log_mailer.params %></td>
-      <td>
-        <p><%= log_mailer.mail_to %></p>
-        <p><%= log_mailer.cc_to %></p>
-      </td>
-      <td><%= log_mailer.sent_status %></td>
-      <td><%= log_mailer.sent_string %></td>
-      <td><time><%= log_mailer.created_at.to_s(:rfc822) %></time></td>
-      <td>
-        <%= link_to panel_log_mailer_path(log_mailer), aria: { label: t('.show') }, remote: true, class: 'button is-small is-rounded is-light' do %>
-          <i class="fa fa-eye"></i>
-        <% end %>
-        <%= link_to panel_log_mailer_path(log_mailer), method: :delete, aria: { label: t('.destroy') }, data: { confirm: t('.confirm') }, remote: true, class: 'button is-small is-rounded is-light' do %>
-          <i class="fa fa-trash"></i>
-        <% end %>
-      </td>
-    </tr>
-  <% end %>
-  </tbody>
-</table>
+<%= render layout: 'index_table', locals: { cache_key: LogMailer.column_names.hash } do %>
+  <%= render partial: 'index_tbody', collection: @log_mailers, as: :log_mailer %>
+<% end %>
 
 <%= paginate @log_mailers %>

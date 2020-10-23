@@ -1,47 +1,5 @@
-<%= render 'filter_form' %>
-
-<table class="table is-hoverable is-fullwidth">
-  <thead>
-    <tr>
-      <th><%= LogCsp.human_attribute_name(:id) %></th>
-      <th>
-        <p><%= LogCsp.human_attribute_name(:document_uri) %></p>
-        <p><%= LogCsp.human_attribute_name(:referrer) %></p>
-      </th>
-      <th><%= LogCsp.human_attribute_name(:blocked_uri) %></th>
-      <th>
-        <p><%= LogCsp.human_attribute_name(:violated_directive) %></p>
-        <p><%= LogCsp.human_attribute_name(:effective_directive) %></p>
-      </th>
-      <th><%= LogCsp.human_attribute_name(:original_policy) %></th>
-      <th></th>
-    </tr>
-  </thead>
-  <tbody>
-  <% @log_csps.each do |log_csp| %>
-    <tr>
-      <td><%= log_csp.id %></td>
-      <td>
-        <p><%= log_csp.document_uri %></p>
-        <p><%= log_csp.referrer %></p>
-      </td>
-      <td><%= log_csp.blocked_uri %></td>
-      <td>
-        <p><%= log_csp.violated_directive %></p>
-        <p><%= log_csp.effective_directive %></p>
-      </td>
-      <td><%= simple_format log_csp.original_policy.split('; ') %></td>
-      <td>
-        <%= link_to panel_log_csp_path(log_csp), aria: { label: t('.show') }, remote: true, class: 'button is-small is-rounded is-light' do %>
-          <i class="fas fa-eye"></i>
-        <% end %>
-        <%= link_to panel_log_csp_path(log_csp), method: :delete, aria: { label: t('.destroy') }, data: { confirm: t('.confirm') }, remote: true, class: 'button is-small is-rounded is-light' do %>
-          <i class="fas fa-trash-alt"></i>
-        <% end %>
-      </td>
-    </tr>
-  <% end %>
-  </tbody>
-</table>
+<%= render layout: 'index_table', locals: { cache_key: LogCsp.column_names.hash } do %>
+  <%= render partial: 'index_tbody', collection: @log_csps, as: :log_csp %>
+<% end %>
 
 <%= paginate @log_csps %>

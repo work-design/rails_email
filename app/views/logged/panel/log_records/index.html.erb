@@ -1,52 +1,5 @@
-<%= render 'filter_form' %>
-
-<table class="table is-hoverable is-striped is-fullwidth">
-  <thead>
-    <tr>
-      <th style="width: 4rem;"><%= LogRecord.human_attribute_name(:id) %></th>
-      <th>
-        <p><%= LogRecord.human_attribute_name(:path) %></p>
-        <p><%= LogRecord.human_attribute_name(:controller_name) %></p>
-        <p><%= LogRecord.human_attribute_name(:action_name) %></p>
-      </th>
-      <th><%= LogRecord.human_attribute_name(:params) %></th>
-      <th><%= LogRecord.human_attribute_name(:session) %></th>
-      <th><%= LogRecord.human_attribute_name(:exception) %></th>
-      <th><%= LogRecord.human_attribute_name(:created_at) %></th>
-      <th></th>
-    </tr>
-  </thead>
-
-  <tbody>
-  <% @log_records.each do |log_record| %>
-    <tr>
-      <td><%= link_to log_record.id, panel_log_record_path(log_record) %></td>
-      <td>
-        <p><%= log_record.path %></p>
-        <p><%= log_record.controller_name %></p>
-        <p><%= log_record.action_name %></p>
-      </td>
-      <td>
-        <p><%= log_record.params %></p>
-      </td>
-      <td>
-        <p><%= log_record.session %></p>
-      </td>
-      <td>
-        <p style="max-height: 100px"><%= log_record.exception %></p>
-      </td>
-      <td><time><%= log_record.created_at.to_s(:rfc822) %></time></td>
-      <td>
-        <%= link_to panel_log_record_path(log_record), aria: { label: t('.show') }, remote: true, class: 'button is-small is-rounded is-light' do %>
-          <i class="fas fa-eye"></i>
-        <% end %>
-        <%= link_to panel_log_record_path(log_record), method: :delete, aria: { label: t('.destroy') }, remote: true, class: 'button is-small is-rounded is-light' do %>
-          <i class="fas fa-trash"></i>
-        <% end %>
-      </td>
-    </tr>
-  <% end %>
-  </tbody>
-</table>
+<%= render layout: 'index_table', locals: { cache_key: LogRecord.column_names.hash } do %>
+  <%= render partial: 'index_tbody', collection: @log_records, as: :log_record %>
+<% end %>
 
 <%= paginate @log_records %>

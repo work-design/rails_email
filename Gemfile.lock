@@ -1,22 +1,23 @@
 GIT
   remote: https://github.com/qinmingyuan/default_form.git
-  revision: 56536edc9bbc76fdc435489c451b0e550b6ae230
+  revision: 979419809f67974ee7bebce7764eca540a6c73db
   specs:
     default_form (1.5.1)
       rails_com (~> 1.2)
 
 GIT
   remote: https://github.com/work-design/rails_com.git
-  revision: 4399a8e029722e9482f2fc008c8a85fbbe93a632
+  revision: fc8a8df92918660fecc9e87ac83b97d2ebe1b984
   specs:
     rails_com (1.2.9)
       acme-client
+      acts_as_list (>= 1.0)
+      closure_tree (>= 7.2)
       default_where (~> 2.2)
       http-form_data (~> 2.2)
       httpx (~> 0.8)
       kaminari
       rails (~> 6.0)
-      rqrcode
 
 PATH
   remote: .
@@ -84,9 +85,13 @@ GEM
       minitest (~> 5.1)
       tzinfo (~> 1.1)
       zeitwerk (~> 2.2, >= 2.2.2)
+    acts_as_list (1.0.2)
+      activerecord (>= 4.2)
     awesome_print (1.8.0)
     builder (3.2.4)
-    chunky_png (1.3.12)
+    closure_tree (7.2.0)
+      activerecord (>= 4.2.10)
+      with_advisory_lock (>= 4.0.0)
     coderay (1.1.3)
     concurrent-ruby (1.1.7)
     crass (1.0.6)
@@ -104,7 +109,7 @@ GEM
       activesupport (>= 4.2.0)
     http-2-next (0.2.6)
     http-form_data (2.3.0)
-    httpx (0.8.2)
+    httpx (0.9.0)
       http-2-next (>= 0.1.2)
       timers
     i18n (1.8.5)
@@ -175,10 +180,6 @@ GEM
       thor (>= 0.20.3, < 2.0)
     rake (13.0.1)
     rdoc (6.2.1)
-    rqrcode (1.1.2)
-      chunky_png (~> 1.0)
-      rqrcode_core (~> 0.1)
-    rqrcode_core (0.1.2)
     sdoc (1.1.0)
       rdoc (>= 5.0)
     semantic_range (2.3.0)
@@ -206,6 +207,8 @@ GEM
     websocket-driver (0.7.3)
       websocket-extensions (>= 0.1.0)
     websocket-extensions (0.1.5)
+    with_advisory_lock (4.6.0)
+      activerecord (>= 4.2)
     zeitwerk (2.4.0)
 
 PLATFORMS
