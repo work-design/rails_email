@@ -12,7 +12,7 @@
   <td><time><%= log_mailer.created_at.to_s(:rfc822) %></time></td>
   <td>
     <%= link_to panel_log_mailer_path(log_mailer), aria: { label: t('.show') }, remote: true, class: 'button is-small is-rounded is-light' do %>
-      <i class="fa fa-eye"></i>
+      <i class="fa fa-info"></i>
     <% end %>
     <%= link_to panel_log_mailer_path(log_mailer), method: :delete, aria: { label: t('.destroy') }, data: { confirm: t('.confirm') }, remote: true, class: 'button is-small is-rounded is-light' do %>
       <i class="fa fa-trash"></i>

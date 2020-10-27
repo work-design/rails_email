@@ -12,7 +12,7 @@
   <td><%= simple_format log_csp.original_policy.split('; ') %></td>
   <td>
     <%= link_to panel_log_csp_path(log_csp), aria: { label: t('.show') }, remote: true, class: 'button is-small is-rounded is-light' do %>
-      <i class="fas fa-eye"></i>
+      <i class="fas fa-info"></i>
     <% end %>
     <%= link_to panel_log_csp_path(log_csp), method: :delete, aria: { label: t('.destroy') }, data: { confirm: t('.confirm') }, remote: true, class: 'button is-small is-rounded is-light' do %>
       <i class="fas fa-trash-alt"></i>

@@ -17,7 +17,7 @@
   <td><time><%= log_record.created_at.to_s(:rfc822) %></time></td>
   <td>
     <%= link_to panel_log_record_path(log_record), aria: { label: t('.show') }, remote: true, class: 'button is-small is-rounded is-light' do %>
-      <i class="fas fa-eye"></i>
+      <i class="fas fa-info"></i>
     <% end %>
     <%= link_to panel_log_record_path(log_record), method: :delete, aria: { label: t('.destroy') }, remote: true, class: 'button is-small is-rounded is-light' do %>
       <i class="fas fa-trash"></i>
