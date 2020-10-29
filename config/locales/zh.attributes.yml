@@ -1,0 +1,7 @@
+zh:
+  activerecord:
+    attributes:
+      log_record:
+        path: 路径
+        controller_name: Controller
+        action_name: Action
