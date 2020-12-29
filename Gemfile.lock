@@ -1,13 +1,13 @@
 GIT
   remote: https://github.com/qinmingyuan/default_form.git
-  revision: ac31a38225b03689bf533ca3973b538a65abde36
+  revision: 33098aaeee43889b3492049be3400217f008437a
   specs:
     default_form (1.5.1)
       rails_com (~> 1.2)
 
 GIT
   remote: https://github.com/work-design/rails_com.git
-  revision: 2de290bb9fe0373dc8139db04d3621866cafe61f
+  revision: 2caea265701b5f6df521701f6008670b0c462902
   specs:
     rails_com (1.2.9)
       acme-client
@@ -89,7 +89,7 @@ GEM
       minitest (>= 5.1)
       tzinfo (~> 2.0)
       zeitwerk (~> 2.3)
-    acts_as_list (1.0.2)
+    acts_as_list (1.0.3)
       activerecord (>= 4.2)
     awesome_print (1.8.0)
     builder (3.2.4)
@@ -107,7 +107,7 @@ GEM
     factory_bot_rails (6.1.0)
       factory_bot (~> 6.1.0)
       railties (>= 5.0.0)
-    faraday (1.1.0)
+    faraday (1.2.0)
       multipart-post (>= 1.2, < 3)
       ruby2_keywords
     globalid (0.4.2)
@@ -234,4 +234,4 @@ DEPENDENCIES
   webpacker
 
 BUNDLED WITH
-   2.1.4
+   2.2.3

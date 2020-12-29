@@ -1,26 +1,16 @@
-<tr>
-  <td><%= link_to log_record.id, panel_log_record_path(log_record) %></td>
-  <td>
-    <p><%= log_record.path %></p>
-    <p><%= log_record.controller_name %></p>
-    <p><%= log_record.action_name %></p>
-  </td>
-  <td>
-    <p><%= log_record.params %></p>
-  </td>
-  <td>
-    <p><%= log_record.session %></p>
-  </td>
-  <td>
-    <p style="max-height: 100px"><%= log_record.exception %></p>
-  </td>
-  <td><time><%= log_record.created_at.to_s(:rfc822) %></time></td>
-  <td>
-    <%= link_to panel_log_record_path(log_record), aria: { label: t('.show') }, remote: true, class: 'button is-small is-rounded is-light' do %>
-      <i class="fas fa-info"></i>
-    <% end %>
-    <%= link_to panel_log_record_path(log_record), method: :delete, aria: { label: t('.destroy') }, remote: true, class: 'button is-small is-rounded is-light' do %>
-      <i class="fas fa-trash"></i>
-    <% end %>
-  </td>
-</tr>
+<td><%= link_to model.id, { action: 'show', id: model.id }, text: true %></td>
+<td>
+  <p><%= model.path %></p>
+  <p><%= model.controller_name %></p>
+  <p><%= model.action_name %></p>
+</td>
+<td>
+  <p><%= model.params %></p>
+</td>
+<td>
+  <p><%= model.session %></p>
+</td>
+<td>
+  <p style="max-height: 100px"><%= model.exception %></p>
+</td>
+<td><time data-controller="time"><%= model.created_at.to_s(:rfc822) %></time></td>

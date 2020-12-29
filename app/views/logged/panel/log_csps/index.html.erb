@@ -1,5 +1,5 @@
 <%= render layout: 'index_table', locals: { cache_key: LogCsp.column_names.hash } do %>
-  <%= render partial: 'index_tbody', collection: @log_csps, as: :log_csp %>
+  <%= render partial: 'index_tbody', layout: 'index_tr', collection: @log_csps, as: :model %>
 <% end %>
 
 <%= paginate @log_csps %>

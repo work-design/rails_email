@@ -1,21 +1,11 @@
-<tr>
-  <td><%= log_csp.id %></td>
-  <td>
-    <p><%= log_csp.document_uri %></p>
-    <p><%= log_csp.referrer %></p>
-  </td>
-  <td><%= log_csp.blocked_uri %></td>
-  <td>
-    <p><%= log_csp.violated_directive %></p>
-    <p><%= log_csp.effective_directive %></p>
-  </td>
-  <td><%= simple_format log_csp.original_policy.split('; ') %></td>
-  <td>
-    <%= link_to panel_log_csp_path(log_csp), aria: { label: t('.show') }, remote: true, class: 'button is-small is-rounded is-light' do %>
-      <i class="fas fa-info"></i>
-    <% end %>
-    <%= link_to panel_log_csp_path(log_csp), method: :delete, aria: { label: t('.destroy') }, data: { confirm: t('.confirm') }, remote: true, class: 'button is-small is-rounded is-light' do %>
-      <i class="fas fa-trash-alt"></i>
-    <% end %>
-  </td>
-</tr>
+<td><%= model.id %></td>
+<td>
+  <p><%= model.document_uri %></p>
+  <p><%= model.referrer %></p>
+</td>
+<td><%= model.blocked_uri %></td>
+<td>
+  <p><%= model.violated_directive %></p>
+  <p><%= model.effective_directive %></p>
+</td>
+<td><%= simple_format model.original_policy.split('; ') %></td>

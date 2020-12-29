@@ -1,21 +1,11 @@
-<tr>
-  <td><%= link_to log_mailer.id, panel_log_mailer_path(log_mailer) %></td>
-  <td><%= log_mailer.mailer %></td>
-  <td><%= log_mailer.action_name %></td>
-  <td><%= log_mailer.params %></td>
-  <td>
-    <p><%= log_mailer.mail_to %></p>
-    <p><%= log_mailer.cc_to %></p>
-  </td>
-  <td><%= log_mailer.sent_status %></td>
-  <td><%= log_mailer.sent_string %></td>
-  <td><time><%= log_mailer.created_at.to_s(:rfc822) %></time></td>
-  <td>
-    <%= link_to panel_log_mailer_path(log_mailer), aria: { label: t('.show') }, remote: true, class: 'button is-small is-rounded is-light' do %>
-      <i class="fa fa-info"></i>
-    <% end %>
-    <%= link_to panel_log_mailer_path(log_mailer), method: :delete, aria: { label: t('.destroy') }, data: { confirm: t('.confirm') }, remote: true, class: 'button is-small is-rounded is-light' do %>
-      <i class="fa fa-trash"></i>
-    <% end %>
-  </td>
-</tr>
+<td><%= link_to model.id, { action: 'show', id: model.id }, text: true %></td>
+<td><%= model.mailer %></td>
+<td><%= model.action_name %></td>
+<td><%= model.params %></td>
+<td>
+  <p><%= model.mail_to %></p>
+  <p><%= model.cc_to %></p>
+</td>
+<td><%= model.sent_status %></td>
+<td><%= model.sent_string %></td>
+<td><time data-controller="time"><%= model.created_at.to_s(:rfc822) %></time></td>
