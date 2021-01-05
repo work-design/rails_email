@@ -12,7 +12,8 @@ module RailsLog
       debug "  Headers: #{real_headers.inspect}"
       debug "  Sessions: #{raw_headers['rack.session'].to_h}"
       debug "  Cookies: #{cookies}"
-      debug "  Prefixes: #{event.payload[:request].controller_class._prefixes}"
+      debug "  Ancestors: #{event.payload[:request].controller_class.ancestors.yield_self { |i| i.slice(0..i.index(ApplicationController)) }}"
+      debug "  Prefixes:  #{event.payload[:request].controller_class._prefixes}"
     end
 
     def process_action(event)
