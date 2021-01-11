@@ -1,5 +1,6 @@
 module RailsLog::LogCsp
   extend ActiveSupport::Concern
+
   included do
     attribute :document_uri, :string
     attribute :referrer, :string
@@ -16,5 +17,5 @@ module RailsLog::LogCsp
 
     default_scope -> { order(id: :desc) }
   end
-  
+
 end

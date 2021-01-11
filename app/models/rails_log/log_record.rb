@@ -7,12 +7,7 @@ module RailsLog::LogRecord
     attribute :action_name, :string
     attribute :exception, :string
     attribute :exception_object, :string
-    if connection.adapter_name == 'PostgreSQL'
-      attribute :exception_backtrace, :string, array: true, default: []
-    else
-      attribute :exception_backtrace, :string
-      serialize :exception_backtrace, Array
-    end
+    attribute :exception_backtrace, :string, array: true, default: []
     attribute :params, :json, default: {}
     attribute :headers, :json, default: {}
     attribute :cookie, :json, default: {}
@@ -90,6 +85,6 @@ module RailsLog::LogRecord
         'exception_backtrace'
       ).transform_values { |i| i.limit.nil? ? -1 : i.limit - 1 }
     end
-
   end
+
 end

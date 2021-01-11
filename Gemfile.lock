@@ -7,7 +7,7 @@ GIT
 
 GIT
   remote: https://github.com/work-design/rails_com.git
-  revision: 46c19b3da2378918c46cf732cce13c46f2017d08
+  revision: b35fc1ee3eb0b499c0eeac445b3ed6fe65b3284f
   specs:
     rails_com (1.2.9)
       acme-client
@@ -150,6 +150,7 @@ GEM
     nokogiri (1.11.0)
       mini_portile2 (~> 2.5.0)
       racc (~> 1.4)
+    pg (1.2.3)
     pry (0.13.1)
       coderay (~> 1.1)
       method_source (~> 1.0)
@@ -200,7 +201,6 @@ GEM
       actionpack (>= 4.0)
       activesupport (>= 4.0)
       sprockets (>= 3.0.0)
-    sqlite3 (1.4.2)
     thor (1.0.1)
     timers (4.3.2)
     turbolinks (5.2.1)
@@ -228,12 +228,12 @@ DEPENDENCIES
   default_form!
   factory_bot_rails
   kaminari
+  pg
   pry-rails
   rails
   rails_com!
   rails_log!
   sdoc
-  sqlite3
   turbolinks
   webpacker
 

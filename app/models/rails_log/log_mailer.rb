@@ -1,5 +1,6 @@
 module RailsLog::LogMailer
   extend ActiveSupport::Concern
+
   included do
     attribute :message_object_id, :string
     attribute :mailer, :string
