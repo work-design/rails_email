@@ -1,4 +1,4 @@
-<%= render layout: 'index_table', locals: { cache_key: LogRecord.column_names.hash } do %>
+<%= render layout: 'index_table', locals: { cache_key: Logged::LogRecord.column_names.hash } do %>
   <%= render partial: 'index_tbody', layout: 'index_tr', collection: @log_records, as: :model %>
 <% end %>
 

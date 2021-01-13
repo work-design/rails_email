@@ -5,7 +5,7 @@ module RailsLog
       return unless logger.debug?
       payload = event.payload
       raw_headers = payload.fetch(:headers, {})
-      real_headers = ::LogRecord.request_headers(raw_headers)
+      real_headers = Logged::LogRecord.request_headers(raw_headers)
       session_key = Rails.configuration.session_options[:key]
       cookies = Hash(raw_headers['rack.request.cookie_hash']).except(session_key)
 
@@ -29,12 +29,12 @@ module RailsLog
     def record_to_log(payload)
       raw_headers = payload.fetch(:headers, {})
 
-      lc = ::LogRecord.new
+      lc = Logged::LogRecord.new
       lc.path = payload[:path]
       lc.controller_name = payload[:controller]
       lc.action_name = payload[:action]
-      lc.params = ::LogRecord.filter_params(payload[:params])
-      lc.headers = ::LogRecord.request_headers(raw_headers)
+      lc.params = Logged::LogRecord.filter_params(payload[:params])
+      lc.headers = Logged::LogRecord.request_headers(raw_headers)
       lc.ip = raw_headers['action_dispatch.remote_ip'].to_s
       lc.cookie = raw_headers['rack.request.cookie_hash']
       lc.session = raw_headers['rack.session'].to_h
@@ -45,7 +45,7 @@ module RailsLog
     end
 
     def columns_limit
-      ::LogRecord.columns_limit
+      Logged::LogRecord.columns_limit
     end
 
   end
