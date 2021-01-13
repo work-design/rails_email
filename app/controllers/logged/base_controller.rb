@@ -1,3 +1,4 @@
-class Logged::BaseController < ApplicationController
-
-end unless defined? Logged::BaseController
+module Logged
+  class BaseController < ApplicationController
+  end
+end

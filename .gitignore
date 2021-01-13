@@ -4,3 +4,6 @@ docs/
 db/
 
 *.gem
+tmp/**/*.log
+tmp/**/*.state
+!tmp/sockets/.keep

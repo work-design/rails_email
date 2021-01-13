@@ -1,3 +1,4 @@
-class Logged::Panel::BaseController < PanelController
-
-end unless defined? Logged::Panel::BaseController
+module Logged
+  class Panel::BaseController < PanelController
+  end
+end
