@@ -1,9 +1,9 @@
 # RailsLog
 
 ## 功能
-1. 记录Rails应用报错日志到数据库中，包含出错时的各种详尽信息。
-2. 记录系统邮件发送记录，包含是否发送成功及邮件服务商队列ID等信息。
-3. 在开发环境中（Loglevel 为 debug）,打印request headers 信息：
+1. 记录Rails应用报错日志到数据库中，包含出错时的各种详尽信息；
+2. 记录系统邮件发送记录，包含是否发送成功及邮件服务商队列ID等信息；
+3. 在开发环境中（Loglevel 为 debug）,打印request headers 信息；
 
 ```
 Started GET "/admin/log_csps" for 127.0.0.1 at 2018-11-06 15:11:45 +0800
@@ -47,4 +47,4 @@ config.action_mailer.smtp_settings = {
 then you can visit `log_records` to see error records
 
 ## 许可证
-许可证采用 [LGPL-3.0](https://opensource.org/licenses/LGPL-3.0).
+许可证采用 [LGPL-3.0](https://opensource.org/licenses/LGPL-3.0)
