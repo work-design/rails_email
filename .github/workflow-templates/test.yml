@@ -4,21 +4,21 @@ jobs:
   test:
     runs-on: ubuntu-latest
     steps:
-    - name: Fetch Project
-      uses: actions/checkout@v1
-      with:
-        submodules: recursive
     - name: Set up System
       run: |
-        sudo apt install libsqlite3-dev
+        sudo systemctl status postgresql
     - name: Set up Ruby
       uses: actions/setup-ruby@v1
       with:
-        ruby-version: 2.6.x
+        ruby-version: 3.0.x
     - name: Set up Nodejs
       uses: actions/setup-node@v1
       with:
         node-version: 10.x
+    - name: Fetch Project
+      uses: actions/checkout@v1
+      with:
+        submodules: recursive
     - name: Cache Bundle
       uses: actions/cache@v1
       with:
@@ -42,4 +42,4 @@ jobs:
         bin/rails db:migrate
     - name: Run Test
       run: |
-        bin/rails test
+        bin/rails test -v -b
