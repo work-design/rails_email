@@ -6,6 +6,7 @@ jobs:
     steps:
     - name: Set up System
       run: |
+        sudo systemctl start postgresql
         sudo systemctl status postgresql
     - name: Set up Ruby
       uses: actions/setup-ruby@v1
