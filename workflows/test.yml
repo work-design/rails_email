@@ -8,7 +8,7 @@ jobs:
       run: |
         sudo systemctl start postgresql
         sudo systemctl status postgresql
-        createuser -U postgres -P -e joe
+        createuser -h 127.0.0.1 -U postgres -P -e joe
         qinqinqin
         qinqinqin
     - name: Set up Ruby
