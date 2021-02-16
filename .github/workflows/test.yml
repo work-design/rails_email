@@ -8,6 +8,9 @@ jobs:
       run: |
         sudo systemctl start postgresql
         sudo systemctl status postgresql
+        sudo createuser -P -e joe
+        qinqinqin
+        qinqinqin
     - name: Set up Ruby
       uses: actions/setup-ruby@v1
       with:
