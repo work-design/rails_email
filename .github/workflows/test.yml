@@ -8,9 +8,8 @@ jobs:
       run: |
         sudo systemctl start postgresql
         sudo systemctl status postgresql
-        createuser -h 127.0.0.1 -U postgres -P -e joe
-        qinqinqin
-        qinqinqin
+        psql -l
+        psql postgres -c "create role runner with login password 'runner';"
     - name: Set up Ruby
       uses: actions/setup-ruby@v1
       with:
