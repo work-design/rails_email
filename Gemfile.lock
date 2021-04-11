@@ -8,7 +8,7 @@ GIT
 
 GIT
   remote: https://github.com/qinmingyuan/default_form.git
-  revision: d2fc522e0c9f14f7b97fbea5ac5a8c8a3e6c059e
+  revision: 6242a0c2987b798080038b1d90e5dbde729a5b9c
   specs:
     default_form (1.5.1)
       rails_com (~> 1.2)
@@ -25,7 +25,7 @@ GIT
 
 GIT
   remote: https://github.com/work-design/rails_com.git
-  revision: 98dced474f590ef6b2ca4c237f967e424a7ea1cc
+  revision: 58d4ba0c000238e596edf6439cff4a50f80a124a
   specs:
     rails_com (1.2.9)
       acme-client
@@ -39,7 +39,7 @@ GIT
 
 GIT
   remote: https://github.com/work-design/rails_ui.git
-  revision: ab3ed6e843082a60b9bb9b1d9ee33823274097e7
+  revision: da232bf24f3de4226ce93a55a7bcaa004c8a0c96
   specs:
     rails_ui (0.1.0)
       rails
@@ -141,7 +141,7 @@ GEM
       activesupport (>= 4.2.0)
     http-2-next (0.4.0)
     http-form_data (2.3.0)
-    httpx (0.12.0)
+    httpx (0.13.1)
       http-2-next (>= 0.1.2)
       timers
     i18n (1.8.9)
