@@ -7,7 +7,7 @@ module Logged
       attribute :referrer, :string
       attribute :violated_directive, :string
       attribute :effective_directive, :string
-      attribute :original_policy, :string, limit: 1024
+      attribute :original_policy, :string
       attribute :disposition, :string
       attribute :blocked_uri, :string
       attribute :line_number, :string
