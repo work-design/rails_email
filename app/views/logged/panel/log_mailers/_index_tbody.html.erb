@@ -1,11 +1,15 @@
 <td><%= link_to model.id, { action: 'show', id: model.id }, text: true %></td>
-<td><%= model.mailer %></td>
-<td><%= model.action_name %></td>
+<td>
+  <p><%= model.mailer %></p>
+  <p><%= model.action_name %></p>
+</td>
 <td><%= model.params %></td>
 <td>
   <p><%= model.mail_to %></p>
   <p><%= model.cc_to %></p>
 </td>
-<td><%= model.sent_status %></td>
-<td><%= model.sent_string %></td>
+<td>
+  <p><%= model.sent_status %></p>
+  <p><%= model.sent_string %></p>
+</td>
 <td><time data-controller="time"><%= model.created_at.to_s(:rfc822) %></time></td>
