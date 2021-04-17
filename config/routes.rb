@@ -1,15 +1,15 @@
 Rails.application.routes.draw do
 
-  scope :panel, module: 'logged/panel', as: :panel, defaults: { business: 'logged', namespace: 'panel' } do
-    resources :log_records, only: [:index, :show, :destroy]
-    resources :log_mailers, only: [:index, :show, :destroy]
-    resources :log_csps, only: [:index, :show, :destroy]
-  end
-
-  scope module: 'logged', defaults: { business: 'logged' } do
+  namespace :logged, defaults: { business: 'logged' } do
     controller :rails_log do
       get '/not_founds' => :index
       post '/csp_violation_report' => :csp
+    end
+
+    namespace :panel, defaults: { namespace: 'panel' } do
+      resources :log_records, only: [:index, :show, :destroy]
+      resources :log_mailers, only: [:index, :show, :destroy]
+      resources :log_csps, only: [:index, :show, :destroy]
     end
   end
 
