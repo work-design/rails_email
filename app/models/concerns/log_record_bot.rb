@@ -14,7 +14,7 @@ class LogRecordBot
     add_column '用户信息', @log_record.user_info.inspect
     add_paragraph(@log_record.exception)
     add_paragraph(@log_record.exception_backtrace[0])
-    link_more('详细点击', Rails.application.routes.url_for(controller: 'logged/panel/log_record', action: 'show', id: @log_record.id))
+    link_more('详细点击', Rails.application.routes.url_for(controller: 'logged/panel/log_records', action: 'show', id: @log_record.id))
   end
 
   def add_paragraph(content)
