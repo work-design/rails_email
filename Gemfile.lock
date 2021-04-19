@@ -25,7 +25,7 @@ GIT
 
 GIT
   remote: https://github.com/work-design/rails_com.git
-  revision: 4b7f53e9970c8ddf35f783546f3debcc6b21f3c6
+  revision: 4b7b34222bd7378f26b34641f594f72d6c2dd4fc
   specs:
     rails_com (1.2.9)
       acme-client
@@ -39,7 +39,7 @@ GIT
 
 GIT
   remote: https://github.com/work-design/rails_ui.git
-  revision: a53f3635004d7e696375271076dc27776cab842a
+  revision: f32369d7690c9f848297d5ab97765ec980b33d4c
   specs:
     rails_ui (0.1.0)
       rails
@@ -123,28 +123,24 @@ GEM
       with_advisory_lock (>= 4.0.0)
     coderay (1.1.3)
     concurrent-ruby (1.1.8)
-    connection_pool (2.2.5)
     crass (1.0.6)
     default_where (2.2.0)
       activerecord (>= 4.0.0)
     erubi (1.10.0)
-    excon (0.80.1)
     factory_bot (6.1.0)
       activesupport (>= 5.0.0)
     factory_bot_rails (6.1.0)
       factory_bot (~> 6.1.0)
       railties (>= 5.0.0)
-    faraday (1.4.0)
-      faraday-excon (~> 1.0)
+    faraday (1.4.1)
+      faraday-excon (~> 1.1)
       faraday-net_http (~> 1.0)
-      faraday-net_http_persistent (~> 1.0)
+      faraday-net_http_persistent (~> 1.1)
       multipart-post (>= 1.2, < 3)
       ruby2_keywords (>= 0.0.4)
-    faraday-excon (1.0.0)
-      excon (>= 0.27.4)
+    faraday-excon (1.1.0)
     faraday-net_http (1.0.1)
-    faraday-net_http_persistent (1.0.3)
-      net-http-persistent (>= 3.1)
+    faraday-net_http_persistent (1.1.0)
     globalid (0.4.2)
       activesupport (>= 4.2.0)
     http-2-next (0.4.0)
@@ -177,8 +173,6 @@ GEM
     mini_portile2 (2.5.0)
     minitest (5.14.4)
     multipart-post (2.1.1)
-    net-http-persistent (4.0.1)
-      connection_pool (~> 2.2)
     nio4r (2.5.7)
     nokogiri (1.11.3)
       mini_portile2 (~> 2.5.0)
