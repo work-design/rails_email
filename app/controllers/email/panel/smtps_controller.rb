@@ -1,5 +1,5 @@
-module Com
-  class Admin::SmtpsController < Admin::BaseController
+module Email
+  class Panel::SmtpsController < Panel::BaseController
     before_action :set_smtp, only: [:show, :edit, :update, :destroy]
 
     def index
@@ -45,7 +45,11 @@ module Com
       params.fetch(:smtp, {}).permit(
         :name,
         :address,
-        :port
+        :port,
+        :authentication,
+        :enable_starttls_auto,
+        :ssl,
+        :openssl_verify_mode
       )
     end
 

@@ -1,4 +1,4 @@
-module Com
+module Email
   class Admin::SmtpAccountsController < Admin::BaseController
     before_action :set_smtp
     before_action :set_smtp_account, only: [:show, :edit, :update, :destroy]
