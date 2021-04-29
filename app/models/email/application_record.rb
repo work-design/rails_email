@@ -1,4 +1,4 @@
-module Logged
+module Email
   class ApplicationRecord < ApplicationRecord
     self.abstract_class = true
   end

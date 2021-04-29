@@ -1,4 +1,4 @@
-module Mail
+module Email
   class Smtp < ApplicationRecord
     include Model::Smtp
   end

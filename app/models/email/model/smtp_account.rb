@@ -1,4 +1,4 @@
-module Mail
+module Email
   module Model::SmtpAccount
     extend ActiveSupport::Concern
 
