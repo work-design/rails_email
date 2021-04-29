@@ -1,5 +1,5 @@
 module Email
-  module Model::LogMailer
+  module Model::Log
     extend ActiveSupport::Concern
 
     included do
