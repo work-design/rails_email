@@ -1,5 +1,5 @@
 module Email
-  class LogMailer < ApplicationRecord
-    include Model::LogMailer
+  class Log < ApplicationRecord
+    include Model::Log
   end
 end
