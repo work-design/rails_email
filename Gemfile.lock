@@ -25,7 +25,7 @@ GIT
 
 GIT
   remote: https://github.com/work-design/rails_com.git
-  revision: 4b7b34222bd7378f26b34641f594f72d6c2dd4fc
+  revision: 861f3fe53e80224e1c32d5f8a49d1db3f0b7906c
   specs:
     rails_com (1.2.9)
       acme-client
@@ -39,7 +39,7 @@ GIT
 
 GIT
   remote: https://github.com/work-design/rails_ui.git
-  revision: f32369d7690c9f848297d5ab97765ec980b33d4c
+  revision: bb16a36a8a4bd7a4ea732610d7c0573a1be51b6b
   specs:
     rails_ui (0.1.0)
       rails
@@ -53,7 +53,7 @@ PATH
 GEM
   remote: https://rubygems.org/
   specs:
-    acme-client (2.0.7)
+    acme-client (2.0.8)
       faraday (>= 0.17, < 2.0.0)
     actioncable (6.1.3.1)
       actionpack (= 6.1.3.1)
@@ -114,7 +114,7 @@ GEM
       minitest (>= 5.1)
       tzinfo (~> 2.0)
       zeitwerk (~> 2.3)
-    acts_as_list (1.0.3)
+    acts_as_list (1.0.4)
       activerecord (>= 4.2)
     awesome_print (1.9.2)
     builder (3.2.4)
@@ -143,7 +143,7 @@ GEM
     faraday-net_http_persistent (1.1.0)
     globalid (0.4.2)
       activesupport (>= 4.2.0)
-    http-2-next (0.4.0)
+    http-2-next (0.4.1)
     http-form_data (2.3.0)
     httpx (0.13.2)
       http-2-next (>= 0.1.2)
