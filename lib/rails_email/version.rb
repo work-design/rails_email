@@ -1,3 +1,3 @@
-module RailsLog
+module RailsEmail
   VERSION = '2.1.6'
 end

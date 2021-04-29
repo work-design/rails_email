@@ -1,5 +1,5 @@
 $:.push File.expand_path('lib', __dir__)
-require 'rails_log/version'
+require 'rails_email/version'
 
 Gem::Specification.new do |s|
   s.name = 'rails_email'
