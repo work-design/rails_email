@@ -1,4 +1,4 @@
-module Logged
+module Mail
   class LogMailer < ApplicationRecord
     include Model::LogMailer
   end

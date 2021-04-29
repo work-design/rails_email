@@ -1,0 +1,19 @@
+<td><%= model.name %></td>
+<td><%= model.address %></td>
+<td><%= model.port %></td>
+<td><%= model.authentication %></td>
+<td>
+  <p>
+    <%= form_with theme: nil, model: model, url: { action: 'update', id: model.id }, data: { controller: 'input' } do |f| %>
+      <%= f.check_box :ssl, data: { input_target: 'checkbox' }, id: nil, class: 'switch is-rounded' %>
+      <label data-action="click->input#check"></label>
+    <% end %>
+  </p>
+  <p>
+    <%= form_with theme: nil, model: model, url: { action: 'update', id: model.id }, data: { controller: 'input' } do |f| %>
+      <%= f.check_box :enable_starttls_auto, data: { input_target: 'checkbox' }, id: nil, class: 'switch is-rounded' %>
+      <label data-action="click->input#check"></label>
+    <% end %>
+  </p>
+  <p><%= model.openssl_verify_mode %></p>
+</td>

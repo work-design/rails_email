@@ -1,4 +1,4 @@
-module Logged
+module Mail
   module Model::LogMailer
     extend ActiveSupport::Concern
 

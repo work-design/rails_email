@@ -1,4 +1,6 @@
-# RailsLog
+# RailsMail
+
+Email 周边服务
 
 ## 功能
 1. 记录Rails应用报错日志到数据库中，包含出错时的各种详尽信息；

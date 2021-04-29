@@ -1,0 +1,8 @@
+<%= render 'shared/error_messages', target: f.object %>
+<%= f.text_field :name %>
+<%= f.text_field :address %>
+<%= f.text_field :port %>
+<%= f.select :authentication, options_for_select(Com::Smtp.options_i18n(:authentication), f.object.authentication) %>
+<%= f.check_box :enable_starttls_auto %>
+<%= f.check_box :ssl %>
+<%= f.select :openssl_verify_mode, options_for_select(Com::Smtp.options_i18n(:openssl_verify_mode), f.object.openssl_verify_mode) %>
