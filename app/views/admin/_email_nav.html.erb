@@ -1,10 +1,10 @@
 <div class="<%= active_helper(modules: 'email/admin', active: 'menu ex-accordion is-dark is-active', item: 'menu ex-accordion is-dark') %>" data-controller="menu">
   <%= content_tag :div, class: 'menu-list' do %>
-    <%= link_to t('email.panel.smtps.index.title'), { controller: 'email/panel/smtps' }, class: active_helper(controllers: ['smtps', 'smtp_accounts'], active: 'is-active') -%>
+    <%= link_to t('email.panel.smtps.index.title'), { controller: 'email/admin/smtps' }, class: active_helper(controllers: ['smtps', 'smtp_accounts'], active: 'is-active') -%>
   <% end %>
   <a class="menu-label" data-action="menu#toggle">
     <i class="fas fa-images fa-fw"></i>
-    <span>资源</span>
+    <span><%= t('email.admin.title') %></span>
     <i class="fas dropdown"></i>
   </a>
 </div>
