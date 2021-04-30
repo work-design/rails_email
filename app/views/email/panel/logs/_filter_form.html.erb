@@ -5,6 +5,7 @@
     <%= f.text_field :mail_to %>
     <div class="field is-narrow">
       <%= f.submit %>
+      <%= link_to t('.clear'), filter_params(except: [:mailer, :action_name, :mail_to]), class: 'button is-light' %>
     </div>
   </div>
 <% end %>

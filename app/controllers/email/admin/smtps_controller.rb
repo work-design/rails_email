@@ -3,7 +3,10 @@ module Email
     before_action :set_smtp, only: [:show, :edit, :update, :destroy]
 
     def index
-      @smtps = Smtp.page(params[:page])
+      q_params = {}
+      q_params.merge! default_params
+
+      @smtps = Smtp.default_where(q_params).page(params[:page])
     end
 
     def new
