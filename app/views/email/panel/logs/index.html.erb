@@ -1,5 +1,5 @@
 <%= render layout: 'index_table', locals: { cache_key: Email::Log.column_names.hash } do %>
-  <%= render partial: 'index_tbody', layout: 'index_tr', collection: @log_mailers, as: :model %>
+  <%= render partial: 'index_tbody', layout: 'index_tr', collection: @logs, as: :model %>
 <% end %>
 
-<%= paginate @log_mailers %>
+<%= paginate @logs %>

@@ -1,4 +1,4 @@
-<%= render layout: 'index_table', locals: { cache_key: Com::SmtpAccount.column_names.hash } do %>
+<%= render layout: 'index_table', locals: { cache_key: Email::SmtpAccount.column_names.hash } do %>
   <%= render partial: 'index_tbody', layout: 'index_tr', collection: @smtp_accounts, as: :model %>
 <% end %>
 

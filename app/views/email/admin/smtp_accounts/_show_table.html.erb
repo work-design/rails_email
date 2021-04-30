@@ -1,8 +1,8 @@
 <tr>
-  <td class="has-text-right"><%= Com::SmtpAccount.human_attribute_name(:user_name) %></td>
+  <td class="has-text-right"><%= Email::SmtpAccount.human_attribute_name(:user_name) %></td>
   <td><%= @smtp_account.user_name %></td>
 </tr>
 <tr>
-  <td class="has-text-right"><%= Com::SmtpAccount.human_attribute_name(:password) %></td>
+  <td class="has-text-right"><%= Email::SmtpAccount.human_attribute_name(:password) %></td>
   <td><%= @smtp_account.password %></td>
 </tr>

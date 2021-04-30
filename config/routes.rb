@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
 
-  namespace :logged, defaults: { business: 'logged' } do
+  namespace :email, defaults: { business: 'email' } do
     namespace :panel, defaults: { namespace: 'panel' } do
       resources :logs, only: [:index, :show, :destroy]
       resources :smtps
