@@ -3,12 +3,17 @@ zh:
     title: 邮件服务
     panel:
       title: 邮件
-      log_records:
-        index:
-          title: 错误日志
-      log_csps:
-        index:
-          title: 内容安全
       logs:
         index:
           title: 发送日志
+      smtps:
+        index:
+          title: 邮件 SMTP 发送
+    admin:
+      title: 邮件服务
+      smtps:
+        index:
+          title: SMTP 服务
+      smtp_accounts:
+        index:
+          title: SMTP 邮箱
