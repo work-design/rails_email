@@ -1,6 +1,6 @@
 require 'rails_com'
 
-class RailsLog::Engine < ::Rails::Engine # :nodoc:
+class RailsEmail::Engine < ::Rails::Engine # :nodoc:
 
   config.generators do |g|
     g.rails = {
@@ -14,7 +14,5 @@ class RailsLog::Engine < ::Rails::Engine # :nodoc:
     }
     g.templates.unshift File.expand_path('lib/templates', RailsCom::Engine.root)
   end
-
-
 
 end

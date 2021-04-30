@@ -1,6 +1,6 @@
-module RailsLog::MailerRecord
-  def self.prepended(mod)
+module RailsEmail::MailerRecord
 
+  def self.prepended(mod)
     def mod.deliver_mail(mail)
       ActiveSupport::Notifications.instrument('deliver.action_mailer') do |payload|
         set_payload_for_mail(payload, mail)
@@ -8,16 +8,15 @@ module RailsLog::MailerRecord
         payload[:subject] = mail.subject
         payload[:mail_to] = Array(mail.to).join(', ')
         payload[:cc_to] = Array(mail.cc).join(', ')
-        
+
         result = yield
-        
+
         if result.is_a? Net::SMTP::Response
           payload[:sent_status] = result.status
           payload[:sent_string] = result.string
         end
       end
     end
-  
   end
 
   def process(method_name, *args)
@@ -36,5 +35,5 @@ module RailsLog::MailerRecord
 end
 
 ActiveSupport.on_load :action_mailer do
-  prepend RailsLog::MailerRecord
+  prepend RailsEmail::MailerRecord
 end

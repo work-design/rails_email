@@ -1,4 +1,4 @@
-module Logged
+module Email
   class BaseController < ApplicationController
   end
 end

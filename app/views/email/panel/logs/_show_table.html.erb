@@ -1,0 +1,40 @@
+<tr>
+  <td><%= Email::Log.human_attribute_name(:created_at) %></td>
+  <td><time data-controller="time"><%= @log_mailer.created_at.to_s(:rfc822) %></time></td>
+</tr>
+<tr>
+  <td><%= Email::Log.human_attribute_name(:mailer) %></td>
+  <td><%= @log_mailer.mailer %></td>
+</tr>
+<tr>
+  <td><%= Email::Log.human_attribute_name(:action_name) %></td>
+  <td><%= @log_mailer.action_name %></td>
+</tr>
+<tr>
+  <td><%= Email::Log.human_attribute_name(:params) %></td>
+  <td><%= @log_mailer.params %></td>
+</tr>
+<tr>
+  <td><%= Email::Log.human_attribute_name(:subject) %></td>
+  <td><%= @log_mailer.subject %></td>
+</tr>
+<tr>
+  <td><%= Email::Log.human_attribute_name(:message_object_id) %></td>
+  <td><%= @log_mailer.message_object_id %></td>
+</tr>
+<tr>
+  <td><%= Email::Log.human_attribute_name(:mail_to) %></td>
+  <td><%= @log_mailer.mail_to %></td>
+</tr>
+<tr>
+  <td><%= Email::Log.human_attribute_name(:cc_to) %></td>
+  <td><%= @log_mailer.cc_to %></td>
+</tr>
+<tr>
+  <td><%= Email::Log.human_attribute_name(:sent_status) %></td>
+  <td><%= @log_mailer.sent_status %></td>
+</tr>
+<tr>
+  <td><%= Email::Log.human_attribute_name(:sent_string) %></td>
+  <td><%= @log_mailer.sent_string %></td>
+</tr>
