@@ -12,5 +12,7 @@ module Email
       has_one_attached :cover
     end
 
+
+
   end
 end
