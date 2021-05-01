@@ -1,16 +1,16 @@
 <tr>
-  <td class="has-text-right"><%= Template.human_attribute_name(:honorific) %></td>
+  <td class="has-text-right"><%= Email::Template.human_attribute_name(:honorific) %></td>
   <td><%= @template.honorific %></td>
 </tr>
 <tr>
-  <td class="has-text-right"><%= Template.human_attribute_name(:body) %></td>
+  <td class="has-text-right"><%= Email::Template.human_attribute_name(:body) %></td>
   <td><%= @template.body %></td>
 </tr>
 <tr>
-  <td class="has-text-right"><%= Template.human_attribute_name(:order_prefix) %></td>
+  <td class="has-text-right"><%= Email::Template.human_attribute_name(:order_prefix) %></td>
   <td><%= @template.order_prefix %></td>
 </tr>
 <tr>
-  <td class="has-text-right"><%= Template.human_attribute_name(:cover) %></td>
-  <td><%= @template.cover %></td>
+  <td class="has-text-right"><%= Email::Template.human_attribute_name(:cover) %></td>
+  <td><%= image_tag @template.cover if @template.cover.attached? %></td>
 </tr>
