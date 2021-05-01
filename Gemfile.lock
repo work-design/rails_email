@@ -25,7 +25,7 @@ GIT
 
 GIT
   remote: https://github.com/work-design/rails_com.git
-  revision: a043b83faa9e72a4ed8fc23bc24ac70ad6020dec
+  revision: af228efb4f6d32a0c7f0550e64d3b26a814c5aac
   specs:
     rails_com (1.2.9)
       acme-client
@@ -47,7 +47,7 @@ GIT
 PATH
   remote: .
   specs:
-    rails_log (2.1.6)
+    rails_email (2.1.6)
       rails_com (~> 1.2)
 
 GEM
@@ -254,7 +254,7 @@ DEPENDENCIES
   puma
   rails
   rails_com!
-  rails_log!
+  rails_email!
   rails_ui!
   sdoc
   turbo-rails!
