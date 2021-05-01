@@ -1,9 +1,10 @@
 module Email
   class CommonMailer < ApplicationMailer
 
-    def notify(account_id, template_id, **delivery_options)
+    def notify(account_id)
+      position = account_id.modulo Template.count
       @account = Auth::Account.find account_id
-      @template = Email::Template.find template_id
+      @template = Email::Template.find_by position: position
 
       mail_params = {
         to: @account.identity,
