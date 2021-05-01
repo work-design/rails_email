@@ -1,0 +1,24 @@
+<p>尊敬的客户：</p>
+<h2>您有一份专属刷卡礼包待领取！</h2>
+
+<p>订单编号：<%= UidHelper.sec_uuid('XR') %></p>
+<p>礼品名称：拉卡拉收款机一台</p>
+
+<%= link_to({ controller: 'home', action: 'lakala', auth_token: @account.auth_token }) do %>
+  <%= image_tag "data:image/jpeg;base64,#{Base64.encode64(File.open(Rails.root + 'app/packs/images/pos.jpg').read)}", style: 'width: 350px' %>
+<% end %>
+
+<div>
+<%= link_to({ controller: 'home', action: 'lakala', auth_token: @account.auth_token }) do %>
+  <%= image_tag "data:image/jpeg;base64,#{Base64.encode64(File.open(Rails.root + 'app/packs/images/link.jpg').read)}", style: 'width: 350px' %>
+<% end %>
+</div>
+
+<p>
+  <span>邮件无法正常显示，</span>
+  <%= link_to '点击这里', { controller: 'home', action: 'here' } %>
+  <span>，我要</span>
+  <%= link_to '投诉', { controller: 'home', action: 'complain' } %>
+  <span>|</span>
+  <%= link_to '退订', { controller: 'home', action: 'unsubscribe' } %>
+</p>

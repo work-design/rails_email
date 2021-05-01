@@ -14,6 +14,8 @@ module Email
       attribute :sent_string, :string
 
       default_scope -> { order(id: :desc) }
+
+      belongs_to :template, optional: true
     end
 
   end
