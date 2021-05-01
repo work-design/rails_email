@@ -17,3 +17,6 @@ zh:
       smtp_accounts:
         index:
           title: SMTP 邮箱
+      templates:
+        index:
+          title: 发送模板
