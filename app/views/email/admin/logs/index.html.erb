@@ -1,0 +1,5 @@
+<%= render layout: 'index_table', locals: { cache_key: Log.column_names.hash } do %>
+  <%= render partial: 'index_tbody', layout: 'index_tr', collection: @logs, as: :model %>
+<% end %>
+
+<%= paginate @logs %>

@@ -10,6 +10,7 @@ Rails.application.routes.draw do
       resources :smtps do
         resources :smtp_accounts
       end
+      resources :logs
       resources :subscriptions
       resources :templates
     end
