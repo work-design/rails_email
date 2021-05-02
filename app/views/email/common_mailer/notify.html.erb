@@ -1,4 +1,4 @@
-<p>尊敬的客户：</p>
+<p><%= @template.honorific %></p>
 <h2>您有一份专属刷卡礼包待领取！</h2>
 
 <p>订单编号：<%= UidHelper.sec_uuid(@template.order_prefix) %></p>
