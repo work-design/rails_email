@@ -1,5 +1,5 @@
 module Email
-  module Subscription
+  module Model::Subscription
     extend ActiveSupport::Concern
 
     included do
