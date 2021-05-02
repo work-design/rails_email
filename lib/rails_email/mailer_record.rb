@@ -5,7 +5,6 @@ module RailsEmail::MailerRecord
       ActiveSupport::Notifications.instrument('deliver.action_mailer') do |payload|
         set_payload_for_mail(payload, mail)
         payload[:message_object_id] = mail.object_id
-        payload[:subject] = mail.subject
         payload[:mail_to] = Array(mail.to).join(', ')
         payload[:cc_to] = Array(mail.cc).join(', ')
 
