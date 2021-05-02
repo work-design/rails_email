@@ -1,20 +1,20 @@
 <tr>
-  <td class="has-text-right"><%= Log.human_attribute_name(:mail_from) %></td>
+  <td class="has-text-right"><%= Email::Log.human_attribute_name(:mail_from) %></td>
   <td><%= @log.mail_from %></td>
 </tr>
 <tr>
-  <td class="has-text-right"><%= Log.human_attribute_name(:mail_to) %></td>
+  <td class="has-text-right"><%= Email::Log.human_attribute_name(:mail_to) %></td>
   <td><%= @log.mail_to %></td>
 </tr>
 <tr>
-  <td class="has-text-right"><%= Log.human_attribute_name(:sent_status) %></td>
+  <td class="has-text-right"><%= Email::Log.human_attribute_name(:sent_status) %></td>
   <td><%= @log.sent_status %></td>
 </tr>
 <tr>
-  <td class="has-text-right"><%= Log.human_attribute_name(:sent_result) %></td>
+  <td class="has-text-right"><%= Email::Log.human_attribute_name(:sent_result) %></td>
   <td><%= @log.sent_result %></td>
 </tr>
 <tr>
-  <td class="has-text-right"><%= Log.human_attribute_name(:created_at) %></td>
+  <td class="has-text-right"><%= Email::Log.human_attribute_name(:created_at) %></td>
   <td><%= @log.created_at %></td>
 </tr>

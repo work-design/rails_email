@@ -11,6 +11,9 @@ zh:
           title: 邮件 SMTP 发送
     admin:
       title: 邮件服务
+      logs:
+        index:
+          title: 发送日志
       smtps:
         index:
           title: SMTP 服务

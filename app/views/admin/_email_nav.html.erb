@@ -1,7 +1,8 @@
 <div class="<%= active_helper(modules: 'email/admin', active: 'menu ex-accordion is-dark is-active', item: 'menu ex-accordion is-dark') %>" data-controller="menu">
   <%= content_tag :div, class: 'menu-list' do %>
     <%= link_to t('email.admin.templates.index.title'), { controller: 'email/admin/templates' }, class: active_helper(controllers: ['templates'], active: 'is-active') %>
-    <%= link_to t('email.admin.smtps.index.title'), { controller: 'email/admin/smtps' }, class: active_helper(controllers: ['smtps', 'smtp_accounts'], active: 'is-active') -%>
+    <%= link_to t('email.admin.smtps.index.title'), { controller: 'email/admin/smtps' }, class: active_helper(controllers: ['smtps', 'smtp_accounts'], active: 'is-active') %>
+    <%= link_to t('email.admin.logs.index.title'), { controller: 'email/admin/logs' }, class: active_helper(controllers: ['logs'], active: 'is-active') -%>
   <% end %>
   <a class="menu-label" data-action="menu#toggle">
     <i class="fas fa-envelope fa-fw"></i>
