@@ -46,6 +46,8 @@ module Email
 
     def template_params
       params.fetch(:template, {}).permit(
+        :contact,
+        :subject,
         :honorific,
         :body,
         :order_prefix,

@@ -3,6 +3,8 @@ module Email
     extend ActiveSupport::Concern
 
     included do
+      attribute :contact, :string
+      attribute :subject, :string
       attribute :honorific, :string
       attribute :body, :string
       attribute :order_prefix, :string

@@ -12,8 +12,8 @@ module Email
 
       mail_params = {
         to: @account.identity,
-        from: "银联信用中心 <#{smtp_account.user_name}>",
-        subject: '因你信用分较高，将向你发出提额机 1 部，点击查看（AD）',
+        from: "#{@template.contact} <#{smtp_account.user_name}>",
+        subject: @template.subject,
         delivery_method_options: {
           user_name: smtp_acount.user_name,
           password: smtp_account.password,

@@ -2,7 +2,12 @@ zh:
   activerecord:
     attributes:
       email/template:
+        contact: 联系人
+        subject: 主题
         honorific: 敬语
         body: 内容
         order_prefix: 订单号前缀
         cover: 图片/封面
+      email/smtp_account:
+        user_name: 用户名
+        password: 密码
