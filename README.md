@@ -38,4 +38,4 @@ config.action_mailer.smtp_settings = {
 then you can visit `log_records` to see error records
 
 ## 许可证
-许可证采用 [LGPL-3.0](https://opensource.org/licenses/LGPL-3.0)
+遵循 [MIT](https://opensource.org/licenses/MIT) 协议
