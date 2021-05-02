@@ -8,6 +8,8 @@ module Email
       attribute :position, :integer, index: true
 
       belongs_to :smtp
+
+      acts_as_list top_of_list: 0
     end
 
 

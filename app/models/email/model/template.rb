@@ -14,7 +14,7 @@ module Email
 
       has_one_attached :cover
 
-      acts_as_list
+      acts_as_list top_of_list: 0
     end
 
 
