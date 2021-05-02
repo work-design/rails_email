@@ -17,7 +17,7 @@ module RailsEmail
 
       log = Email::Log.find_or_initialize_by(message_object_id: payload[:message_object_id], mailer: payload[:mailer])
       log.subject = payload[:subject]
-      log.from = payload[:from][0]
+      log.mail_from = payload[:from][0]
       log.sent_status = payload[:sent_status]
       log.sent_string = payload[:sent_string]
       log.mail_to = payload[:mail_to]
