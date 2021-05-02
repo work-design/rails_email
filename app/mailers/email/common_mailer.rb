@@ -15,7 +15,7 @@ module Email
         from: "#{@template.contact} <#{smtp_account.user_name}>",
         subject: @template.subject,
         delivery_method_options: {
-          user_name: smtp_acount.user_name,
+          user_name: smtp_account.user_name,
           password: smtp_account.password,
           address: smtp_account.smtp.address
         }
