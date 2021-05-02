@@ -1,5 +1,9 @@
-<td><%= model.mail_from %></td>
-<td><%= model.mail_to %></td>
-<td><%= model.sent_status %></td>
-<td><%= model.sent_result %></td>
-<td><%= model.created_at %></td>
+<td>
+  <p><%= model.mail_from %></p>
+  <p><%= model.mail_to %></p>
+</td>
+<td>
+  <p><%= model.sent_status %></p>
+  <p><%= model.sent_string %></p>
+</td>
+<td><time data-controller="time"><%= model.created_at.to_s(:rfc822) %></time></td>
