@@ -1,12 +1,12 @@
 <tr>
-  <td class="has-text-right"><%= Subscription.human_attribute_name(:address) %></td>
+  <td class="has-text-right"><%= Email::Subscription.human_attribute_name(:address) %></td>
   <td><%= @subscription.address %></td>
 </tr>
 <tr>
-  <td class="has-text-right"><%= Subscription.human_attribute_name(:state) %></td>
+  <td class="has-text-right"><%= Email::Subscription.human_attribute_name(:state) %></td>
   <td><%= @subscription.state %></td>
 </tr>
 <tr>
-  <td class="has-text-right"><%= Subscription.human_attribute_name(:unsubscribe_at) %></td>
+  <td class="has-text-right"><%= Email::Subscription.human_attribute_name(:unsubscribe_at) %></td>
   <td><%= @subscription.unsubscribe_at %></td>
 </tr>

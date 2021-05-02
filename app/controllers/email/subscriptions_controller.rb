@@ -8,10 +8,12 @@ module Email
 
     def new
       @subscription = Subscription.new
+      @subscription.address = params[:address]
     end
 
     def create
       @subscription = Subscription.new(subscription_params)
+      @subscription.unsubscribe_at = Time.current
 
       unless @subscription.save
         render :new, locals: { model: @subscription }, status: :unprocessable_entity

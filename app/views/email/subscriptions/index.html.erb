@@ -1,5 +1,0 @@
-<%= render layout: 'index_table', locals: { cache_key: Subscription.column_names.hash } do %>
-  <%= render partial: 'index_tbody', layout: 'index_tr', collection: @subscriptions, as: :model %>
-<% end %>
-
-<%= paginate @subscriptions %>
