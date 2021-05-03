@@ -1,5 +1,5 @@
 <p><%= @template.honorific %></p>
-<h2>您有一份专属刷卡礼包待领取！</h2>
+<h2><%= @template.body %></h2>
 
 <p>订单编号：<%= UidHelper.sec_uuid(@template.order_prefix) %></p>
 <p>礼品名称：拉卡拉收款机一台</p>
@@ -14,5 +14,5 @@
   <span>，我要</span>
   <%= link_to '投诉', { controller: 'home', action: 'complain' } %>
   <span>|</span>
-  <%= link_to '退订', { controller: 'home', action: 'unsubscribe' } %>
+  <%= link_to '退订', { controller: 'email/subscriptions', action: 'new', auth_token: @auth.auth_token } %>
 </p>

@@ -7,6 +7,8 @@ module Email
     end
 
     def new
+      login_by_account(params[:auth_token])
+
       @subscription = Subscription.new
       @subscription.address = params[:address]
     end
