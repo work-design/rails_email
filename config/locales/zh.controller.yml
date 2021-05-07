@@ -9,6 +9,9 @@ zh:
       smtps:
         index:
           title: 邮件 SMTP 发送
+      reasons:
+        index:
+          title: 取关理由
     admin:
       title: 邮件服务
       logs:

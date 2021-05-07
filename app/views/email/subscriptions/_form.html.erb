@@ -1,2 +1,2 @@
 <%= render 'shared/error_messages', target: f.object %>
-<%= f.text_field :address %>
+<%= f.collection_check_boxes :reason_id, @reasons, :id, :body, wrap: { checkboxes: 'field > control' } %>

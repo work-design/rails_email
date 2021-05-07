@@ -15,6 +15,7 @@ module Email
 
       belongs_to :smtp, optional: true
       belongs_to :smtp_account, optional: true
+      belongs_to :reason, optional: true
     end
 
   end

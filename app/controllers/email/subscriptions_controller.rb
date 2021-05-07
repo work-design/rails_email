@@ -1,9 +1,10 @@
 module Email
   class SubscriptionsController < BaseController
     before_action :set_subscription, only: [:show, :edit, :update, :destroy]
+    before_action :prepare_form, only: [:new]
 
     def index
-      @subscriptions = Subscription.page(params[:page])
+      @subscriptions = Subscription.includes(:reason).page(params[:page])
     end
 
     def new
@@ -45,11 +46,16 @@ module Email
       @subscription = Subscription.find(params[:id])
     end
 
+    def prepare_form
+      @reasons = Reason.all
+    end
+
     def subscription_params
       params.fetch(:subscription, {}).permit(
         :address,
         :state,
-        :unsubscribe_at
+        :unsubscribe_at,
+        :reason_id
       )
     end
 

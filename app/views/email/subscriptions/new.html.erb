@@ -1,0 +1,14 @@
+<div class="hero is-large is-info">
+  <div class="hero-head">
+    <h2 class="title has-text-centered">你确定要取消邮件订阅么？</h2>
+  </div>
+  <div class="hero-body">
+    <%= form_with model: @subscription, url: { action: 'create' } do |f| %>
+      <%= render partial: 'form', locals: { f: f } %>
+      <%= f.submit %>
+    <% end %>
+  </div>
+  <div class="hero-buttons">
+  
+  </div>
+</div>

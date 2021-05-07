@@ -11,3 +11,5 @@ zh:
       email/smtp_account:
         user_name: 用户名
         password: 密码
+      email/subscription:
+        reason_id: 原因

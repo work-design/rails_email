@@ -5,6 +5,7 @@ Rails.application.routes.draw do
     namespace :panel, defaults: { namespace: 'panel' } do
       resources :logs, only: [:index, :show, :destroy]
       resources :smtps
+      resources :reasons
     end
     namespace :admin, defaults: { namespace: 'admin' } do
       resources :smtps do

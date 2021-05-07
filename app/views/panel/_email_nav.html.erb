@@ -1,6 +1,7 @@
 <div class="<%= active_helper(modules: 'email/panel', active: 'menu ex-accordion is-active', item: 'menu ex-accordion') %>" data-controller="menu">
   <%= content_tag :div, class: 'menu-list' do %>
     <%= link_to t('email.panel.smtps.index.title'), { controller: 'email/panel/smtps' }, class: active_helper(controllers: 'smtps', active: 'is-active') %>
+    <%= link_to t('email.panel.reasons.index.title'), { controller: 'email/panel/reasons' }, class: active_helper(controllers: 'reasons', active: 'is-active') %>
     <%= link_to t('email.panel.logs.index.title'), { controller: 'email/panel/logs' }, class: active_helper(controllers: 'logs', active: 'is-active') -%>
   <% end %>
   <a class="menu-label" data-action="menu#toggle">
