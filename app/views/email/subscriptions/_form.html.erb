@@ -1,2 +1,4 @@
 <%= render 'shared/error_messages', target: f.object %>
-<%= f.collection_check_boxes :reason_id, @reasons, :id, :body, wrap: { checkboxes: 'field > control' } %>
+<%= f.collection_check_boxes :reason_id, @reasons, :id, :body, origin: { inline_checkbox: 'check' } do |b| %>
+  <%= b.label(class: 'field is-block') { b.check_box + b.text } %>
+<% end %>

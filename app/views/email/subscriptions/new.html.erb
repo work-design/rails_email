@@ -3,7 +3,7 @@
     <h2 class="title has-text-centered">你确定要取消邮件订阅么？</h2>
   </div>
   <div class="hero-body">
-    <%= form_with model: @subscription, url: { action: 'create' } do |f| %>
+    <%= form_with theme: nil, model: @subscription, url: { action: 'create' }, class: 'form' do |f| %>
       <%= render partial: 'form', locals: { f: f } %>
       <%= f.submit %>
     <% end %>
