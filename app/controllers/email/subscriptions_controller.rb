@@ -1,6 +1,8 @@
 module Email
   class SubscriptionsController < BaseController
+    before_action :login_by_token, only: [:new]
     before_action :set_subscription, only: [:show, :edit, :update, :destroy]
+    before_action :set_current_subscription, only: [:new, :create]
     before_action :prepare_form, only: [:new]
 
     def index
@@ -8,15 +10,10 @@ module Email
     end
 
     def new
-      login_by_token(params[:auth_token])
-
-      @subscription = Subscription.new
       @subscription.address = params[:address]
     end
 
     def create
-      account = Account.find current_account.id
-      @subscription = account.subscription || account.build_subscription
       @subscription.assign_attributes subscription_params
       @subscription.unsubscribe_at = Time.current
 
@@ -44,6 +41,11 @@ module Email
     end
 
     private
+    def set_current_subscription
+      account = Account.find current_account.id
+      @subscription = account.subscription || account.build_subscription
+    end
+
     def set_subscription
       @subscription = Subscription.find(params[:id])
     end
