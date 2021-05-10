@@ -1,4 +1,4 @@
-<%= form_with theme: nil, model: @subscription, url: { action: 'update', id: @subscription.id } do |f| %>
+<%= form_with theme: nil, model: @subscription, url: { action: 'update', id: @subscription.id }, class: 'form box' do |f| %>
   <%= render partial: 'form', locals: { f: f } %>
   <%= f.submit '确认' %>
 <% end %>

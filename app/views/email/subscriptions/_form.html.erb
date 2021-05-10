@@ -1,3 +1,3 @@
 <%= render 'shared/error_messages', target: f.object %>
-<%= f.collection_radio_buttons :reason_id, @reasons, :id, :body, origin: { inline_radio: 'radio is-block' }  %>
+<%= f.collection_radio_buttons :reason_id, @reasons, :id, :body, origin: { inline_radio: 'radio is-block', inline_radio_checked: 'radio is-block' }  %>
 

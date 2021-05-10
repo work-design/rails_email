@@ -1,13 +1,11 @@
 <div class="hero is-large is-info">
-  <div class="hero-head">
-    <h2 class="title has-text-centered">你确定要取消邮件订阅么？</h2>
-  </div>
   <div class="hero-body">
-  <% if @subscription.new_record? %>
-    <%= render 'new_form' %>
-  <% else %>
-    <%= render 'edit_form' %>
-  <% end %>
+    <h2 class="title has-text-centered">你确定要取消邮件订阅么？</h2>
+    <% if @subscription.new_record? %>
+      <%= render 'new_form' %>
+    <% else %>
+      <%= render 'edit_form' %>
+    <% end %>
   </div>
   <div class="hero-buttons">
   
