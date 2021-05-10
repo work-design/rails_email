@@ -15,7 +15,9 @@ module Email
     end
 
     def create
-      @subscription = Subscription.new(subscription_params)
+      account = Account.find current_account.id
+      @subscription = account.subscription || account.build_subscription
+      @subscription.assign_attributes subscription_params
       @subscription.unsubscribe_at = Time.current
 
       unless @subscription.save

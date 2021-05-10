@@ -5,7 +5,7 @@
   <div class="hero-body">
     <%= form_with theme: nil, model: @subscription, url: { action: 'create' }, class: 'form' do |f| %>
       <%= render partial: 'form', locals: { f: f } %>
-      <%= f.submit %>
+      <%= f.submit '确认' %>
     <% end %>
   </div>
   <div class="hero-buttons">
