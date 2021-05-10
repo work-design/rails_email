@@ -1,6 +1,10 @@
 Rails.application.routes.draw do
 
   namespace :email, defaults: { business: 'email' } do
+    controller :home do
+      get :index
+      get :preview
+    end
     resources :subscriptions
     namespace :panel, defaults: { namespace: 'panel' } do
       resources :logs, only: [:index, :show, :destroy]

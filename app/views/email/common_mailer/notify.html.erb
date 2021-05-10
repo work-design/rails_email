@@ -4,15 +4,13 @@
 <p>订单编号：<%= UidHelper.sec_uuid(@template.order_prefix) %></p>
 <p>礼品名称：拉卡拉收款机一台</p>
 
-<%= link_to({ controller: 'home', action: 'lakala', auth_token: @account.auth_token }) do %>
+<%= link_to({ controller: 'email/home', auth_token: @account.auth_token }) do %>
   <%= image_tag @template.cover_blob.data_url, style: 'width: 350px' %>
 <% end %>
 
 <p>
   <span>邮件无法正常显示，</span>
-  <%= link_to '点击这里', { controller: 'home', action: 'here' } %>
+  <%= link_to '点击这里', { controller: 'email/home', action: 'preview' } %>
   <span>，我要</span>
-  <%= link_to '投诉', { controller: 'home', action: 'complain' } %>
-  <span>|</span>
   <%= link_to '退订', { controller: 'email/subscriptions', action: 'new', auth_token: @account.auth_token } %>
 </p>
