@@ -1,1 +1,28 @@
 en:
+  email:
+    title: 邮件服务
+    panel:
+      title: 邮件
+      logs:
+        index:
+          title: 发送日志
+      smtps:
+        index:
+          title: 邮件 SMTP 发送
+      reasons:
+        index:
+          title: 取关理由
+    admin:
+      title: 邮件服务
+      logs:
+        index:
+          title: 发送日志
+      smtps:
+        index:
+          title: SMTP 服务
+      smtp_accounts:
+        index:
+          title: SMTP 邮箱
+      templates:
+        index:
+          title: 发送模板
