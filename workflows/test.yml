@@ -20,9 +20,10 @@ jobs:
       with:
         submodules: recursive
     - name: Set up Ruby
-      uses: actions/setup-ruby@v1
+      uses: ruby/setup-ruby@v1
       with:
         ruby-version: 3.0.x
+        bundler-cache: true
     - name: Set up Nodejs
       uses: actions/setup-node@v1
       with:
