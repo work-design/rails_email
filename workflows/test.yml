@@ -22,7 +22,7 @@ jobs:
     - name: Set up Ruby
       uses: ruby/setup-ruby@v1
       with:
-        ruby-version: 3.0.x
+        ruby-version: 3.0.2
         bundler-cache: true
     - name: Set up Nodejs
       uses: actions/setup-node@v1
