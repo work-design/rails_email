@@ -30,11 +30,6 @@ jobs:
       uses: actions/setup-node@v1
       with:
         node-version: 16.3.0
-    - name: Cache Bundle
-      uses: actions/cache@v1
-      with:
-        path: vendor/bundle
-        key: ${{ runner.OS }}-bundle-${{ hashFiles('Gemfile.lock') }}
     - name: Cache Node Modules
       uses: actions/cache@v1
       with:
