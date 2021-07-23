@@ -42,7 +42,6 @@ jobs:
         key: ${{ runner.OS }}-yarn-${{ hashFiles('test/dummy/yarn.lock') }}
     - name: Install Dependencies
       run: |
-        gem install bundler
         bundle install --jobs=4 --retry=3
         test/dummy/bin/yarn install --check-files
     - name: Prepare DB
