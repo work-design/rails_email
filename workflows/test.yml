@@ -33,7 +33,7 @@ jobs:
     - name: Cache Bundle
       uses: actions/cache@v1
       with:
-        path: bundle
+        path: vendor/bundle
         key: ${{ runner.OS }}-bundle-${{ hashFiles('Gemfile.lock') }}
     - name: Cache Node Modules
       uses: actions/cache@v1
@@ -43,12 +43,12 @@ jobs:
     - name: Install Dependencies
       run: |
         gem install bundler
-        bundle install --path=bundle --jobs=4 --retry=3
+        bundle install --jobs=4 --retry=3
         test/dummy/bin/yarn install --check-files
     - name: Prepare DB
       run: |
         bin/rails db:create
-        bin/rails g rails_com:migrations --force
+        bin/rails g rails_com:migrations -f
         bin/rails db:migrate
     - name: Run Test
       run: |
