@@ -18,7 +18,7 @@ jobs:
           - 5432:5432
     steps:
     - name: Fetch Project
-      uses: actions/checkout@v1
+      uses: actions/checkout@v2
       with:
         submodules: recursive
     - name: Set up Ruby and Bundle Install
@@ -27,11 +27,12 @@ jobs:
         ruby-version: 3.0.2
         bundler-cache: true
     - name: Set up Nodejs
-      uses: actions/setup-node@v1
+      uses: actions/setup-node@v2
       with:
         node-version: 16.3.0
+        cache: 'yarn'
     - name: Cache Node Modules
-      uses: actions/cache@v1
+      uses: actions/cache@v2
       with:
         path: test/dummy/node_modules
         key: ${{ runner.OS }}-yarn-${{ hashFiles('test/dummy/yarn.lock') }}
