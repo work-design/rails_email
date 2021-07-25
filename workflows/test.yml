@@ -35,7 +35,7 @@ jobs:
       with:
         path: test/dummy/node_modules
         key: ${{ runner.OS }}-yarn-${{ hashFiles('test/dummy/yarn.lock') }}
-    - name: Install Dependencies
+    - name: Install Javascript(Node.js) Dependencies
       run: |
         test/dummy/bin/yarn install --check-files
     - name: Prepare DB
