@@ -1,0 +1,10 @@
+one:
+  type: Auth::EmailAccount
+  identity: test@work.design
+  confirmed: false
+  source: MyString
+two:
+  type: Auth::EmailAccount
+  identity: test2@work.design
+  confirmed: false
+  source: MyString

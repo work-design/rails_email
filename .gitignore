@@ -4,5 +4,5 @@ docs/
 db/
 
 *.gem
-tmp/**/*.state
+tmp/**/*.*
 !tmp/sockets/.keep

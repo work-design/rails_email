@@ -6,6 +6,15 @@ GIT
       rails
 
 GIT
+  remote: https://github.com/work-design/rails_auth.git
+  revision: c9dae8f6af1e7f42d16591ef9aba91cab1b00b63
+  specs:
+    rails_auth (1.1.0)
+      bcrypt (~> 3.1)
+      jwt (>= 2.0, <= 3.0)
+      rails_com (~> 1.2)
+
+GIT
   remote: https://github.com/work-design/rails_com.git
   revision: 19bcb32682f63d4240bf1d80f4c796dd4c4f0b11
   specs:
@@ -31,6 +40,7 @@ PATH
   remote: .
   specs:
     rails_email (2.1.6)
+      rails_auth
       rails_com (~> 1.2)
 
 GEM
@@ -100,6 +110,7 @@ GEM
     acts_as_list (1.0.4)
       activerecord (>= 4.2)
     awesome_print (1.9.2)
+    bcrypt (3.1.16)
     builder (3.2.4)
     closure_tree (7.3.0)
       activerecord (>= 4.2.10)
@@ -136,6 +147,7 @@ GEM
       timers
     i18n (1.8.10)
       concurrent-ruby (~> 1.0)
+    jwt (2.2.3)
     kaminari (1.2.1)
       activesupport (>= 4.1.0)
       kaminari-actionview (= 1.2.1)
@@ -236,6 +248,7 @@ DEPENDENCIES
   pry-rails
   puma
   rails
+  rails_auth!
   rails_com!
   rails_email!
   rails_ui!

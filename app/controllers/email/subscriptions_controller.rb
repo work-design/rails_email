@@ -3,11 +3,7 @@ module Email
     before_action :login_by_token, only: [:new]
     before_action :set_subscription, only: [:show, :edit, :update, :destroy]
     before_action :set_current_subscription, only: [:new, :create]
-    before_action :prepare_form, only: [:new]
-
-    def index
-      @subscriptions = Subscription.includes(:reason).page(params[:page])
-    end
+    before_action :prepare_form, only: [:new, :edit]
 
     def new
       @subscription.address = params[:address]
