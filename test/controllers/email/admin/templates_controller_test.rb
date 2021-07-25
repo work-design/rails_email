@@ -1,49 +1,62 @@
 require 'test_helper'
-class Email::Admin::TemplatesControllerTest < ActionDispatch::IntegrationTest
+module Email
+  class Admin::TemplatesControllerTest < ActionDispatch::IntegrationTest
 
-  setup do
-    @email_admin_template = create email_admin_templates
-  end
-
-  test 'index ok' do
-    get admin_templates_url
-    assert_response :success
-  end
-
-  test 'new ok' do
-    get new_admin_template_url
-    assert_response :success
-  end
-
-  test 'create ok' do
-    assert_difference('Template.count') do
-      post admin_templates_url, params: { #{singular_table_name}: { #{attributes_string} } }
+    setup do
+      @template = email_templates(:one)
     end
 
-    assert_response :success
-  end
-
-  test 'show ok' do
-    get admin_template_url(@email_admin_template)
-    assert_response :success
-  end
-
-  test 'edit ok' do
-    get edit_admin_template_url(@email_admin_template)
-    assert_response :success
-  end
-
-  test 'update ok' do
-    patch admin_template_url(@email_admin_template), params: { #{singular_table_name}: { #{attributes_string} } }
-    assert_response :success
-  end
-
-  test 'destroy ok' do
-    assert_difference('Template.count', -1) do
-      delete admin_template_url(@email_admin_template)
+    test 'index ok' do
+      get url_for(controller: 'email/admin/templates')
+      assert_response :success
     end
 
-    assert_response :success
-  end
+    test 'new ok' do
+      get url_for(controller: 'email/admin/templates', action: 'new')
+      assert_response :success
+    end
 
+    test 'create ok' do
+      assert_difference('Email::Template.count') do
+        post(
+          url_for(controller: 'email/admin/templates', action: 'create'),
+          params: { template: @template.attributes.except('id', 'created_at', 'updated_at') },
+          as: :turbo_stream
+        )
+      end
+
+      assert_response :success
+    end
+
+    test 'show ok' do
+      get url_for(controller: 'email/admin/templates', action: 'show', id: @template.id)
+      assert_response :success
+    end
+
+    test 'edit ok' do
+      get url_for(controller: 'email/admin/templates', action: 'edit', id: @template.id)
+      assert_response :success
+    end
+
+    test 'update ok' do
+      patch(
+        url_for(controller: 'email/admin/templates', action: 'update', id: @template.id),
+        params: { template: { subject: 'xx' } },
+        as: :turbo_stream
+      )
+
+      @template.reload
+      assert_equal 'xx', @template.subject
+      assert_response :success
+    end
+
+    test 'destroy ok' do
+      assert_difference('Email::Template.count', -1) do
+        delete url_for(controller: 'email/admin/templates', action: 'destroy', id: @template.id), as: :turbo_stream
+      end
+
+      assert_response :success
+    end
+
+  end
 end

@@ -1,49 +1,42 @@
 require 'test_helper'
-class Email::Admin::LogsControllerTest < ActionDispatch::IntegrationTest
+module Email
+  class Admin::LogsControllerTest < ActionDispatch::IntegrationTest
 
-  setup do
-    @email_admin_log = create email_admin_logs
-  end
-
-  test 'index ok' do
-    get admin_logs_url
-    assert_response :success
-  end
-
-  test 'new ok' do
-    get new_admin_log_url
-    assert_response :success
-  end
-
-  test 'create ok' do
-    assert_difference('Log.count') do
-      post admin_logs_url, params: { #{singular_table_name}: { #{attributes_string} } }
+    setup do
+      @log = email_logs(:one)
     end
 
-    assert_response :success
-  end
-
-  test 'show ok' do
-    get admin_log_url(@email_admin_log)
-    assert_response :success
-  end
-
-  test 'edit ok' do
-    get edit_admin_log_url(@email_admin_log)
-    assert_response :success
-  end
-
-  test 'update ok' do
-    patch admin_log_url(@email_admin_log), params: { #{singular_table_name}: { #{attributes_string} } }
-    assert_response :success
-  end
-
-  test 'destroy ok' do
-    assert_difference('Log.count', -1) do
-      delete admin_log_url(@email_admin_log)
+    test 'index ok' do
+      get url_for(controller: 'email/admin/logs')
+      assert_response :success
     end
 
-    assert_response :success
-  end
+    test 'show ok' do
+      get url_for(controller: 'email/admin/logs', action: 'show', id: @log.id)
+      assert_response :success
+    end
 
+    test 'edit ok' do
+      get url_for(controller: 'email/admin/logs', action: 'edit', id: @log.id)
+      assert_response :success
+    end
+
+    test 'update ok' do
+      patch(
+        url_for(controller: 'email/admin/logs', action: 'update', id: @log.id),
+        params: { log: {  } },
+        as: :turbo_stream
+      )
+      assert_response :success
+    end
+
+    test 'destroy ok' do
+      assert_difference('Email::Log.count', -1) do
+        delete url_for(controller: 'email/admin/logs', action: 'update', id: @log.id), as: :turbo_stream
+      end
+
+      assert_response :success
+    end
+
+  end
 end

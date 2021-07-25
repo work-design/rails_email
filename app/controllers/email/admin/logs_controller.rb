@@ -6,18 +6,6 @@ module Email
       @logs = Log.page(params[:page])
     end
 
-    def new
-      @log = Log.new
-    end
-
-    def create
-      @log = Log.new(log_params)
-
-      unless @log.save
-        render :new, locals: { model: @log }, status: :unprocessable_entity
-      end
-    end
-
     def show
     end
 

@@ -1,0 +1,24 @@
+one:
+  template: one
+  mail_from: MyString
+  message_object_id: MyString
+  mailer: MyString
+  action_name: MyString
+  params: MyString
+  subject: MyString
+  mail_to: MyString
+  cc_to: MyString
+  sent_status: MyString
+  sent_string: MyString
+two:
+  template: two
+  mail_from: MyString
+  message_object_id: MyString
+  mailer: MyString
+  action_name: MyString
+  params: MyString
+  subject: MyString
+  mail_to: MyString
+  cc_to: MyString
+  sent_status: MyString
+  sent_string: MyString
