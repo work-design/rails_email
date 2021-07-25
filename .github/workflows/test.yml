@@ -3,47 +3,46 @@ on: [push]
 jobs:
   test:
     runs-on: ubuntu-latest
+    services:
+      postgres:
+        image: postgres:13
+        env:
+          POSTGRES_USER: postgres
+          POSTGRES_PASSWORD: postgres
+        options: >-
+          --health-cmd pg_isready
+          --health-interval 10s
+          --health-timeout 5s
+          --health-retries 5
+        ports:
+          - 5432:5432
     steps:
-    - name: Set up System
-      run: |
-        sudo systemctl start postgresql
-        sudo systemctl status postgresql
-        sudo su postgres && psql -c "create role runner with login password 'runner';" && exit
-    - name: Set up Ruby
+    - name: Fetch Project
+      uses: actions/checkout@v2
+      with:
+        submodules: true
+    - name: Set up Ruby and Bundle Install
       uses: ruby/setup-ruby@v1
       with:
-        ruby-version: 3.0.x
+        ruby-version: 3.0.2
         bundler-cache: true
     - name: Set up Nodejs
-      uses: actions/setup-node@v1
+      uses: actions/setup-node@v2
       with:
-        node-version: 10.x
-    - name: Fetch Project
-      uses: actions/checkout@v1
-      with:
-        submodules: recursive
-    - name: Cache Bundle
-      uses: actions/cache@v1
-      with:
-        path: bundle
-        key: ${{ runner.OS }}-bundle-${{ hashFiles('Gemfile.lock') }}
+        node-version: 16.3.0
     - name: Cache Node Modules
-      uses: actions/cache@v1
+      uses: actions/cache@v2
       with:
         path: test/dummy/node_modules
         key: ${{ runner.OS }}-yarn-${{ hashFiles('test/dummy/yarn.lock') }}
-    - name: Install Dependencies
+    - name: Install Javascript(Node.js) Dependencies
       run: |
-        gem install bundler
-        bundle install --path=bundle --jobs=4 --retry=3
         test/dummy/bin/yarn install --check-files
     - name: Prepare DB
       run: |
-        cp test/dummy/config/database.yml.example test/dummy/config/database.yml
-        bin/rails db:drop
-        bin/rails db:create
-        bin/rails g rails_com:migrations --force
-        bin/rails db:migrate
+        RAILS_ENV=test bin/rails db:create
+        RAILS_ENV=test bin/rails g rails_com:migrations -f
+        RAILS_ENV=test bin/rails db:migrate
     - name: Run Test
       run: |
         bin/rails test -v -b
