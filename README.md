@@ -11,17 +11,6 @@ Email 周边服务
 2. 记录了非常详尽的debug信息;
 
 ## 使用方法
-
-* 添加到gemfile中，默认包含对controller 及 mailer 的日志记录；
-`gem 'rails_log'`
-
-如果只需要其中一个，在gemfile中指定 require
-```
-gem 'rails_log', require: 'log_mailer'
-gem 'rails_log', require: 'log_controller'
-gem 'rails_log', require: ['log_controller', 'log_mailer']
-```
-
 * 邮件日志相关配置
 * 设置发送邮件返回 response
 ```ruby
@@ -35,7 +24,7 @@ config.action_mailer.smtp_settings = {
  config.action_mailer.raise_delivery_errors = true
 ```
 
-then you can visit `log_records` to see error records
+then you can visit `email/admin/logs` to see error records
 
 ## 许可证
 遵循 [MIT](https://opensource.org/licenses/MIT) 协议
