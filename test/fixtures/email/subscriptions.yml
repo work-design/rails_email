@@ -1,0 +1,12 @@
+one:
+  reason: one
+  address: MyString
+  subscribe_at: <%= Time.current %>
+  unsubscribe_at: <%= Time.current %>
+  state: <%= Email::Subscription.states.values.shuffle!.pop %>
+two:
+  reason: two
+  address: MyString
+  subscribe_at: <%= Time.current %>
+  unsubscribe_at: <%= Time.current %>
+  state: <%= Email::Subscription.states.values.shuffle!.pop %>

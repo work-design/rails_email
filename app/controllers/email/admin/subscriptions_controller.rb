@@ -1,5 +1,5 @@
 module Email
-  class Panel::SubscriptionsController < Panel::BaseController
+  class Admin::SubscriptionsController < Admin::BaseController
     before_action :set_subscription, only: [:show, :edit, :update, :destroy]
 
     def index
