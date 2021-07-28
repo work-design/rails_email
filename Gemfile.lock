@@ -1,13 +1,13 @@
 GIT
   remote: https://github.com/qinmingyuan/viter.git
-  revision: 7e67bf86c44f0c95c918d631df253e0f824caf15
+  revision: 68d21b1844497c22df45dea05cf93bc84c809166
   specs:
     viter (0.1.0)
       rails
 
 GIT
   remote: https://github.com/work-design/rails_auth.git
-  revision: c9dae8f6af1e7f42d16591ef9aba91cab1b00b63
+  revision: e49f90c93acf53084eeab6d0338d2add4c75c2a1
   specs:
     rails_auth (1.1.0)
       bcrypt (~> 3.1)
@@ -16,7 +16,7 @@ GIT
 
 GIT
   remote: https://github.com/work-design/rails_com.git
-  revision: 19bcb32682f63d4240bf1d80f4c796dd4c4f0b11
+  revision: 0d665c63b5015543291c90db94ab53dbdb2893d7
   specs:
     rails_com (1.2.9)
       acme-client
@@ -31,7 +31,7 @@ GIT
 
 GIT
   remote: https://github.com/work-design/rails_ui.git
-  revision: 092c9bcf325a2c4f609bb74a18e65bd07cd66017
+  revision: 28312c28dd5e5af50e4d16d38ffc7a15b7e0eee0
   specs:
     rails_ui (0.1.0)
       rails
