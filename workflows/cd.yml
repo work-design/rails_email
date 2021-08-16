@@ -3,7 +3,6 @@ on:
   push:
     branches:
       - deploy
-
 jobs:
   build:
     name: Build image
@@ -11,6 +10,8 @@ jobs:
     steps:
       - name: Checkout code
         uses: actions/checkout@v2
+        with:
+          submodules: true
       - name: Docker build
         run: |
           docker build -t docker.pkg.github.com/$GITHUB_REPOSITORY:latest .
