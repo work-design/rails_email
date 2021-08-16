@@ -28,5 +28,5 @@ jobs:
       - name: Docker push production
         if: ${{ github.ref == 'refs/heads/deploy' }}
         run: |
-          docker tag docker.pkg.github.com/$GITHUB_REPOSITORY:latest docker.pkg.github.com/$GITHUB_REPOSITORY:production
-          docker push docker.pkg.github.com/$GITHUB_REPOSITORY:production
+          docker tag docker.pkg.github.com/$GITHUB_REPOSITORY/engine:latest docker.pkg.github.com/$GITHUB_REPOSITORY/engine:production
+          docker push docker.pkg.github.com/$GITHUB_REPOSITORY/engine:production
