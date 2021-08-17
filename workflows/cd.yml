@@ -25,7 +25,7 @@ jobs:
       - name: Docker push latest
         if: ${{ github.ref == 'refs/heads/main' }}
         run: |
-          docker push docker.pkg.github.com/$GITHUB_REPOSITORY:latest
+          docker push docker.pkg.github.com/$GITHUB_REPOSITORY/engine:latest
       - name: Docker push production
         if: ${{ github.ref == 'refs/heads/deploy' }}
         run: |
