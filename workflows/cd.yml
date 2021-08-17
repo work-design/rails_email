@@ -15,7 +15,7 @@ jobs:
           submodules: true
       - name: Docker build
         run: |
-          docker build -t $GITHUB_REGISTRY/$GITHUB_REPOSITORY/engine:latest .
+          docker build -t $GITHUB_REPOSITORY/engine:latest .
       - name: Docker login
         uses: docker/login-action@v1
         with:
@@ -25,9 +25,9 @@ jobs:
       - name: Docker push latest
         if: ${{ github.ref == 'refs/heads/main' }}
         run: |
-          docker push $GITHUB_REGISTRY/$GITHUB_REPOSITORY/engine:latest
+          docker push $GITHUB_REPOSITORY/engine:latest
       - name: Docker push production
         if: ${{ github.ref == 'refs/heads/deploy' }}
         run: |
-          docker tag $GITHUB_REGISTRY/$GITHUB_REPOSITORY/engine:latest $GITHUB_REGISTRY/$GITHUB_REPOSITORY/engine:production
-          docker push $GITHUB_REGISTRY/$GITHUB_REPOSITORY/engine:production
+          docker tag $GITHUB_REPOSITORY/engine:latest $GITHUB_REPOSITORY/engine:production
+          docker push $GITHUB_REPOSITORY/engine:production
