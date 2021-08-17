@@ -9,6 +9,12 @@ jobs:
     name: Build image
     runs-on: ubuntu-latest
     steps:
+      - name: Docker login
+        uses: docker/login-action@v1
+        with:
+          registry: ${{ secrets.REGISTRY }}
+          username: ${{ secrets.USER }}
+          password: ${{ secrets.TOKEN }}
       - name: Checkout code
         uses: actions/checkout@v2
         with:
@@ -16,12 +22,6 @@ jobs:
       - name: Docker build
         run: |
           docker build -t $GITHUB_REPOSITORY/engine:latest .
-      - name: Docker login
-        uses: docker/login-action@v1
-        with:
-          registry: ${{ secrets.GITHUB_REGISTRY }}
-          username: ${{ secrets.GITHUB_USER }}
-          password: ${{ secrets.GITHUB_TOKEN }}
       - name: Docker push latest
         if: ${{ github.ref == 'refs/heads/main' }}
         run: |
