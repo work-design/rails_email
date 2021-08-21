@@ -20,13 +20,13 @@ jobs:
           submodules: true
       - name: Docker build
         run: |
-          docker build -t docker.pkg.github.com/$GITHUB_REPOSITORY/engine:latest -f docker/Dockerfile .
+          docker build -t docker.pkg.github.com/$GITHUB_REPOSITORY/${{ github.event.repository.name }}:latest -f docker/Dockerfile .
       - name: Docker push latest
         if: ${{ github.ref == 'refs/heads/main' }}
         run: |
-          docker push docker.pkg.github.com/$GITHUB_REPOSITORY/engine:latest
+          docker push docker.pkg.github.com/$GITHUB_REPOSITORY/${{ github.event.repository.name }}:latest
       - name: Docker push production
         if: ${{ github.ref == 'refs/heads/deploy' }}
         run: |
-          docker tag docker.pkg.github.com/$GITHUB_REPOSITORY/engine:latest docker.pkg.github.com/$GITHUB_REPOSITORY/engine:production
-          docker push docker.pkg.github.com/$GITHUB_REPOSITORY/engine:production
+          docker tag docker.pkg.github.com/$GITHUB_REPOSITORY/${{ github.event.repository.name }}:latest docker.pkg.github.com/$GITHUB_REPOSITORY/${{ github.event.repository.name }}:production
+          docker push docker.pkg.github.com/$GITHUB_REPOSITORY/${{ github.event.repository.name }}:production
