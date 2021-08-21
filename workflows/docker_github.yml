@@ -1,0 +1,32 @@
+name: Docker Github
+on:
+  push:
+    branches:
+      - main
+jobs:
+  build:
+    name: Build image
+    runs-on: ubuntu-latest
+    steps:
+      - name: Docker login
+        uses: docker/login-action@v1
+        with:
+          registry: docker.pkg.github.com
+          username: ${{ github.actor }}
+          password: ${{ secrets.AK }}
+      - name: Checkout code
+        uses: actions/checkout@v2
+        with:
+          submodules: true
+      - name: Docker build
+        run: |
+          docker build -t docker.pkg.github.com/$GITHUB_REPOSITORY:latest -f docker/Dockerfile .
+      - name: Docker push latest
+        if: ${{ github.ref == 'refs/heads/main' }}
+        run: |
+          docker push docker.pkg.github.com/$GITHUB_REPOSITORY:latest
+      - name: Docker push production
+        if: ${{ github.ref == 'refs/heads/deploy' }}
+        run: |
+          docker tag docker.pkg.github.com/$GITHUB_REPOSITORY:latest docker.pkg.github.com/$GITHUB_REPOSITORY:production
+          docker push docker.pkg.github.com/$GITHUB_REPOSITORY:production
