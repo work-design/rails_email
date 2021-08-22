@@ -20,7 +20,7 @@ jobs:
           submodules: true
       - name: Docker build
         run: |
-          docker build -t docker.pkg.github.com/$GITHUB_REPOSITORY/${{ github.event.repository.name }}:latest -f docker/Dockerfile .
+          docker build -t docker.pkg.github.com/$GITHUB_REPOSITORY/${{ github.event.repository.name }}:latest -f docker/engine/Dockerfile .
       - name: Docker push latest
         if: ${{ github.ref == 'refs/heads/main' }}
         run: |

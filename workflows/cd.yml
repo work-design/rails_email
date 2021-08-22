@@ -21,7 +21,7 @@ jobs:
           submodules: true
       - name: Docker build
         run: |
-          docker build -t ${{ secrets.DOCKER_URL }}/$GITHUB_REPOSITORY:latest -f docker/Dockerfile .
+          docker build -t ${{ secrets.DOCKER_URL }}/$GITHUB_REPOSITORY:latest -f docker/engine/Dockerfile .
       - name: Docker push latest
         if: ${{ github.ref == 'refs/heads/main' }}
         run: |
