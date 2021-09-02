@@ -40,7 +40,7 @@ jobs:
         test/dummy/bin/yarn install --check-files
     - name: Prepare DB
       run: |
-        RAILS_ENV=test bin/rails db:create
+        RAILS_ENV=test bin/rails app:db:prepare
         RAILS_ENV=test bin/rails g rails_com:migrations -f
         RAILS_ENV=test bin/rails db:migrate
     - name: Run Test
