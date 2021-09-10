@@ -13,7 +13,7 @@ jobs:
       with:
         submodules: true
     - name: Set up Ruby
-      uses: actions/setup-ruby@v1
+      uses: ruby/setup-ruby@v1
       with:
         ruby-version: 3.0
     - name: Publish to RubyGems
