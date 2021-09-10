@@ -1,11 +1,8 @@
 name: Gem
 on:
-  pull_request:
-    branches:
-    - release
-  push:
-    branches:
-    - release
+  create:
+    tags:
+    - 'v*'
 jobs:
   build:
     name: Build + Publish
