@@ -18,7 +18,7 @@ jobs:
     - name: Set up Ruby
       uses: actions/setup-ruby@v1
       with:
-        version: 3.0.x
+        version: 3.0
     - name: Publish to RubyGems
       run: |
         mkdir -p $HOME/.gem

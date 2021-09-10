@@ -24,12 +24,12 @@ jobs:
     - name: Set up Ruby and Bundle Install
       uses: ruby/setup-ruby@v1
       with:
-        ruby-version: 3.0.2
+        ruby-version: 3.0
         bundler-cache: true
     - name: Set up Nodejs
       uses: actions/setup-node@v2
       with:
-        node-version: 16.3.0
+        node-version: 16.3
     - name: Cache Node Modules
       uses: actions/cache@v2
       with:
@@ -41,7 +41,7 @@ jobs:
     - name: Prepare DB
       run: |
         RAILS_ENV=test bin/rails app:db:prepare
-        RAILS_ENV=test bin/rails g rails_com:migrations -f
+        RAILS_ENV=test bin/rails g rails_extend:migrations -f
         RAILS_ENV=test bin/rails db:migrate
     - name: Run Test
       run: |
