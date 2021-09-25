@@ -1,13 +1,6 @@
 GIT
-  remote: https://github.com/qinmingyuan/viter.git
-  revision: 997cbc807babe4380f76ad0051518de12135702e
-  specs:
-    viter (0.1.0)
-      rails
-
-GIT
   remote: https://github.com/work-design/rails_auth.git
-  revision: 9f4972e3bdd847663fcbc7f5d4f83ee27fc05d69
+  revision: d18ba68e975f04a63e97cbcafc5bf92512cdb18e
   specs:
     rails_auth (1.2.0)
       bcrypt (~> 3.1)
@@ -16,7 +9,7 @@ GIT
 
 GIT
   remote: https://github.com/work-design/rails_com.git
-  revision: 97e509876fd80ae76f1afc6c129ff817a96df0e9
+  revision: f9033ce0d1c2c8e102741a04760b9ccbde412f16
   specs:
     rails_com (1.2.9)
       acme-client
@@ -25,15 +18,24 @@ GIT
       default_where (~> 2.2)
       http-form_data (~> 2.3)
       httpx (~> 0.16)
+      jbuilder
       kaminari
-      rails (~> 6.1)
+      rails (>= 6.1)
+      rails_extend
       turbo-rails
 
 GIT
-  remote: https://github.com/work-design/rails_ui.git
-  revision: 60778d85c650357871ece6410ff61bbd9f9ebdec
+  remote: https://github.com/work-design/rails_design.git
+  revision: 26448b208a4d0fb7b585744441f3a237705695b0
   specs:
-    rails_ui (0.1.0)
+    rails_design (0.0.1)
+      rails
+
+GIT
+  remote: https://github.com/work-design/rails_vite.git
+  revision: fc5c34bce125a277b71b61b8f9764b4555f477f8
+  specs:
+    rails_vite (0.0.1)
       rails
 
 PATH
@@ -46,62 +48,62 @@ PATH
 GEM
   remote: https://rubygems.org/
   specs:
-    acme-client (2.0.8)
+    acme-client (2.0.9)
       faraday (>= 0.17, < 2.0.0)
-    actioncable (6.1.4)
-      actionpack (= 6.1.4)
-      activesupport (= 6.1.4)
+    actioncable (6.1.4.1)
+      actionpack (= 6.1.4.1)
+      activesupport (= 6.1.4.1)
       nio4r (~> 2.0)
       websocket-driver (>= 0.6.1)
-    actionmailbox (6.1.4)
-      actionpack (= 6.1.4)
-      activejob (= 6.1.4)
-      activerecord (= 6.1.4)
-      activestorage (= 6.1.4)
-      activesupport (= 6.1.4)
+    actionmailbox (6.1.4.1)
+      actionpack (= 6.1.4.1)
+      activejob (= 6.1.4.1)
+      activerecord (= 6.1.4.1)
+      activestorage (= 6.1.4.1)
+      activesupport (= 6.1.4.1)
       mail (>= 2.7.1)
-    actionmailer (6.1.4)
-      actionpack (= 6.1.4)
-      actionview (= 6.1.4)
-      activejob (= 6.1.4)
-      activesupport (= 6.1.4)
+    actionmailer (6.1.4.1)
+      actionpack (= 6.1.4.1)
+      actionview (= 6.1.4.1)
+      activejob (= 6.1.4.1)
+      activesupport (= 6.1.4.1)
       mail (~> 2.5, >= 2.5.4)
       rails-dom-testing (~> 2.0)
-    actionpack (6.1.4)
-      actionview (= 6.1.4)
-      activesupport (= 6.1.4)
+    actionpack (6.1.4.1)
+      actionview (= 6.1.4.1)
+      activesupport (= 6.1.4.1)
       rack (~> 2.0, >= 2.0.9)
       rack-test (>= 0.6.3)
       rails-dom-testing (~> 2.0)
       rails-html-sanitizer (~> 1.0, >= 1.2.0)
-    actiontext (6.1.4)
-      actionpack (= 6.1.4)
-      activerecord (= 6.1.4)
-      activestorage (= 6.1.4)
-      activesupport (= 6.1.4)
+    actiontext (6.1.4.1)
+      actionpack (= 6.1.4.1)
+      activerecord (= 6.1.4.1)
+      activestorage (= 6.1.4.1)
+      activesupport (= 6.1.4.1)
       nokogiri (>= 1.8.5)
-    actionview (6.1.4)
-      activesupport (= 6.1.4)
+    actionview (6.1.4.1)
+      activesupport (= 6.1.4.1)
       builder (~> 3.1)
       erubi (~> 1.4)
       rails-dom-testing (~> 2.0)
       rails-html-sanitizer (~> 1.1, >= 1.2.0)
-    activejob (6.1.4)
-      activesupport (= 6.1.4)
+    activejob (6.1.4.1)
+      activesupport (= 6.1.4.1)
       globalid (>= 0.3.6)
-    activemodel (6.1.4)
-      activesupport (= 6.1.4)
-    activerecord (6.1.4)
-      activemodel (= 6.1.4)
-      activesupport (= 6.1.4)
-    activestorage (6.1.4)
-      actionpack (= 6.1.4)
-      activejob (= 6.1.4)
-      activerecord (= 6.1.4)
-      activesupport (= 6.1.4)
+    activemodel (6.1.4.1)
+      activesupport (= 6.1.4.1)
+    activerecord (6.1.4.1)
+      activemodel (= 6.1.4.1)
+      activesupport (= 6.1.4.1)
+    activestorage (6.1.4.1)
+      actionpack (= 6.1.4.1)
+      activejob (= 6.1.4.1)
+      activerecord (= 6.1.4.1)
+      activesupport (= 6.1.4.1)
       marcel (~> 1.0.0)
       mini_mime (>= 1.1.0)
-    activesupport (6.1.4)
+    activesupport (6.1.4.1)
       concurrent-ruby (~> 1.0, >= 1.0.2)
       i18n (>= 1.6, < 2)
       minitest (>= 5.1)
@@ -109,19 +111,18 @@ GEM
       zeitwerk (~> 2.3)
     acts_as_list (1.0.4)
       activerecord (>= 4.2)
-    awesome_print (1.9.2)
+    amazing_print (1.3.0)
     bcrypt (3.1.16)
     builder (3.2.4)
     closure_tree (7.3.0)
       activerecord (>= 4.2.10)
       with_advisory_lock (>= 4.0.0)
-    coderay (1.1.3)
     concurrent-ruby (1.1.9)
     crass (1.0.6)
     default_where (2.3.0)
       activerecord (>= 4.0, <= 7.0)
     erubi (1.10.0)
-    faraday (1.7.0)
+    faraday (1.8.0)
       faraday-em_http (~> 1.0)
       faraday-em_synchrony (~> 1.0)
       faraday-excon (~> 1.1)
@@ -140,15 +141,17 @@ GEM
     faraday-net_http_persistent (1.2.0)
     faraday-patron (1.0.0)
     faraday-rack (1.0.0)
-    globalid (0.4.2)
-      activesupport (>= 4.2.0)
+    globalid (0.5.2)
+      activesupport (>= 5.0)
     http-2-next (0.5.0)
     http-form_data (2.3.0)
-    httpx (0.16.1)
+    httpx (0.17.0)
       http-2-next (>= 0.4.1)
       timers
     i18n (1.8.10)
       concurrent-ruby (~> 1.0)
+    jbuilder (2.11.2)
+      activesupport (>= 5.0.0)
     jwt (2.2.3)
     kaminari (1.2.1)
       activesupport (>= 4.1.0)
@@ -162,56 +165,53 @@ GEM
       activerecord
       kaminari-core (= 1.2.1)
     kaminari-core (1.2.1)
-    loofah (2.10.0)
+    loofah (2.12.0)
       crass (~> 1.0.2)
       nokogiri (>= 1.5.9)
     mail (2.7.1)
       mini_mime (>= 0.1.1)
-    marcel (1.0.1)
+    marcel (1.0.2)
     method_source (1.0.0)
-    mini_mime (1.1.0)
-    mini_portile2 (2.5.3)
+    mini_mime (1.1.1)
+    mini_portile2 (2.6.1)
     minitest (5.14.4)
     multipart-post (2.1.1)
-    nio4r (2.5.7)
-    nokogiri (1.11.7)
-      mini_portile2 (~> 2.5.0)
+    nio4r (2.5.8)
+    nokogiri (1.12.4)
+      mini_portile2 (~> 2.6.1)
       racc (~> 1.4)
     pg (1.2.3)
-    pry (0.14.1)
-      coderay (~> 1.1)
-      method_source (~> 1.0)
-    pry-rails (0.3.9)
-      pry (>= 0.10.4)
-    puma (5.3.2)
+    puma (5.5.0)
       nio4r (~> 2.0)
     racc (1.5.2)
     rack (2.2.3)
     rack-test (1.1.0)
       rack (>= 1.0, < 3)
-    rails (6.1.4)
-      actioncable (= 6.1.4)
-      actionmailbox (= 6.1.4)
-      actionmailer (= 6.1.4)
-      actionpack (= 6.1.4)
-      actiontext (= 6.1.4)
-      actionview (= 6.1.4)
-      activejob (= 6.1.4)
-      activemodel (= 6.1.4)
-      activerecord (= 6.1.4)
-      activestorage (= 6.1.4)
-      activesupport (= 6.1.4)
+    rails (6.1.4.1)
+      actioncable (= 6.1.4.1)
+      actionmailbox (= 6.1.4.1)
+      actionmailer (= 6.1.4.1)
+      actionpack (= 6.1.4.1)
+      actiontext (= 6.1.4.1)
+      actionview (= 6.1.4.1)
+      activejob (= 6.1.4.1)
+      activemodel (= 6.1.4.1)
+      activerecord (= 6.1.4.1)
+      activestorage (= 6.1.4.1)
+      activesupport (= 6.1.4.1)
       bundler (>= 1.15.0)
-      railties (= 6.1.4)
+      railties (= 6.1.4.1)
       sprockets-rails (>= 2.0.0)
     rails-dom-testing (2.0.3)
       activesupport (>= 4.2.0)
       nokogiri (>= 1.6)
-    rails-html-sanitizer (1.3.0)
+    rails-html-sanitizer (1.4.2)
       loofah (~> 2.3)
-    railties (6.1.4)
-      actionpack (= 6.1.4)
-      activesupport (= 6.1.4)
+    rails_extend (1.0.0)
+      rails (>= 6.1)
+    railties (6.1.4.1)
+      actionpack (= 6.1.4.1)
+      activesupport (= 6.1.4.1)
       method_source
       rake (>= 0.13)
       thor (~> 1.0)
@@ -229,7 +229,7 @@ GEM
       sprockets (>= 3.0.0)
     thor (1.1.0)
     timers (4.3.3)
-    turbo-rails (0.7.3)
+    turbo-rails (0.8.0)
       rails (>= 6.0.0)
     tzinfo (2.0.4)
       concurrent-ruby (~> 1.0)
@@ -244,18 +244,16 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
-  awesome_print
-  kaminari
+  amazing_print
   pg
-  pry-rails
   puma
   rails
   rails_auth!
   rails_com!
+  rails_design!
   rails_email!
-  rails_ui!
+  rails_vite!
   sdoc
-  viter!
 
 BUNDLED WITH
    2.2.22
