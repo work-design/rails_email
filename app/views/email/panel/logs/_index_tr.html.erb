@@ -3,10 +3,10 @@
   <td>
     <span data-show-target="item" style="visibility: hidden">
       <%= link_to({ action: 'show', id: model.id }, data: { turbo_frame: 'modal' }, aria: { label: t('.show') }, class: 'button is-small is-rounded is-light') do %>
-        <i class="fa-light fa-info"></i>
+        <i class="fa-light fa-circle-info"></i>
       <% end %>
       <%= button_to({ action: 'destroy', id: model.id }, method: :delete, aria: { label: t('.destroy') }, data: { confirm: t('.confirm') }, class: 'button is-small is-rounded is-light') do %>
-        <i class="fa-light fa-trash-alt"></i>
+        <i class="fa-light fa-trash"></i>
       <% end %>
     </span>
   </td>
