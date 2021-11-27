@@ -1,6 +1,6 @@
 GIT
   remote: https://github.com/work-design/rails_auth.git
-  revision: 10bc1ef696d970d41a9b2d55b697160dd33f4800
+  revision: edbc9cad1b016bc87ac2fe695cf110add360aba0
   specs:
     rails_auth (1.2.0)
       bcrypt (~> 3.1)
@@ -9,7 +9,7 @@ GIT
 
 GIT
   remote: https://github.com/work-design/rails_com.git
-  revision: 110f021ee303be80369c460dc6586ef550491c87
+  revision: a489fe0edb363723d5481dfaed74eeffe4ea4a3a
   specs:
     rails_com (1.3.0)
       acme-client
@@ -115,7 +115,7 @@ GEM
       zeitwerk (~> 2.3)
     acts_as_list (1.0.4)
       activerecord (>= 4.2)
-    amazing_print (1.3.0)
+    amazing_print (1.4.0)
     bcrypt (3.1.16)
     builder (3.2.4)
     closure_tree (7.4.0)
@@ -146,13 +146,13 @@ GEM
     faraday-net_http_persistent (1.2.0)
     faraday-patron (1.0.0)
     faraday-rack (1.0.0)
-    globalid (0.5.2)
+    globalid (1.0.0)
       activesupport (>= 5.0)
     http-2-next (0.5.0)
     http-form_data (2.3.0)
-    httpx (0.18.0)
+    httpx (0.18.1)
       http-2-next (>= 0.4.1)
-    i18n (1.8.10)
+    i18n (1.8.11)
       concurrent-ruby (~> 1.0)
     io-wait (0.2.1)
     jbuilder (2.11.3)
@@ -177,7 +177,7 @@ GEM
       mini_mime (>= 0.1.1)
     marcel (1.0.2)
     method_source (1.0.0)
-    mini_mime (1.1.1)
+    mini_mime (1.1.2)
     mini_portile2 (2.6.1)
     minitest (5.14.4)
     multipart-post (2.1.1)
@@ -200,13 +200,13 @@ GEM
       net-protocol
       timeout
     nio4r (2.5.8)
-    nokogiri (1.12.4)
+    nokogiri (1.12.5)
       mini_portile2 (~> 2.6.1)
       racc (~> 1.4)
     pg (1.2.3)
-    puma (5.5.0)
+    puma (5.5.2)
       nio4r (~> 2.0)
-    racc (1.5.2)
+    racc (1.6.0)
     rack (2.2.3)
     rack-test (1.1.0)
       rack (>= 1.0, < 3)
@@ -239,21 +239,21 @@ GEM
       rake (>= 0.13)
       thor (~> 1.0)
     rake (13.0.6)
-    rdoc (6.3.2)
+    rdoc (6.3.3)
     ruby2_keywords (0.0.5)
     sdoc (2.2.0)
       rdoc (>= 5.0)
     sprockets (4.0.2)
       concurrent-ruby (~> 1.0)
       rack (> 1, < 3)
-    sprockets-rails (3.2.2)
-      actionpack (>= 4.0)
-      activesupport (>= 4.0)
+    sprockets-rails (3.4.1)
+      actionpack (>= 5.2)
+      activesupport (>= 5.2)
       sprockets (>= 3.0.0)
     strscan (3.0.1)
     thor (1.1.0)
     timeout (0.2.0)
-    turbo-rails (7.1.1)
+    turbo-rails (0.9.0)
       rails (>= 6.0.0)
     tzinfo (2.0.4)
       concurrent-ruby (~> 1.0)
@@ -263,7 +263,7 @@ GEM
     websocket-extensions (0.1.5)
     with_advisory_lock (4.6.0)
       activerecord (>= 4.2)
-    zeitwerk (2.4.2)
+    zeitwerk (2.5.1)
 
 PLATFORMS
   ruby
@@ -281,4 +281,4 @@ DEPENDENCIES
   sdoc
 
 BUNDLED WITH
-   2.2.22
+   2.3.0.dev
