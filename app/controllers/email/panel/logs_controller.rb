@@ -9,13 +9,6 @@ module Email
       @logs = Log.default_where(q_params).page(params[:page])
     end
 
-    def show
-    end
-
-    def destroy
-      @log.destroy
-    end
-
     private
     def set_log
       @log = Log.find(params[:id])

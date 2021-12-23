@@ -18,24 +18,6 @@ module Email
       end
     end
 
-    def show
-    end
-
-    def edit
-    end
-
-    def update
-      @reason.assign_attributes(reason_params)
-
-      unless @reason.save
-        render :edit, locals: { model: @reason }, status: :unprocessable_entity
-      end
-    end
-
-    def destroy
-      @reason.destroy
-    end
-
     private
     def set_reason
       @reason = Reason.find(params[:id])

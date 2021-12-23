@@ -6,24 +6,6 @@ module Email
       @logs = Log.page(params[:page])
     end
 
-    def show
-    end
-
-    def edit
-    end
-
-    def update
-      @log.assign_attributes(log_params)
-
-      unless @log.save
-        render :edit, locals: { model: @log }, status: :unprocessable_entity
-      end
-    end
-
-    def destroy
-      @log.destroy
-    end
-
     private
     def set_log
       @log = Log.find(params[:id])

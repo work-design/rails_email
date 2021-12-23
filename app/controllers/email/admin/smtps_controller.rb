@@ -21,24 +21,6 @@ module Email
       end
     end
 
-    def show
-    end
-
-    def edit
-    end
-
-    def update
-      @smtp.assign_attributes(smtp_params)
-
-      unless @smtp.save
-        render :edit, locals: { model: @smtp }, status: :unprocessable_entity
-      end
-    end
-
-    def destroy
-      @smtp.destroy
-    end
-
     private
     def set_smtp
       @smtp = Smtp.find(params[:id])

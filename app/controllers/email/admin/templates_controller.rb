@@ -21,24 +21,6 @@ module Email
       end
     end
 
-    def show
-    end
-
-    def edit
-    end
-
-    def update
-      @template.assign_attributes(template_params)
-
-      unless @template.save
-        render :edit, locals: { model: @template }, status: :unprocessable_entity
-      end
-    end
-
-    def destroy
-      @template.destroy
-    end
-
     private
     def set_template
       @template = Template.find(params[:id])

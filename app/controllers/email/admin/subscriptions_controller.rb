@@ -18,24 +18,6 @@ module Email
       end
     end
 
-    def show
-    end
-
-    def edit
-    end
-
-    def update
-      @subscription.assign_attributes(subscription_params)
-
-      unless @subscription.save
-        render :edit, locals: { model: @subscription }, status: :unprocessable_entity
-      end
-    end
-
-    def destroy
-      @subscription.destroy
-    end
-
     private
     def set_subscription
       @subscription = Subscription.find(params[:id])
