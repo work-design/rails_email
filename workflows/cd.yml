@@ -19,6 +19,7 @@ jobs:
         uses: actions/checkout@v2
         with:
           submodules: true
+          token: ${{ github.token }}
       - name: Docker build
         run: |
           docker build -t ${{ secrets.DOCKER_URL }}/$GITHUB_REPOSITORY:latest -f docker/engine/Dockerfile .
