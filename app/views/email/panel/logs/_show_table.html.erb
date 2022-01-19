@@ -1,6 +1,6 @@
 <tr>
   <td><%= Email::Log.human_attribute_name(:created_at) %></td>
-  <td><time data-controller="time"><%= @log.created_at.to_s(:iso8601) %></time></td>
+  <td><time data-controller="time"><%= @log.created_at.to_formatted_s(:iso8601) %></time></td>
 </tr>
 <tr>
   <td><%= Email::Log.human_attribute_name(:mailer) %></td>
