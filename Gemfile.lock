@@ -1,6 +1,6 @@
 GIT
   remote: https://github.com/work-design/rails_auth.git
-  revision: aefb9a92d7856259a908ea60552a6839d0399f39
+  revision: 3ab16af127bedbe6df497d91b210175dbd4b3404
   specs:
     rails_auth (1.2.0)
       bcrypt (~> 3.1)
@@ -9,7 +9,7 @@ GIT
 
 GIT
   remote: https://github.com/work-design/rails_com.git
-  revision: 133decd15ca48a418e89fef16e877ac269cab716
+  revision: 29e9f3c9ce5b37240c7f52d87c1d6b7deb2c363e
   specs:
     rails_com (1.3.0)
       acme-client
@@ -26,7 +26,7 @@ GIT
 
 GIT
   remote: https://github.com/work-design/rails_design.git
-  revision: d7f6a99ad578f360635e89c94c91c4f5b182dd81
+  revision: f608148c64c031cca6ddc61b222b268dfa01ad20
   specs:
     rails_design (0.0.1)
       rails
@@ -158,7 +158,7 @@ GEM
     method_source (1.0.0)
     mini_mime (1.1.2)
     mini_portile2 (2.8.0)
-    minitest (5.15.0)
+    minitest (5.16.1)
     net-http (0.2.2)
       uri
     net-imap (0.2.3)
@@ -179,13 +179,13 @@ GEM
     nokogiri (1.13.6)
       mini_portile2 (~> 2.8.0)
       racc (~> 1.4)
-    pg (1.3.5)
+    pg (1.4.0)
     psych (4.0.4)
       stringio
     puma (5.6.4)
       nio4r (~> 2.0)
     racc (1.6.0)
-    rack (2.2.3)
+    rack (2.2.3.1)
     rack-test (1.1.0)
       rack (>= 1.0, < 3)
     rails (7.0.3)
@@ -205,7 +205,7 @@ GEM
     rails-dom-testing (2.0.3)
       activesupport (>= 4.2.0)
       nokogiri (>= 1.6)
-    rails-html-sanitizer (1.4.2)
+    rails-html-sanitizer (1.4.3)
       loofah (~> 2.3)
     rails_extend (1.0.1)
       rails (>= 5.0)
@@ -238,7 +238,7 @@ GEM
     websocket-extensions (0.1.5)
     with_advisory_lock (4.6.0)
       activerecord (>= 4.2)
-    zeitwerk (2.5.4)
+    zeitwerk (2.6.0)
 
 PLATFORMS
   ruby
