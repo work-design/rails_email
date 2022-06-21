@@ -1,6 +1,6 @@
 GIT
   remote: https://github.com/work-design/rails_auth.git
-  revision: 13a9d887ce9d39bcdd097146d5f6377e6b6361c8
+  revision: aefb9a92d7856259a908ea60552a6839d0399f39
   specs:
     rails_auth (1.2.0)
       bcrypt (~> 3.1)
@@ -9,7 +9,7 @@ GIT
 
 GIT
   remote: https://github.com/work-design/rails_com.git
-  revision: 7d57be4d5f52d60cc913ab1092096ca22bff3f31
+  revision: 133decd15ca48a418e89fef16e877ac269cab716
   specs:
     rails_com (1.3.0)
       acme-client
@@ -136,7 +136,7 @@ GEM
       http-2-next (>= 0.4.1)
     i18n (1.10.0)
       concurrent-ruby (~> 1.0)
-    jwt (2.4.0)
+    jwt (2.4.1)
     kaminari (1.2.2)
       activesupport (>= 4.1.0)
       kaminari-actionview (= 1.2.2)
