@@ -1,9 +1,6 @@
-$:.push File.expand_path('lib', __dir__)
-require 'rails_email/version'
-
 Gem::Specification.new do |s|
   s.name = 'rails_email'
-  s.version = RailsEmail::VERSION
+  s.version = '0.0.2'
   s.authors = ['qinmingyuan']
   s.email = ['mingyuan0715@foxmail.com']
   s.homepage = 'https://github.com/work-design/rails_email'

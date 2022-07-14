@@ -22,4 +22,4 @@ config.action_mailer.smtp_settings = {
 访问 `email/admin/logs` 查看邮件发送日志
 
 ## 许可证
-遵循 [MIT](https://opensource.org/licenses/MIT) 协议
+遵循 [MIT](LICENSE) 协议

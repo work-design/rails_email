@@ -1,6 +1,6 @@
 GIT
   remote: https://github.com/work-design/rails_auth.git
-  revision: 883317729fb38a25e1c4c56a97e9d442f85a49bc
+  revision: 1668d3b93fbfad42d8393ab127af9af5017b181f
   specs:
     rails_auth (1.2.0)
       bcrypt (~> 3.1)
@@ -9,7 +9,7 @@ GIT
 
 GIT
   remote: https://github.com/work-design/rails_com.git
-  revision: eafd77d0727b1b3cbc4a1ade0e75adab84a32c83
+  revision: e5eaf04a6aab4c5acc1bc11832712c0fad3cf18b
   specs:
     rails_com (1.3.0)
       acme-client
@@ -26,7 +26,7 @@ GIT
 
 GIT
   remote: https://github.com/work-design/rails_design.git
-  revision: 460c2408ac589c2832c86c80955f34b4ed323e70
+  revision: f919cb5c5367cc7549d093bfebb560b96a006f0a
   specs:
     rails_design (0.0.1)
       rails
@@ -34,7 +34,7 @@ GIT
 PATH
   remote: .
   specs:
-    rails_email (2.1.6)
+    rails_email (0.0.2)
       rails_auth
       rails_com (~> 1.2)
 
@@ -44,67 +44,67 @@ GEM
     acme-client (2.0.11)
       faraday (>= 1.0, < 3.0.0)
       faraday-retry (~> 1.0)
-    actioncable (7.0.3)
-      actionpack (= 7.0.3)
-      activesupport (= 7.0.3)
+    actioncable (7.0.3.1)
+      actionpack (= 7.0.3.1)
+      activesupport (= 7.0.3.1)
       nio4r (~> 2.0)
       websocket-driver (>= 0.6.1)
-    actionmailbox (7.0.3)
-      actionpack (= 7.0.3)
-      activejob (= 7.0.3)
-      activerecord (= 7.0.3)
-      activestorage (= 7.0.3)
-      activesupport (= 7.0.3)
+    actionmailbox (7.0.3.1)
+      actionpack (= 7.0.3.1)
+      activejob (= 7.0.3.1)
+      activerecord (= 7.0.3.1)
+      activestorage (= 7.0.3.1)
+      activesupport (= 7.0.3.1)
       mail (>= 2.7.1)
       net-imap
       net-pop
       net-smtp
-    actionmailer (7.0.3)
-      actionpack (= 7.0.3)
-      actionview (= 7.0.3)
-      activejob (= 7.0.3)
-      activesupport (= 7.0.3)
+    actionmailer (7.0.3.1)
+      actionpack (= 7.0.3.1)
+      actionview (= 7.0.3.1)
+      activejob (= 7.0.3.1)
+      activesupport (= 7.0.3.1)
       mail (~> 2.5, >= 2.5.4)
       net-imap
       net-pop
       net-smtp
       rails-dom-testing (~> 2.0)
-    actionpack (7.0.3)
-      actionview (= 7.0.3)
-      activesupport (= 7.0.3)
+    actionpack (7.0.3.1)
+      actionview (= 7.0.3.1)
+      activesupport (= 7.0.3.1)
       rack (~> 2.0, >= 2.2.0)
       rack-test (>= 0.6.3)
       rails-dom-testing (~> 2.0)
       rails-html-sanitizer (~> 1.0, >= 1.2.0)
-    actiontext (7.0.3)
-      actionpack (= 7.0.3)
-      activerecord (= 7.0.3)
-      activestorage (= 7.0.3)
-      activesupport (= 7.0.3)
+    actiontext (7.0.3.1)
+      actionpack (= 7.0.3.1)
+      activerecord (= 7.0.3.1)
+      activestorage (= 7.0.3.1)
+      activesupport (= 7.0.3.1)
       globalid (>= 0.6.0)
       nokogiri (>= 1.8.5)
-    actionview (7.0.3)
-      activesupport (= 7.0.3)
+    actionview (7.0.3.1)
+      activesupport (= 7.0.3.1)
       builder (~> 3.1)
       erubi (~> 1.4)
       rails-dom-testing (~> 2.0)
       rails-html-sanitizer (~> 1.1, >= 1.2.0)
-    activejob (7.0.3)
-      activesupport (= 7.0.3)
+    activejob (7.0.3.1)
+      activesupport (= 7.0.3.1)
       globalid (>= 0.3.6)
-    activemodel (7.0.3)
-      activesupport (= 7.0.3)
-    activerecord (7.0.3)
-      activemodel (= 7.0.3)
-      activesupport (= 7.0.3)
-    activestorage (7.0.3)
-      actionpack (= 7.0.3)
-      activejob (= 7.0.3)
-      activerecord (= 7.0.3)
-      activesupport (= 7.0.3)
+    activemodel (7.0.3.1)
+      activesupport (= 7.0.3.1)
+    activerecord (7.0.3.1)
+      activemodel (= 7.0.3.1)
+      activesupport (= 7.0.3.1)
+    activestorage (7.0.3.1)
+      actionpack (= 7.0.3.1)
+      activejob (= 7.0.3.1)
+      activerecord (= 7.0.3.1)
+      activesupport (= 7.0.3.1)
       marcel (~> 1.0)
       mini_mime (>= 1.1.0)
-    activesupport (7.0.3)
+    activesupport (7.0.3.1)
       concurrent-ruby (~> 1.0, >= 1.0.2)
       i18n (>= 1.6, < 2)
       minitest (>= 5.1)
@@ -132,9 +132,9 @@ GEM
       activesupport (>= 5.0)
     http-2-next (0.5.0)
     http-form_data (2.3.0)
-    httpx (0.20.2)
+    httpx (0.20.3)
       http-2-next (>= 0.4.1)
-    i18n (1.10.0)
+    i18n (1.12.0)
       concurrent-ruby (~> 1.0)
     jwt (2.4.1)
     kaminari (1.2.2)
@@ -158,7 +158,7 @@ GEM
     method_source (1.0.0)
     mini_mime (1.1.2)
     mini_portile2 (2.8.0)
-    minitest (5.16.1)
+    minitest (5.16.2)
     net-http (0.2.2)
       uri
     net-imap (0.2.3)
@@ -176,32 +176,37 @@ GEM
       net-protocol
       timeout
     nio4r (2.5.8)
-    nokogiri (1.13.6)
+    nokogiri (1.13.7)
       mini_portile2 (~> 2.8.0)
       racc (~> 1.4)
-    pg (1.4.0)
+    pg (1.4.1)
+    propshaft (0.6.4)
+      actionpack (>= 7.0.0)
+      activesupport (>= 7.0.0)
+      rack
+      railties (>= 7.0.0)
     psych (4.0.4)
       stringio
     puma (5.6.4)
       nio4r (~> 2.0)
     racc (1.6.0)
-    rack (2.2.3.1)
-    rack-test (1.1.0)
-      rack (>= 1.0, < 3)
-    rails (7.0.3)
-      actioncable (= 7.0.3)
-      actionmailbox (= 7.0.3)
-      actionmailer (= 7.0.3)
-      actionpack (= 7.0.3)
-      actiontext (= 7.0.3)
-      actionview (= 7.0.3)
-      activejob (= 7.0.3)
-      activemodel (= 7.0.3)
-      activerecord (= 7.0.3)
-      activestorage (= 7.0.3)
-      activesupport (= 7.0.3)
+    rack (2.2.4)
+    rack-test (2.0.2)
+      rack (>= 1.3)
+    rails (7.0.3.1)
+      actioncable (= 7.0.3.1)
+      actionmailbox (= 7.0.3.1)
+      actionmailer (= 7.0.3.1)
+      actionpack (= 7.0.3.1)
+      actiontext (= 7.0.3.1)
+      actionview (= 7.0.3.1)
+      activejob (= 7.0.3.1)
+      activemodel (= 7.0.3.1)
+      activerecord (= 7.0.3.1)
+      activestorage (= 7.0.3.1)
+      activesupport (= 7.0.3.1)
       bundler (>= 1.15.0)
-      railties (= 7.0.3)
+      railties (= 7.0.3.1)
     rails-dom-testing (2.0.3)
       activesupport (>= 4.2.0)
       nokogiri (>= 1.6)
@@ -209,9 +214,9 @@ GEM
       loofah (~> 2.3)
     rails_extend (1.0.1)
       rails (>= 5.0)
-    railties (7.0.3)
-      actionpack (= 7.0.3)
-      activesupport (= 7.0.3)
+    railties (7.0.3.1)
+      actionpack (= 7.0.3.1)
+      activesupport (= 7.0.3.1)
       method_source
       rake (>= 12.2)
       thor (~> 1.0)
@@ -246,6 +251,7 @@ PLATFORMS
 DEPENDENCIES
   amazing_print
   pg
+  propshaft
   puma
   rails
   rails_auth!
