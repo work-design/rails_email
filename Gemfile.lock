@@ -1,6 +1,6 @@
 GIT
   remote: https://github.com/work-design/rails_auth.git
-  revision: 023e89e8629359702ed633dcc922f3260d36aa75
+  revision: 9d64c0b39a9d4290bc4be952dc05f9d296338f62
   specs:
     rails_auth (1.2.0)
       bcrypt (~> 3.1)
@@ -9,7 +9,7 @@ GIT
 
 GIT
   remote: https://github.com/work-design/rails_com.git
-  revision: 406d3afb34aa7e396070edea4b12dfc8ec4a022d
+  revision: 488a6d2e6e8ced689f35f06ccda2c5087d2d772f
   specs:
     rails_com (1.3.0)
       acme-client
@@ -26,7 +26,7 @@ GIT
 
 GIT
   remote: https://github.com/work-design/rails_design.git
-  revision: 814cd1b3d5e551d683ce5d8f37ef12ef5315ef22
+  revision: 391ce9e2b7018b83c821c8eb8844b3a309f47f4f
   specs:
     rails_design (0.0.1)
       rails
@@ -123,16 +123,16 @@ GEM
       activerecord (>= 4.0.0)
     digest (3.1.0)
     erubi (1.10.0)
-    faraday (2.5.2)
+    faraday (2.6.0)
       faraday-net_http (>= 2.0, < 3.1)
       ruby2_keywords (>= 0.0.4)
-    faraday-net_http (3.0.0)
+    faraday-net_http (3.0.1)
     faraday-retry (1.0.3)
     globalid (1.0.0)
       activesupport (>= 5.0)
     http-2-next (0.5.0)
     http-form_data (2.3.0)
-    httpx (0.21.0)
+    httpx (0.21.1)
       http-2-next (>= 0.4.1)
     i18n (1.12.0)
       concurrent-ruby (~> 1.0)
@@ -231,7 +231,7 @@ GEM
     strscan (3.0.3)
     thor (1.2.1)
     timeout (0.3.0)
-    turbo-rails (1.3.0)
+    turbo-rails (1.3.1)
       actionpack (>= 6.0.0)
       activejob (>= 6.0.0)
       railties (>= 6.0.0)
