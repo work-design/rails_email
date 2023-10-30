@@ -8,8 +8,6 @@ module RailsEmail
       log.action_name = payload[:action_name]
       log.params = payload[:params]
       log.save
-
-      debug "\e[35m  mailer log saved!  \e[0m"
     end
 
     def deliver(event)
@@ -23,8 +21,6 @@ module RailsEmail
       log.mail_to = payload[:mail_to]
       log.cc_to = payload[:cc_to]
       log.save
-
-      debug "\e[35m  mailer log updated!  \e[0m"
     end
 
     self.attach_to :action_mailer
