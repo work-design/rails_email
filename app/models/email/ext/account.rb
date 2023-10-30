@@ -1,5 +1,5 @@
 module Email
-  module Model::Account
+  module Ext::Account
     extend ActiveSupport::Concern
 
     included do
