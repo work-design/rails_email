@@ -7,6 +7,7 @@ Rails.application.routes.draw do
       end
       resources :subscriptions
       namespace :panel, defaults: { namespace: 'panel' } do
+        root 'home#index'
         resources :logs, only: [:index, :show, :destroy]
         resources :smtps
         resources :reasons
