@@ -1,17 +1,17 @@
 en:
   email:
-    title: 邮件服务
+    title: Email Admin
     panel:
-      title: 邮件
+      title: Email Admin
       logs:
         index:
-          title: 发送日志
+          title: Email Logs
       smtps:
         index:
-          title: 邮件 SMTP 发送
+          title: SMTP Settings
       reasons:
         index:
-          title: 取关理由
+          title: Unsubscribe Reasons
     admin:
       title: 邮件服务
       logs:
