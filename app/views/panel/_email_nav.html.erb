@@ -2,7 +2,7 @@
   <a class="menu-label" data-action="menu#toggle">
     <i class="fa-solid fa-fw fa-envelope"></i>
     <span><%= t('email.panel.title') %></span>
-    <i class="fa-solid dropdown"></i>
+    <i class="fa-solid fa-fw dropdown"></i>
   </a>
   <div class="menu-list" data-empty-target="content">
     <%= link_to t('email.panel.smtps.index.title'), { controller: 'email/panel/smtps' }, class: active_helper(controllers: 'smtps', active: 'is-active') %>

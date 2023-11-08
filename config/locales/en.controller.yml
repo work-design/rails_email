@@ -1,8 +1,8 @@
 en:
   email:
-    title: Email Admin
+    title: Email
     panel:
-      title: Email Admin
+      title: Email
       logs:
         index:
           title: Email Logs

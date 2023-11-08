@@ -1,6 +1,6 @@
 GIT
   remote: https://github.com/work-design/rails_auth.git
-  revision: 82a38ea5068ab03a7766d213289d85fe139776ef
+  revision: 74bb3b54bdb8f894d2c197fd9b77475e763370e1
   specs:
     rails_auth (1.2.0)
       bcrypt (~> 3.1)
@@ -9,7 +9,7 @@ GIT
 
 GIT
   remote: https://github.com/work-design/rails_com.git
-  revision: 9ac07b21666cd460219f306165958ec9fb8728c9
+  revision: 2731330d08263723c09a98a736fa8daaa7b490ee
   specs:
     rails_com (1.3.0)
       acme-client
@@ -27,7 +27,7 @@ GIT
 
 GIT
   remote: https://github.com/work-design/rails_design.git
-  revision: ca9433ed10de1c7c2a8818ecb6f286359a6573f9
+  revision: 2f2f33e4eebeaa97e2e335f62825a8a3cb983303
   specs:
     rails_design (0.0.1)
       rails
@@ -160,7 +160,7 @@ GEM
       thor (>= 0.14.1)
     http-2-next (1.0.1)
     http-form_data (2.3.0)
-    httpx (1.1.0)
+    httpx (1.1.1)
       http-2-next (>= 1.0.1)
     i18n (1.14.1)
       concurrent-ruby (~> 1.0)
@@ -193,7 +193,7 @@ GEM
     mini_portile2 (2.8.5)
     minitest (5.20.0)
     mutex_m (0.1.2)
-    net-http (0.3.2)
+    net-http (0.4.0)
       uri
     net-imap (0.4.2)
       date
@@ -277,7 +277,7 @@ GEM
       railties (>= 6.0.0)
     tzinfo (2.0.6)
       concurrent-ruby (~> 1.0)
-    uri (0.12.2)
+    uri (0.13.0)
     webrick (1.8.1)
     websocket-driver (0.7.6)
       websocket-extensions (>= 0.1.0)
