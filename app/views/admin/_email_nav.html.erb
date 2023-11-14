@@ -5,8 +5,8 @@
     <i class="fa-solid fa-fw dropdown"></i>
   </a>
   <div class="menu-list">
-    <%= link_to t('email.admin.templates.index.title'), { controller: 'email/admin/templates' }, class: active_helper(controllers: ['templates'], active: 'is-active') %>
-    <%= link_to t('email.admin.smtps.index.title'), { controller: 'email/admin/smtps' }, class: active_helper(controllers: ['smtps', 'smtp_accounts'], active: 'is-active') %>
-    <%= link_to t('email.admin.logs.index.title'), { controller: 'email/admin/logs' }, class: active_helper(controllers: ['logs'], active: 'is-active') %>
+    <%= link_to t('email.admin.templates.index.title'), { controller: 'email/admin/templates' }, data: { turbo_frame: 'body', action: 'menu#enter' }, class: active_helper(controllers: ['templates'], active: 'is-active') %>
+    <%= link_to t('email.admin.smtps.index.title'), { controller: 'email/admin/smtps' }, data: { turbo_frame: 'body', action: 'menu#enter' }, class: active_helper(controllers: ['smtps', 'smtp_accounts'], active: 'is-active') %>
+    <%= link_to t('email.admin.logs.index.title'), { controller: 'email/admin/logs' }, data: { turbo_frame: 'body', action: 'menu#enter' }, class: active_helper(controllers: ['logs'], active: 'is-active') %>
   </div>
 </div>
