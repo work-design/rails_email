@@ -19,7 +19,7 @@ jobs:
         run: |
           git submodule update --init
           git submodule foreach git checkout main
-          cd ${{ github.repository }}
+          cd ${{ github.event.repository.name }}
           git pull
           cd ..
           git add .
