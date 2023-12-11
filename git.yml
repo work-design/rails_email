@@ -23,5 +23,5 @@ jobs:
           git status
           git remote -v
           git add . -v
-          git commit -m 'up'
+          git commit -m ${{ steps.date.outputs.date }}
           git push
