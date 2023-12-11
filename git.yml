@@ -14,7 +14,6 @@ jobs:
           repository: work-design/engine
           ref: main
           submodules: true
-          token: ${{ github.token }}
       - name: Git Pull
         run: |
           git config --global user.email 'mingyuan0715@foxmail.com'
