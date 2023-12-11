@@ -20,5 +20,6 @@ jobs:
           git config --global user.email 'mingyuan0715@foxmail.com'
           git config --global user.name 'Mingyuan Qin With Bot'
           git status
-          git add .
+          git remote -v
+          git add . -v
           git commit -m 'up'
