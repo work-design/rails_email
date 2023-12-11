@@ -1,0 +1,25 @@
+name: Git Collect
+on:
+  push:
+    branches:
+      - main
+jobs:
+  build:
+    name: Git Collect
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+        with:
+          repository: git@github.com:work-design/engine.git
+          submodules: true
+          token: ${{ github.token }}
+        run: |
+          git submodule update --init
+          git submodule foreach git checkout main
+          cd ${{ github.repository }}
+          git pull
+          cd ..
+          git add .
+          git commit -m 'up'
+
