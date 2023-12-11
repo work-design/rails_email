@@ -16,8 +16,8 @@ jobs:
           submodules: true
       - name: Git Pull
         run: |
-          git config --global user.email 'mingyuan0715@foxmail.com'
-          git config --global user.name 'Mingyuan Qin With Bot'
+          git config user.email 'mingyuan0715@foxmail.com'
+          git config user.name 'Mingyuan Qin With Bot'
           git submodule foreach git checkout main
           git status
           git remote -v
