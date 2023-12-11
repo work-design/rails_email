@@ -1,0 +1,49 @@
+name: Test
+on: [push]
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    services:
+      postgres:
+        image: postgres:13
+        env:
+          POSTGRES_USER: postgres
+          POSTGRES_PASSWORD: postgres
+        options: >-
+          --health-cmd pg_isready
+          --health-interval 10s
+          --health-timeout 5s
+          --health-retries 5
+        ports:
+          - 5432:5432
+    steps:
+    - name: Fetch Project
+      uses: actions/checkout@v2
+      with:
+        submodules: true
+        token: ${{ github.token }}
+    - name: Set up Ruby and Bundle Install
+      uses: ruby/setup-ruby@v1
+      with:
+        ruby-version: 3.0
+        bundler-cache: true
+    - name: Set up Nodejs
+      uses: actions/setup-node@v2
+      with:
+        node-version: 16.3
+    - name: Cache Node Modules
+      uses: actions/cache@v2
+      with:
+        path: test/dummy/node_modules
+        key: ${{ runner.OS }}-yarn-${{ hashFiles('test/dummy/yarn.lock') }}
+    - name: Install Javascript(Node.js) Dependencies
+      run: |
+        yarn install --cwd test/dummy --check-files
+    - name: Prepare DB
+      run: |
+        RAILS_ENV=test bin/rails app:db:prepare
+        RAILS_ENV=test bin/rails g rails_extend:migrations -f
+        RAILS_ENV=test bin/rails db:migrate
+    - name: Run Test
+      run: |
+        bin/rails test -v -b
