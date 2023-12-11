@@ -17,6 +17,8 @@ jobs:
           token: ${{ github.token }}
       - name: Git Pull
         run: |
+          git config --global user.email 'mingyuan0715@foxmail.com'
+          git config --global user.name 'Mingyuan Qin With Bot'
           git submodule update --init
           git submodule foreach git checkout main
           cd ${{ github.event.repository.name }}
