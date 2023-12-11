@@ -20,13 +20,8 @@ jobs:
           git config --global user.email 'mingyuan0715@foxmail.com'
           git config --global user.name 'Mingyuan Qin With Bot'
           git submodule foreach git checkout main
-      - name: Commit Changes
-        run: |
-          cd ${{ github.event.repository.name }}
-          git pull
       - name: Changes
         run: |  
-          cd ..
           git status
           git add .
           git commit -m 'up'
