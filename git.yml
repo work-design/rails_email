@@ -12,6 +12,7 @@ jobs:
         uses: actions/checkout@v4
         with:
           repository: work-design/engine
+          ref: main
           submodules: true
           token: ${{ github.token }}
       - name: Git Pull
