@@ -19,7 +19,7 @@ jobs:
         run: |
           git config --global user.email 'mingyuan0715@foxmail.com'
           git config --global user.name 'Mingyuan Qin With Bot'
-          git submodule update --init
+          git submodule update --init --merge
           git submodule foreach git checkout main
           cd ${{ github.event.repository.name }}
           git pull
