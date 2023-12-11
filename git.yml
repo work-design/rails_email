@@ -24,6 +24,9 @@ jobs:
         run: |
           cd ${{ github.event.repository.name }}
           git pull
+      - name: Changes
+        run: |  
           cd ..
+          git status
           git add .
           git commit -m 'up'
