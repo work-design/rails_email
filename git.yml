@@ -12,8 +12,7 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v4
         with:
-          repository: ${{ vars.REPO }}
-          github-server-url: ${{ vars.SERVER }}
+          repository: work-design/engine
           ref: main
           submodules: true
           token: ${{ secrets.AK }}
