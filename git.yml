@@ -12,7 +12,7 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v4
         with:
-          repository: work-design/engine
+          repository: ${{ github.repository_owner }}/engine
           ref: main
           submodules: true
           token: ${{ secrets.AK }}
