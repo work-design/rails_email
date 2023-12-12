@@ -1,8 +1,8 @@
 name: Docker Github
 on:
-  push:
-    branches:
-      - main
+  create:
+    tags:
+      - 'v*'
 jobs:
   build:
     name: Build image
