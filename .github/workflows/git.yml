@@ -1,0 +1,28 @@
+name: Git Collect
+on:
+  push:
+    branches:
+      - main
+jobs:
+  build:
+    name: Git Collect
+    environment: dev
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+        with:
+          repository: ${{ github.repository_owner }}/engine
+          ref: main
+          submodules: true
+          token: ${{ secrets.AK }}
+      - name: Git Pull
+        run: |
+          git config user.email 'mingyuan0715@foxmail.com'
+          git config user.name 'Mingyuan Qin With Bot'
+          git submodule foreach git checkout main
+          git status
+          git remote -v
+          git add . -v
+          git commit -m "${{ github.event.head_commit.timestamp }} - ${{ github.event.repository.name }}"
+          git push
