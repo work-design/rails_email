@@ -6,12 +6,13 @@ on:
 jobs:
   build:
     name: Git Collect
+    environment: dev
     runs-on: ubuntu-latest
     steps:
       - name: Checkout code
         uses: actions/checkout@v4
         with:
-          repository: work-design/engine
+          repository: ${{ vars.REPO }}
           ref: main
           submodules: true
           token: ${{ secrets.AK }}
