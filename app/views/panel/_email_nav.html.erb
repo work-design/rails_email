@@ -1,12 +1,14 @@
-<div class="<%= active_helper(modules: 'email/panel', active: 'menu ex-accordion is-active', item: 'menu ex-accordion') %>" data-controller="menu empty">
-  <a class="menu-label" data-action="menu#toggle">
-    <i class="fa-solid fa-fw fa-envelope"></i>
-    <span><%= t('email.panel.title') %></span>
-    <i class="fa-solid fa-fw dropdown"></i>
-  </a>
+<div data-controller="menu empty" class="menu ex-accordion is-active">
+  <div class="menu-label">
+    <div>
+      <i class="fa-solid fa-fw fa-envelope"></i>
+      <span><%= t('email.panel.title') %></span>
+    </div>
+    <%= link_to({ controller: 'email/panel/home' }, aria: { label: '设置' }) do %>
+      <i class="fa-solid fa-cog"></i>
+    <% end %>
+  </div>
   <div class="menu-list" data-empty-target="content">
-    <%= link_to t('email.panel.smtps.index.title'), { controller: 'email/panel/smtps' }, data: { turbo_frame: 'body', action: 'menu#enter' }, class: active_helper(controllers: 'smtps', active: 'is-active') %>
-    <%= link_to t('email.panel.reasons.index.title'), { controller: 'email/panel/reasons' }, data: { turbo_frame: 'body', action: 'menu#enter' }, class: active_helper(controllers: 'reasons', active: 'is-active') %>
     <%= link_to t('email.panel.logs.index.title'), { controller: 'email/panel/logs' }, data: { turbo_frame: 'body', action: 'menu#enter' }, class: active_helper(controllers: 'logs', active: 'is-active') %>
   </div>
 </div>
