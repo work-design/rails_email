@@ -7,11 +7,11 @@ module Email
       attribute :subscribe_at, :datetime
       attribute :unsubscribe_at, :datetime
 
-      enum state: {
+      enum :state, {
         init: 'init',
         subscribed: 'subscribed',
         unsubscribed: 'unsubscribed'
-      }, _default: 'init'
+      }, default: 'init'
 
       belongs_to :smtp, optional: true
       belongs_to :smtp_account, optional: true

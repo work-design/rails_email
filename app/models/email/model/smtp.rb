@@ -8,15 +8,15 @@ module Email
       attribute :enable_starttls_auto, :boolean, default: true
       attribute :ssl, :boolean, default: true
 
-      enum authentication: {
+      enum :authentication, {
         plain: 'plain',
         login: 'login',
         cram_md5: 'cram_md5'
       }
-      enum openssl_verify_mode: {
+      enum :openssl_verify_mode, {
         none: 'none',
         peer: 'peer'
-      }, _prefix: true
+      }, prefix: true
 
       has_many :smtp_accounts
     end
