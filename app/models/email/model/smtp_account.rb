@@ -9,7 +9,7 @@ module Email
 
       belongs_to :smtp
 
-      acts_as_list top_of_list: 0
+      positioned
     end
 
 
