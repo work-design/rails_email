@@ -1,3 +1,5 @@
-<%= link_to t('email.panel.smtps.index.title'), { controller: 'email/panel/smtps' }, data: { turbo_frame: 'body', action: 'menu#enter' }, class: active_helper(controllers: 'smtps', active: 'is-active') %>
-
-<%= link_to t('email.panel.reasons.index.title'), { controller: 'email/panel/reasons' }, data: { turbo_frame: 'body', action: 'menu#enter' }, class: active_helper(controllers: 'reasons', active: 'is-active') %>
+<div class="fixed-grid has-6-cols">
+  <div class="grid">
+    <%= render 'index_column' %>
+  </div>
+</div>
