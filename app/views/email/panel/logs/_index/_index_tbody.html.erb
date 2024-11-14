@@ -9,6 +9,6 @@
   <p><%= model.cc_to %></p>
 </td>
 <td>
-  <p class="has-text-success"><%= model.sent_status %></p>
-  <p class="has-text-grey"><time data-controller="time" data-format="human"><%= model.created_at.to_formatted_s(:iso8601) %></time></p>
+  <p class="text-success"><%= model.sent_status %></p>
+  <p class="text-grey"><time data-controller="time" data-format="human"><%= model.created_at.to_formatted_s(:iso8601) %></time></p>
 </td>
