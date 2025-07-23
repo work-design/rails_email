@@ -1,0 +1,16 @@
+<td>
+  <p><%= model.mail_from %></p>
+  <p><%= model.mail_to %></p>
+</td>
+<td>
+  <p><%= model.sent_status %></p>
+  <p><%= model.sent_string %></p>
+</td>
+<td><time data-controller="time"><%= model.created_at.to_formatted_s(:iso8601) %></time></td>
+<td>
+  <div data-show-target="item" style="visibility: hidden">
+    <%= link_to({ action: 'show', id: model.id }, data: { turbo_frame: 'modal' }, aria: { label: t('.show.title') }, class: 'button is-small is-rounded is-light') do %>
+      <i class="fa-solid fa-circle-info"></i>
+    <% end %>
+  </div>
+</td>

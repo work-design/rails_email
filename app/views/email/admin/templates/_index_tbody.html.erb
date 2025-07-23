@@ -6,3 +6,4 @@
 <td><%= model.body %></td>
 <td><%= model.order_prefix %></td>
 <td><%= image_tag model.cover, class: 'image is-64x64' if model.cover.attached? %></td>
+<td><%= render partial: 'index_tr_actions', locals: { model: model } %></td>
