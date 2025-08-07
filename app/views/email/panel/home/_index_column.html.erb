@@ -6,7 +6,7 @@
     <%= link_to({ controller: 'email/panel/reasons' }, data: { turbo_frame: 'body', action: 'menu-popup#enter' }, class: 'cell button is-fullwidth') do %>
       <span><%= t('email.panel.reasons.index.title') %></span>
     <% end %>
-    <%= link_to({ controller: 'email/panel/logs' }, data: { turbo_frame: 'body', action: 'menu-popup#enter' }, class: active_helper(controllers: 'logs', item: 'menu-item', active: 'menu-item is-active')) do %>
+    <%= link_to({ controller: 'email/panel/logs' }, data: { turbo_frame: 'body', action: 'menu-popup#enter' }, class: active_helper(controllers: 'logs', item: 'cell button is-fullwidth', active: 'cell button is-fullwidth is-active')) do %>
       <span><%= t('email.panel.logs.index.title') %></span>
     <% end %>
   </div>
