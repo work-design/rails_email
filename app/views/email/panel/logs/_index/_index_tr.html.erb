@@ -2,11 +2,11 @@
 
   <td>
     <div data-show-target="item" style="visibility: hidden">
-      <%= button_to({ action: 'show', id: model.id }, aria: { label: t('.show.title') }, class: 'button is-small is-rounded is-light') do %>
-        <i class="fa-solid fa-circle-info text-info"></i>
+      <%= button_to({ action: 'show', id: model.id }, aria: { label: t('.show.title') }, class: 'button is-small is-borderless') do %>
+        <%= svg_tag 'circle-info', class: 'icon text-info' %>
       <% end %>
-      <%= button_to({ action: 'destroy', id: model.id }, method: :delete, aria: { label: t('.destroy.title') }, data: { turbo_confirm: t('.confirm') }, class: 'button is-small is-rounded is-light') do %>
-        <i class="fa-solid fa-trash text-danger"></i>
+      <%= button_to({ action: 'destroy', id: model.id }, method: :delete, aria: { label: t('.destroy.title') }, data: { turbo_confirm: t('.confirm') }, class: 'button is-small is-borderless') do %>
+        <%= svg_tag 'trash', class: 'icon text-danger' %>
       <% end %>
     </div>
   </td>
