@@ -10,7 +10,7 @@
 <td>
   <div data-show-target="item" style="visibility: hidden">
     <%= link_to({ action: 'show', id: model.id }, data: { turbo_frame: 'modal' }, aria: { label: t('.show.title') }, class: 'button is-small is-borderless') do %>
-      <%= svg_tag 'circle-info', class: 'icon text-info' %>
+      <%= svg_tag 'eye', class: 'icon text-info' %>
     <% end %>
   </div>
 </td>
