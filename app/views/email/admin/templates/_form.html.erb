@@ -3,4 +3,4 @@
 <%= f.text_field :honorific %>
 <%= f.text_area :body %>
 <%= f.text_field :order_prefix %>
-<%= f.file_field :cover %>
+<%= render 'com/attachments/list_field', target: f.object.cover, f: f %>
