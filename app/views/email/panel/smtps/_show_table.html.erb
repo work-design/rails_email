@@ -13,18 +13,16 @@
 <tr>
   <td class="text-right"><%= Email::Smtp.human_attribute_name(:enable_starttls_auto) %></td>
   <td>
-    <%= form_with theme: nil, model: @smtp, url: { action: 'update' }, data: { controller: 'input' } do |f| %>
-      <%= f.check_box :enable_starttls_auto, data: { input_target: 'checkbox' }, id: nil, class: 'switch is-rounded' %>
-      <label data-action="click->input#check"></label>
+    <%= form_with theme: 'switch', model: @smtp, url: { action: 'update' }, data: { controller: 'input' } do |f| %>
+      <%= f.check_box :enable_starttls_auto, data: { action: 'input#submit' }, id: nil %>
     <% end %>
   </td>
 </tr>
 <tr>
   <td class="text-right"><%= Email::Smtp.human_attribute_name(:ssl) %></td>
   <td>
-    <%= form_with theme: nil, model: @smtp, url: { action: 'update' }, data: { controller: 'input' } do |f| %>
-      <%= f.check_box :ssl, data: { input_target: 'checkbox' }, id: nil, class: 'switch is-rounded' %>
-      <label data-action="click->input#check"></label>
+    <%= form_with theme: 'switch', model: @smtp, url: { action: 'update' }, data: { controller: 'input' } do |f| %>
+      <%= f.check_box :ssl, data: { action: 'input#submit' }, id: nil %>
     <% end %>
   </td>
 </tr>
