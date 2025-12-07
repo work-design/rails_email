@@ -1,10 +1,6 @@
-require 'active_support/configurable'
-
 module RailsEmail
-  include ActiveSupport::Configurable
+  mattr_accessor :config, default: ActiveSupport::OrderedOptions.new
 
-  configure do |config|
-    config.intercept_not_found = true
-  end
+  config.intercept_not_found = true
 
 end
